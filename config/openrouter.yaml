@@ -1,0 +1,26 @@
+# openrouter config
+openrouter:
+  base_url: "https://openrouter.ai/api/v1"
+  api_key: "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"
+  
+  # Request defaults
+  defaults:
+    stream: false
+    response_format:
+      type: "json_object"
+      
+  # Rate limiting
+  rate_limit:
+    requests_per_minute: 60
+    tokens_per_minute: 100000
+    
+  # Retry configuration
+  retry:
+    max_attempts: 3
+    backoff_factor: 2
+    initial_delay_ms: 1000
+    
+  # Model fallbacks
+  fallbacks:
+    "openai/gpt-oss-120b:free": "openai/gpt-oss-120b:free"
+    "qwen/qwen3-coder:free": "qwen/qwen3-coder:free"

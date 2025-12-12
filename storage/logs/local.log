@@ -1,0 +1,120 @@
+11:25:03 | INFO     | Using REAL Supabase Auth
+11:25:06 | INFO     | Supabase auth client initialized
+11:25:06 | INFO     | Using REAL OpenRouter LLM
+11:25:06 | INFO     | OpenRouter client initialized
+11:25:06 | INFO     | Mock Notifier initialized
+11:25:06 | INFO     | Orchestrator initialized
+11:25:06 | INFO     | Starting Flask server on http://localhost:5000
+11:25:07 | INFO     | Using REAL Supabase Auth
+11:25:08 | INFO     | Supabase auth client initialized
+11:25:08 | INFO     | Using REAL OpenRouter LLM
+11:25:08 | INFO     | OpenRouter client initialized
+11:25:08 | INFO     | Mock Notifier initialized
+11:25:09 | INFO     | Orchestrator initialized
+11:25:09 | INFO     | Starting Flask server on http://localhost:5000
+11:25:09 | WARNING  |  * Debugger is active!
+11:26:09 | INFO     | Using REAL Supabase Auth
+11:26:10 | INFO     | Supabase auth client initialized
+11:26:10 | INFO     | Using REAL OpenRouter LLM
+11:26:10 | INFO     | OpenRouter client initialized
+11:26:10 | INFO     | Mock Notifier initialized
+11:26:10 | INFO     | Orchestrator initialized
+11:26:10 | INFO     | Starting Flask server on http://localhost:5000
+11:26:10 | INFO     | Using REAL Supabase Auth
+11:26:11 | INFO     | Supabase auth client initialized
+11:26:11 | INFO     | Using REAL OpenRouter LLM
+11:26:12 | INFO     | OpenRouter client initialized
+11:26:12 | INFO     | Mock Notifier initialized
+11:26:12 | INFO     | Orchestrator initialized
+11:26:12 | INFO     | Starting Flask server on http://localhost:5000
+11:26:12 | WARNING  |  * Debugger is active!
+11:26:33 | INFO     | HTTP Request: GET https://cuswenhahvtnznacoimm.supabase.co/auth/v1/user "HTTP/2 403 Forbidden"
+11:26:33 | ERROR    | Token verification error: invalid JWT: unable to parse or verify signature, token is malformed: token contains an invalid number of segments
+11:27:18 | INFO     | Using REAL Supabase Auth
+11:27:20 | INFO     | Supabase auth client initialized
+11:27:20 | INFO     | Using REAL OpenRouter LLM
+11:27:20 | INFO     | OpenRouter client initialized
+11:27:20 | INFO     | Mock Notifier initialized
+11:27:20 | INFO     | Orchestrator initialized
+11:27:20 | INFO     | Starting Flask server on http://localhost:5000
+11:27:20 | WARNING  |  * Debugger is active!
+11:40:11 | INFO     | Using REAL Supabase Auth
+11:40:13 | INFO     | Supabase auth client initialized
+11:40:13 | INFO     | Using REAL OpenRouter LLM
+11:40:13 | INFO     | OpenRouter client initialized
+11:40:13 | INFO     | Mock Notifier initialized
+11:40:13 | INFO     | Orchestrator initialized
+11:40:13 | INFO     | Starting Flask server on http://localhost:5000
+11:40:13 | WARNING  |  * Debugger is active!
+11:43:54 | INFO     | Using REAL Supabase Auth
+11:43:55 | INFO     | Supabase auth client initialized
+11:43:55 | INFO     | Using REAL OpenRouter LLM
+11:43:55 | INFO     | OpenRouter client initialized
+11:43:55 | INFO     | Mock Notifier initialized
+11:43:55 | INFO     | Orchestrator initialized
+11:43:55 | INFO     | Starting Flask server on http://localhost:5000
+11:43:55 | WARNING  |  * Debugger is active!
+11:46:01 | INFO     | Using REAL Supabase Auth
+11:46:03 | INFO     | Supabase auth client initialized
+11:46:03 | INFO     | Using REAL OpenRouter LLM
+11:46:03 | INFO     | OpenRouter client initialized
+11:46:03 | INFO     | Mock Notifier initialized
+11:46:03 | INFO     | Orchestrator initialized
+11:46:03 | INFO     | Starting Flask server on http://localhost:5000
+11:46:03 | WARNING  |  * Debugger is active!
+12:26:19 | INFO     | Using REAL Supabase Auth
+12:26:22 | INFO     | Supabase auth client initialized
+12:26:22 | INFO     | Using REAL OpenRouter LLM
+12:26:22 | INFO     | OpenRouter client initialized
+12:26:22 | INFO     | Mock Notifier initialized
+12:26:22 | INFO     | Orchestrator initialized
+12:26:22 | INFO     | Starting Flask server on http://localhost:5000
+12:26:23 | INFO     | Using REAL Supabase Auth
+12:26:24 | INFO     | Supabase auth client initialized
+12:26:24 | INFO     | Using REAL OpenRouter LLM
+12:26:25 | INFO     | OpenRouter client initialized
+12:26:25 | INFO     | Mock Notifier initialized
+12:26:25 | INFO     | Orchestrator initialized
+12:26:25 | INFO     | Starting Flask server on http://localhost:5000
+12:26:25 | WARNING  |  * Debugger is active!
+12:26:37 | INFO     | HTTP Request: GET https://cuswenhahvtnznacoimm.supabase.co/auth/v1/user "HTTP/2 403 Forbidden"
+12:26:37 | ERROR    | Token verification error: invalid JWT: unable to parse or verify signature, token is malformed: token contains an invalid number of segments
+13:00:29 | INFO     | Using REAL Supabase Auth
+13:00:31 | INFO     | Supabase auth client initialized
+13:00:31 | INFO     | Using REAL OpenRouter LLM
+13:00:31 | INFO     | OpenRouter client initialized
+13:00:31 | INFO     | Mock Notifier initialized
+13:00:31 | INFO     | Orchestrator initialized
+13:00:31 | INFO     | Starting Flask server on http://localhost:5000
+13:00:32 | INFO     | Using REAL Supabase Auth
+13:00:34 | INFO     | Supabase auth client initialized
+13:00:34 | INFO     | Using REAL OpenRouter LLM
+13:00:34 | INFO     | OpenRouter client initialized
+13:00:34 | INFO     | Mock Notifier initialized
+13:00:34 | INFO     | Orchestrator initialized
+13:00:34 | INFO     | Starting Flask server on http://localhost:5000
+13:00:34 | WARNING  |  * Debugger is active!
+13:01:10 | INFO     | HTTP Request: GET https://cuswenhahvtnznacoimm.supabase.co/auth/v1/user "HTTP/2 403 Forbidden"
+13:01:10 | ERROR    | Token verification error: invalid JWT: unable to parse or verify signature, token is malformed: token contains an invalid number of segments
+13:06:42 | INFO     | Using REAL Supabase Auth
+13:06:43 | INFO     | Supabase auth client initialized
+13:06:43 | INFO     | Using REAL OpenRouter LLM
+13:06:44 | INFO     | OpenRouter client initialized
+13:06:44 | INFO     | Mock Notifier initialized
+13:06:44 | INFO     | Orchestrator initialized
+13:06:44 | INFO     | Starting Flask server on http://localhost:5000
+13:06:44 | INFO     | Using REAL Supabase Auth
+13:06:46 | INFO     | Supabase auth client initialized
+13:06:46 | INFO     | Using REAL OpenRouter LLM
+13:06:46 | INFO     | OpenRouter client initialized
+13:06:46 | INFO     | Mock Notifier initialized
+13:06:46 | INFO     | Orchestrator initialized
+13:06:46 | INFO     | Starting Flask server on http://localhost:5000
+13:06:46 | WARNING  |  * Debugger is active!
+13:37:07 | INFO     | Using REAL Supabase Auth
+13:37:09 | INFO     | Supabase auth client initialized
+13:37:09 | INFO     | Using REAL OpenRouter LLM
+13:37:09 | INFO     | OpenRouter client initialized
+13:37:09 | INFO     | Mock Notifier initialized
+09:21:35 | WARNING  | Failed to initialize Supabase Auth: cannot import name 'SupabaseAuth' from 'app.auth' (D:\fun_model\app\auth.py). Falling back to Mock.
+09:21:35 | INFO     | Using MOCK Auth

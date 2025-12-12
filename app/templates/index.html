@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent Corporate System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏢 Multi-Agent Corp.</h1>
+            <p class="subtitle">Autonomous Enterprise Orchestration System</p>
+        </header>
+        
+        <div class="card">
+            <div class="input-group">
+                <label for="request">Project Request</label>
+                <textarea id="request" placeholder="Describe the software project or task you want the agents to execute... (e.g., 'Create a Snake game in Python with a Tkinter UI')"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="priority">Priority</label>
+                <select id="priority" style="width: 100%; padding: 1rem; border-radius: 8px; background: var(--bg-primary); color: white; border: 1px solid var(--bg-tertiary);">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+
+            <button onclick="runWorkflow()" id="runBtn">
+                <span>🚀 Launch Agents</span>
+            </button>
+        </div>
+        
+        <div class="card" id="resultCard" style="display:none;">
+            <div class="workflow-status">
+                <div>
+                    <span style="color: var(--text-secondary); margin-right: 0.5rem;">Workflow ID:</span>
+                    <span id="workflowId" style="font-family: 'Fira Code', monospace; color: var(--accent-primary);"></span>
+                </div>
+                <span id="statusBadge" class="status-badge pending">Pending</span>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab('summary')">Summary</div>
+                <div class="tab" onclick="switchTab('files')">Deliverables</div>
+                <div class="tab" onclick="switchTab('logs')">Full Logs</div>
+            </div>
+
+            <div id="summaryContent" class="tab-content active">
+                <div id="finalSummary" style="line-height: 1.6;"></div>
+            </div>
+
+            <div id="filesContent" class="tab-content">
+                <div id="fileList"></div>
+            </div>
+
+            <div id="logsContent" class="tab-content">
+                <div class="json-viewer" id="output"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Powered by OpenRouter & Supabase • Secure Corporate Environment</p>
+    </footer>
+    
+    <script>
+        // Mock token for dev mode - in prod, get from auth flow
+        const AUTH_TOKEN = 'test-token'; 
+
+        async function runWorkflow() {
+            const requestInput = document.getElementById('request');
+            const runBtn = document.getElementById('runBtn');
+            const resultCard = document.getElementById('resultCard');
+            const statusBadge = document.getElementById('statusBadge');
+            
+            const request = requestInput.value.trim();
+            if (!request) return alert('Please enter a request description');
+            
+            // Reset UI
+            runBtn.disabled = true;
+            runBtn.innerHTML = '<div class="spinner"></div> Processing...';
+            resultCard.style.display = 'block';
+            statusBadge.className = 'status-badge running';
+            statusBadge.innerText = 'RUNNING';
+            document.getElementById('workflowId').innerText = 'Generating...';
+            document.getElementById('output').innerText = 'Initializing agents...';
+            document.getElementById('finalSummary').innerText = 'Agents are working on your request. This may take a minute...';
+            
+            try {
+                const response = await fetch('/api/run', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${AUTH_TOKEN}`
+                    },
+                    body: JSON.stringify({ 
+                        request,
+                        options: {
+                            priority: document.getElementById('priority').value
+                        }
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    renderResult(data);
+                } else {
+                    throw new Error(data.error || 'Unknown error occurred');
+                }
+            } catch (error) {
+                statusBadge.className = 'status-badge failed';
+                statusBadge.innerText = 'FAILED';
+                document.getElementById('output').innerText = `Error: ${error.message}`;
+                document.getElementById('finalSummary').innerText = 'Workflow failed to complete.';
+            } finally {
+                runBtn.disabled = false;
+                runBtn.innerHTML = '<span>🚀 Launch Agents</span>';
+            }
+        }
+
+        function renderResult(data) {
+            document.getElementById('workflowId').innerText = data.workflow_id;
+            const statusBadge = document.getElementById('statusBadge');
+            statusBadge.className = `status-badge ${data.status}`;
+            statusBadge.innerText = data.status.toUpperCase();
+            
+            // Render Full Logs
+            document.getElementById('output').innerText = JSON.stringify(data.result, null, 2);
+
+            // Render Summary
+            if (data.result && data.result.final_summary) {
+                document.getElementById('finalSummary').innerText = data.result.final_summary;
+            } else if (data.result.error) {
+                 document.getElementById('finalSummary').innerText = `Error: ${data.result.error}`;
+            }
+
+            // Render Files
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+            if (data.result && data.result.deliverables && data.result.deliverables.files) {
+                data.result.deliverables.files.forEach(file => {
+                    const fileDiv = document.createElement('div');
+                    fileDiv.className = 'input-group';
+                    fileDiv.style.marginBottom = '1rem';
+                    fileDiv.innerHTML = `
+                        <label>${file.path}</label>
+                        <textarea readonly style="height: 150px; font-family: monospace; font-size: 0.85rem;">${file.content}</textarea>
+                    `;
+                    fileList.appendChild(fileDiv);
+                });
+            } else {
+                fileList.innerHTML = '<p style="color: var(--text-secondary);">No files generated.</p>';
+            }
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Find the tab element by text content is tricky, so we rely on order or update HTML to have IDs
+            // Simpler: match by text logic or just use event target if passed, but here we passed string.
+            // Let's just select by index? No, let's update HTML to pass `this` is better but I cannot change HTML easily dynamically without rewrite.
+            // I'll implementation logic based on tabName
+            
+            const tabs = document.querySelectorAll('.tab');
+            if (tabName === 'summary') tabs[0].classList.add('active');
+            if (tabName === 'files') tabs[1].classList.add('active');
+            if (tabName === 'logs') tabs[2].classList.add('active');
+
+            document.getElementById(`${tabName}Content`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+10:49:58 | INFO     | local                     | Local data store initialized: D:\fun_model\storage\data\local.db
+10:49:58 | INFO     | local                     | Mock Supabase Auth initialized
+10:49:59 | DEBUG    | orchestrator.config       | Loaded config from agents.yaml
+10:49:59 | DEBUG    | orchestrator.config       | Loaded config from openrouter.yaml
+10:49:59 | DEBUG    | orchestrator.config       | Loaded config from supabase.yaml
+10:49:59 | DEBUG    | orchestrator.config       | Loaded config from smtp.yaml
+11:05:49 | INFO     | local                     | Local data store initialized: D:\fun_model\storage\data\local.db
+11:05:49 | INFO     | local                     | Mock Supabase Auth initialized
+11:05:49 | DEBUG    | orchestrator.agents.base_agent | Initialized ceo agent
+11:05:49 | DEBUG    | orchestrator.agents.base_agent | Initialized pm agent
+11:05:49 | DEBUG    | orchestrator.agents.base_agent | Initialized research agent
+11:05:49 | DEBUG    | orchestrator.agents.base_agent | Initialized coder agent
+11:05:49 | DEBUG    | orchestrator.agents.base_agent | Initialized qa agent
+11:05:49 | DEBUG    | orchestrator.agents.base_agent | Initialized docs agent
+11:05:49 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+11:05:49 | INFO     | local                     | Server: http://127.0.0.1:5000
+11:05:49 | INFO     | werkzeug                  | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+11:05:49 | INFO     | werkzeug                  | [33mPress CTRL+C to quit[0m
+11:05:55 | INFO     | werkzeug                  | 127.0.0.1 - - [11/Dec/2025 11:05:55] "GET / HTTP/1.1" 200 -
+11:05:55 | INFO     | werkzeug                  | 127.0.0.1 - - [11/Dec/2025 11:05:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+11:05:59 | INFO     | werkzeug                  | 127.0.0.1 - - [11/Dec/2025 11:05:59] "GET / HTTP/1.1" 200 -

@@ -1,0 +1,53 @@
+# smtp config
+smtp:
+  host: "${SMTP_HOST}"
+  port: 587
+  username: "${SMTP_USERNAME}"
+  password: "${SMTP_PASSWORD}"
+  use_tls: true
+  
+  # Email templates
+  from_address: "noreply@multiagent-corp.ai"
+  from_name: "Multi-Agent System"
+  
+  # Notification settings
+  notifications:
+    workflow_started: true
+    workflow_completed: true
+    workflow_failed: true
+    qa_approval_required: false
+    
+  # Templates
+  templates:
+    workflow_started:
+      subject: "Workflow Started: {workflow_id}"
+      body: |
+        Your workflow has been initiated.
+        
+        Workflow ID: {workflow_id}
+        Request: {request_summary}
+        Started At: {timestamp}
+        
+        You will receive another notification when the workflow completes.
+        
+    workflow_completed:
+      subject: "Workflow Completed: {workflow_id}"
+      body: |
+        Your workflow has completed successfully.
+        
+        Workflow ID: {workflow_id}
+        Duration: {duration}
+        Iterations: {iterations}
+        
+        View results at: {results_url}
+        
+    workflow_failed:
+      subject: "Workflow Failed: {workflow_id}"
+      body: |
+        Your workflow has encountered an error.
+        
+        Workflow ID: {workflow_id}
+        Error: {error_message}
+        Failed At: {timestamp}
+        
+        Please review the logs for more details.

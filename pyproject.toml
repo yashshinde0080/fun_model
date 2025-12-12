@@ -1,0 +1,28 @@
+[project]
+name = "fun-model"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosmtplib>=3.0.0",
+    "black>=23.11.0",
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+    "gunicorn>=21.0.0",
+    "httpx>=0.25.0",
+    "isort>=5.12.0",
+    "jsonschema>=4.20.0",
+    "mypy>=1.7.0",
+    "pydantic>=2.5.0",
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "python-dotenv>=1.0.0",
+    "python-jose[cryptography]>=3.3.0",
+    "pyyaml>=6.0.0",
+    "requests>=2.31.0",
+    "structlog>=23.2.0",
+    "supabase>=2.0.0",
+    "tenacity>=8.2.0",
+]

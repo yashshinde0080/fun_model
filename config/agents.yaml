@@ -1,0 +1,38 @@
+agents:
+  ceo:
+    enabled: true
+    model: "openai/gpt-oss-120b:free"
+    temperature: 0.7
+    max_tokens: 4096
+  pm:
+    enabled: true
+    model: "openai/gpt-oss-120b:free"
+    temperature: 0.5
+    max_tokens: 4096
+  research:
+    enabled: true
+    model: "openai/gpt-oss-120b:free"
+    temperature: 0.3
+    max_tokens: 2048
+  coder:
+    enabled: true
+    model: "openai/gpt-oss-120b:free"
+    temperature: 0.2
+    max_tokens: 8192
+  qa:
+    enabled: true
+    model: "openai/gpt-oss-120b:free"
+    temperature: 0.3
+    max_tokens: 4096
+  docs:
+    enabled: true
+    model: "openai/gpt-oss-120b:free"
+    temperature: 0.4
+    max_tokens: 4096
+
+orchestration:
+  max_retries_per_task: 2
+  max_iterations_per_workflow: 6
+  task_timeout_seconds: 60
+  require_qa_approval: true
+  require_ceo_finalization: true

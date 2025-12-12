@@ -56,6 +56,7 @@ class OpenRouterClient:
         model: str = "anthropic/claude-3-sonnet",
         temperature: float = 0.7,
         max_tokens: int = 4096,
+        api_key: str = None,
         **kwargs
     ) -> Dict[str, Any]:
         """Generate a completion."""
@@ -72,8 +73,12 @@ class OpenRouterClient:
             **kwargs
         }
         
+        headers = {}
+        if api_key:
+            headers['Authorization'] = f'Bearer {api_key}'
+        
         try:
-            response = self.client.post('/chat/completions', json=payload)
+            response = self.client.post('/chat/completions', json=payload, headers=headers)
             if response.is_error:
                 logger.error(f"OpenRouter Error Status: {response.status_code}")
                 logger.error(f"OpenRouter Error Body: {response.text}")
@@ -100,22 +105,42 @@ class OpenRouterClient:
         response = self.complete(messages=messages, model=model, **kwargs)
         content = response['content']
         
-        # Parse JSON
+        # Robust JSON extraction
         try:
-            if '```json' in content:
-                start = content.find('```json') + 7
-                end = content.find('```', start)
-                content = content[start:end].strip()
-            elif '```' in content:
-                start = content.find('```') + 3
-                end = content.find('```', start)
-                content = content[start:end].strip()
+            # 1. Try finding JSON block
+            import re
+            json_match = re.search(r'```json\s*(\{.*?\})\s*```', content, re.DOTALL)
+            if json_match:
+                content_to_parse = json_match.group(1)
+            else:
+                # 2. Try finding just code block
+                code_match = re.search(r'```\s*(\{.*?\})\s*```', content, re.DOTALL)
+                if code_match:
+                    content_to_parse = code_match.group(1)
+                else:
+                    # 3. Try finding bare JSON-like structure (first { to last })
+                    bare_match = re.search(r'(\{.*\})', content, re.DOTALL)
+                    if bare_match:
+                        content_to_parse = bare_match.group(1)
+                    else:
+                        content_to_parse = content
+
+            # Clean up newlines/tabs inside strings if that's causing issues (basic cleanup)
+            # content_to_parse = content_to_parse.replace('\n', ' ') # DANGEROUS for extraction
             
-            response['parsed'] = json.loads(content)
+            response['parsed'] = json.loads(content_to_parse)
             return response
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse JSON: {e}")
-            raise LLMError(f"Invalid JSON in response: {e}") from e
+            logger.error(f"Content content: {content}")
+            # Fallback: return a valid JSON structure indicating error in parsing to keep flow alive
+            response['parsed'] = {
+                "status": "failed",
+                "error": "JSON parsing failed",
+                "raw_content": content 
+            }
+            return response
+            # raise LLMError(f"Invalid JSON in response: {e}") from e
     
     def close(self):
         if self.client:

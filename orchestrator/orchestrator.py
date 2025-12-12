@@ -298,7 +298,8 @@ class Orchestrator:
                 'validation_results': qa_output.get('validation_results', [])
             },
             'final_summary': ceo_final.get('final_summary', ''),
-            'agent_outputs': context.agent_outputs
+            'agent_outputs': context.agent_outputs,
+            'events': context.events
         }
     
     def _log_event(self, context: WorkflowContext, agent_name: str, event_type: str, data: Dict[str, Any]):

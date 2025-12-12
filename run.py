@@ -433,7 +433,11 @@ def main():
     logger.info("-" * 60)
     logger.info(f"Starting Flask server on http://{host}:{port}")
     print(f"\n\033[92m🚀 Server running!\033[0m")
-    print(f"\033[92m   Local:   http://localhost:{port}\033[0m")
+    if host == '0.0.0.0':
+        print(f"\033[92m   Local:   http://localhost:{port}\033[0m")
+    else:
+        print(f"\033[92m   Local:   http://{host}:{port}\033[0m")
+    
     if host == '0.0.0.0':
         import socket
         try:

@@ -554,3 +554,470 @@ orchestrator.orchestrator.WorkflowError: CEO failed to create specification
 2025-12-12 09:52:51 | INFO     | multiagent           | Application shutdown complete
 2025-12-12 09:52:51 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
 2025-12-12 09:52:51 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 09:59:55 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 09:59:55 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 09:59:55 | INFO     | multiagent           | ============================================================
+2025-12-12 09:59:55 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 09:59:55 | INFO     | multiagent           | ============================================================
+2025-12-12 09:59:55 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 09:59:55 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 09:59:55 | INFO     | multiagent           | Start time: 2025-12-12T04:29:55.630072+00:00
+2025-12-12 09:59:55 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 09:59:55 | INFO     | multiagent.config    | Environment: development
+2025-12-12 09:59:55 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 09:59:55 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 09:59:56 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 09:59:57 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 09:59:57 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 09:59:58 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 09:59:58 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 09:59:58 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 09:59:58 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 09:59:58 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 09:59:58 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 09:59:58 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 09:59:58 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 09:59:58 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 09:59:58 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 09:59:58 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 09:59:58 | INFO     | multiagent           | Debug mode: True
+2025-12-12 09:59:58 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 09:59:58 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 09:59:58 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 09:59:58 | INFO     | multiagent           | ============================================================
+2025-12-12 09:59:58 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 09:59:58 | INFO     | multiagent           | ============================================================
+2025-12-12 09:59:58 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 09:59:58 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 09:59:58 | INFO     | multiagent           | Start time: 2025-12-12T04:29:58.896726+00:00
+2025-12-12 09:59:58 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 09:59:58 | INFO     | multiagent.config    | Environment: development
+2025-12-12 09:59:58 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 09:59:58 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 09:59:59 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:00:00 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:00:00 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:00:01 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:00:01 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:00:01 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:00:01 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:00:01 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:00:01 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:00:01 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:00:01 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:00:01 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:00:01 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:00:01 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:00:01 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:00:01 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:00:01 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-12 10:00:34 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 9980730e-c06a-4540-ba84-c3fe0f51fa18
+2025-12-12 10:00:34 | INFO     | orchestrator.orchestrator | [9980730e-c06a-4540-ba84-c3fe0f51fa18] Phase 1: CEO Specification
+2025-12-12 10:00:35 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-12 10:00:35 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-12 10:00:35 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-12 10:00:35 | ERROR    | orchestrator.agents.base_agent | Agent ceo error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-12 10:00:35 | ERROR    | orchestrator.orchestrator | [9980730e-c06a-4540-ba84-c3fe0f51fa18] Workflow error: CEO failed to create specification
+Traceback (most recent call last):
+  File "D:\fun_model\orchestrator\orchestrator.py", line 118, in execute
+    raise WorkflowError("CEO failed to create specification")
+orchestrator.orchestrator.WorkflowError: CEO failed to create specification
+2025-12-12 10:00:38 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Failed: 9980730e-c06a-4540-ba84-c3fe0f51fa18
+2025-12-12 10:04:24 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:04:24 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:04:24 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:04:25 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 10:04:25 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 10:04:25 | INFO     | multiagent           | ============================================================
+2025-12-12 10:04:25 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 10:04:25 | INFO     | multiagent           | ============================================================
+2025-12-12 10:04:25 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 10:04:25 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 10:04:25 | INFO     | multiagent           | Start time: 2025-12-12T04:34:25.257344+00:00
+2025-12-12 10:04:25 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 10:04:25 | INFO     | multiagent.config    | Environment: development
+2025-12-12 10:04:25 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 10:04:25 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 10:04:26 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:04:26 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:04:26 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:04:27 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:04:27 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:04:28 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:04:28 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:04:28 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:04:28 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:04:28 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:04:28 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:04:28 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:04:28 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:04:28 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:04:28 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:04:28 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:04:28 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-12 10:05:15 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 781e028c-50a6-49cf-9f55-e12fdaafaf6a
+2025-12-12 10:05:15 | INFO     | orchestrator.orchestrator | [781e028c-50a6-49cf-9f55-e12fdaafaf6a] Phase 1: CEO Specification
+2025-12-12 10:05:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-12 10:05:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-12 10:05:15 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-12 10:05:15 | ERROR    | orchestrator.agents.base_agent | Agent ceo error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-12 10:05:15 | ERROR    | orchestrator.orchestrator | [781e028c-50a6-49cf-9f55-e12fdaafaf6a] Workflow error: CEO failed to create specification
+Traceback (most recent call last):
+  File "D:\fun_model\orchestrator\orchestrator.py", line 118, in execute
+    raise WorkflowError("CEO failed to create specification")
+orchestrator.orchestrator.WorkflowError: CEO failed to create specification
+2025-12-12 10:05:18 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Failed: 781e028c-50a6-49cf-9f55-e12fdaafaf6a
+2025-12-12 10:09:28 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:09:28 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:09:28 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:09:28 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 10:09:28 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 10:09:28 | INFO     | multiagent           | ============================================================
+2025-12-12 10:09:28 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 10:09:28 | INFO     | multiagent           | ============================================================
+2025-12-12 10:09:28 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 10:09:28 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 10:09:28 | INFO     | multiagent           | Start time: 2025-12-12T04:39:28.498607+00:00
+2025-12-12 10:09:28 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 10:09:28 | INFO     | multiagent.config    | Environment: development
+2025-12-12 10:09:28 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 10:09:28 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 10:09:29 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:09:30 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:09:30 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:09:30 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:09:31 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:09:31 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:09:31 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:09:31 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:09:31 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:09:31 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:09:31 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:09:31 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:09:31 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:09:31 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:09:31 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:09:31 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:09:31 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-12 10:09:41 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:09:41 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:09:41 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:09:42 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 10:09:42 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 10:09:42 | INFO     | multiagent           | ============================================================
+2025-12-12 10:09:42 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 10:09:42 | INFO     | multiagent           | ============================================================
+2025-12-12 10:09:42 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 10:09:42 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 10:09:42 | INFO     | multiagent           | Start time: 2025-12-12T04:39:42.260767+00:00
+2025-12-12 10:09:42 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 10:09:42 | INFO     | multiagent.config    | Environment: development
+2025-12-12 10:09:42 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 10:09:42 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 10:09:43 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:09:43 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:09:43 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:09:44 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:09:44 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:09:44 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:09:44 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:09:45 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:09:45 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:09:45 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:09:45 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:09:45 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:09:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:09:45 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:09:45 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:09:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:09:45 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-12 10:12:08 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:12:08 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:12:08 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:12:08 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:12:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:12:13 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 10:12:13 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 10:12:13 | INFO     | multiagent           | ============================================================
+2025-12-12 10:12:13 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 10:12:13 | INFO     | multiagent           | ============================================================
+2025-12-12 10:12:13 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 10:12:13 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 10:12:13 | INFO     | multiagent           | Start time: 2025-12-12T04:42:13.082037+00:00
+2025-12-12 10:12:13 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 10:12:13 | INFO     | multiagent.config    | Environment: development
+2025-12-12 10:12:13 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 10:12:13 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 10:12:13 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:12:14 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:12:14 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:12:15 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:12:15 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:12:15 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:12:15 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:12:15 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:12:15 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:12:16 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:12:16 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:12:16 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:12:16 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:12:16 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:12:16 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:12:16 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:12:16 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 10:12:16 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 10:12:16 | INFO     | multiagent           | ============================================================
+2025-12-12 10:12:16 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 10:12:16 | INFO     | multiagent           | ============================================================
+2025-12-12 10:12:16 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 10:12:16 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 10:12:16 | INFO     | multiagent           | Start time: 2025-12-12T04:42:16.155073+00:00
+2025-12-12 10:12:16 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 10:12:16 | INFO     | multiagent.config    | Environment: development
+2025-12-12 10:12:16 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 10:12:16 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 10:12:16 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:12:17 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:12:17 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:12:18 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:12:18 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:12:18 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:12:18 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:12:19 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:12:19 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:12:19 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:12:19 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:12:19 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:12:19 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:12:19 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:12:19 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:12:19 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:12:19 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-12 10:12:45 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 6690bbe7-c8e7-480b-99fd-d0b34a636890
+2025-12-12 10:12:45 | INFO     | orchestrator.orchestrator | [6690bbe7-c8e7-480b-99fd-d0b34a636890] Phase 1: CEO Specification
+2025-12-12 10:12:46 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-12 10:12:46 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-12 10:12:46 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-12 10:12:46 | ERROR    | orchestrator.agents.base_agent | Agent ceo error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-12 10:12:46 | ERROR    | orchestrator.orchestrator | [6690bbe7-c8e7-480b-99fd-d0b34a636890] Workflow error: CEO failed to create specification
+Traceback (most recent call last):
+  File "D:\fun_model\orchestrator\orchestrator.py", line 118, in execute
+    raise WorkflowError("CEO failed to create specification")
+orchestrator.orchestrator.WorkflowError: CEO failed to create specification
+2025-12-12 10:12:49 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Failed: 6690bbe7-c8e7-480b-99fd-d0b34a636890
+2025-12-12 10:15:12 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:15:12 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:15:12 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:15:12 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:15:12 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:15:18 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 10:15:18 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 10:15:18 | INFO     | multiagent           | ============================================================
+2025-12-12 10:15:18 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 10:15:18 | INFO     | multiagent           | ============================================================
+2025-12-12 10:15:18 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 10:15:18 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 10:15:18 | INFO     | multiagent           | Start time: 2025-12-12T04:45:18.168661+00:00
+2025-12-12 10:15:18 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 10:15:18 | INFO     | multiagent.config    | Environment: development
+2025-12-12 10:15:18 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 10:15:18 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 10:15:18 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:15:19 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:15:19 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:15:20 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:15:20 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:15:20 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:15:20 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:15:21 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:15:21 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:15:21 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:15:21 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:15:21 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:15:21 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:15:21 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:15:21 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:15:21 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:15:21 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-12 10:15:21 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251212.log
+2025-12-12 10:15:21 | INFO     | multiagent           | ============================================================
+2025-12-12 10:15:21 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-12 10:15:21 | INFO     | multiagent           | ============================================================
+2025-12-12 10:15:21 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-12 10:15:21 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-12 10:15:21 | INFO     | multiagent           | Start time: 2025-12-12T04:45:21.230594+00:00
+2025-12-12 10:15:21 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-12 10:15:21 | INFO     | multiagent.config    | Environment: development
+2025-12-12 10:15:21 | INFO     | multiagent.config    | Debug mode: True
+2025-12-12 10:15:21 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-12 10:15:22 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-12 10:15:22 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-12 10:15:22 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-12 10:15:23 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-12 10:15:24 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-12 10:15:24 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-12 10:15:24 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-12 10:15:25 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-12 10:15:25 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-12 10:15:25 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-12 10:15:25 | INFO     | app                  | Flask application initialized successfully
+2025-12-12 10:15:25 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-12 10:15:25 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:15:25 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-12 10:15:25 | INFO     | multiagent           | Debug mode: True
+2025-12-12 10:15:25 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-12 10:15:25 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-12 10:15:46 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 76a4578d-2fda-489b-ba58-9401207a95f0
+2025-12-12 10:15:46 | INFO     | orchestrator.orchestrator | [76a4578d-2fda-489b-ba58-9401207a95f0] Phase 1: CEO Specification
+2025-12-12 10:15:58 | INFO     | orchestrator.orchestrator | [76a4578d-2fda-489b-ba58-9401207a95f0] Phase 2: PM Planning
+2025-12-12 10:16:22 | INFO     | orchestrator.orchestrator | [76a4578d-2fda-489b-ba58-9401207a95f0] Phase 3: Task Execution
+2025-12-12 10:17:42 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Unterminated string starting at: line 39 column 20 (char 8710)
+2025-12-12 10:17:42 | ERROR    | orchestrator.llm_client | Content content: {
+  "status": "success",
+  "task_id": "task-003",
+  "agent": "coder",
+  "payload": {
+    "files": [
+      {
+        "path": "index.html",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Simple Calculator</title>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n  <header>\n    <h1>Calculator</h1>\n  </header>\n  <main>\n    <section class=\"calculator\" aria-label=\"Calculator\">\n      <output id=\"display\" class=\"display\" role=\"textbox\" aria-live=\"polite\">0</output>\n      <div class=\"buttons\">\n        <!-- Row 1 -->\n        <button type=\"button\" class=\"btn\" data-key=\"7\">7</button>\n        <button type=\"button\" class=\"btn\" data-key=\"8\">8</button>\n        <button type=\"button\" class=\"btn\" data-key=\"9\">9</button>\n        <button type=\"button\" class=\"btn operator\" data-key=\"/\">÷</button>\n        <!-- Row 2 -->\n        <button type=\"button\" class=\"btn\" data-key=\"4\">4</button>\n        <button type=\"button\" class=\"btn\" data-key=\"5\">5</button>\n        <button type=\"button\" class=\"btn\" data-key=\"6\">6</button>\n        <button type=\"button\" class=\"btn operator\" data-key=\"*\">×</button>\n        <!-- Row 3 -->\n        <button type=\"button\" class=\"btn\" data-key=\"1\">1</button>\n        <button type=\"button\" class=\"btn\" data-key=\"2\">2</button>\n        <button type=\"button\" class=\"btn\" data-key=\"3\">3</button>\n        <button type=\"button\" class=\"btn operator\" data-key=\"-\">−</button>\n        <!-- Row 4 -->\n        <button type=\"button\" class=\"btn\" data-key=\"0\">0</button>\n        <button type=\"button\" class=\"btn\" data-key=\".\">.</button>\n        <button type=\"button\" class=\"btn equals\" data-key=\"Enter\">=</button>\n        <button type=\"button\" class=\"btn operator\" data-key=\"+\">+</button>\n        <!-- Row 5 -->\n        <button type=\"button\" class=\"btn clear\" data-key=\"c\">C</button>\n      </div>\n    </section>\n  </main>\n  <footer>\n    <p>&copy; 2025 Simple Calculator</p>\n  </footer>\n  <script type=\"module\" src=\"script.js\"></script>\n</body>\n</html>\n",
+        "type": "source",
+        "language": "html"
+      },
+      {
+        "path": "styles.css",
+        "content": "/* Reset */\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nhtml, body {\n  height: 100%;\n  font-family: Arial, Helvetica, sans-serif;\n  background: #f4f4f4;\n  color: #333;\n}\n\nheader, footer {\n  text-align: center;\n  padding: 1rem;\n  background: #222;\n  color: #fff;\n}\n\nmain {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: calc(100% - 140px); /* header+footer */\n  padding: 1rem;\n}\n\n.calculator {\n  background: #fff;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.2);\n  max-width: 400px;\n  width: 100%;\n  padding: 1rem;\n  display: grid;\n  grid-template-rows: auto 1fr;\n  gap: 0.5rem;\n}\n\n.display {\n  background: #222;\n  color: #0f0;\n  font-size: 2rem;\n  text-align: right;\n  padding: 0.5rem 1rem;\n  border-radius: 4px;\n  overflow-x: auto;\n}\n\n.buttons {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 0.5rem;\n}\n\n.btn {\n  font-size: 1.5rem;\n  padding: 0.75rem;\n  border: none;\n  border-radius: 4px;\n  background: #e0e0e0;\n  cursor: pointer;\n  transition: background 0.2s;\n}\n\n.btn:hover {\n  background: #d0d0d0;\n}\n\n.operator {\n  background: #ff9500;\n  color: #fff;\n}\n\n.equals {\n  background: #34c759;\n  color: #fff;\n  grid-column: span 2;\n}\n\n.clear {\n  background: #ff3b30;\n  color: #fff;\n  grid-column: span 4;\n}\n\n/* Responsive breakpoints */\n@media (max-width: 600px) {\n  .display {\n    font-size: 1.5rem;\n  }\n  .btn {\n    font-size: 1.2rem;\n    padding: 0.5rem;\n  }\n}\n\n@media (min-width: 901px) {\n  .calculator {\n    max-width: 500px;\n  }\n  .display {\n    font-size: 2.5rem;\n  }\n  .btn {\n    font-size: 1.8rem;\n    padding: 1rem;\n  }\n}\n",
+        "type": "source",
+        "language": "css"
+      },
+      {
+        "path": "script.js",
+        "content": "// calculator.js – core logic and UI wiring\n\n/**\n * Evaluate a simple arithmetic expression consisting of two operands and an operator.\n * Supports +, -, *, / and floating point numbers.\n * Returns a string representation of the result or throws an Error for invalid ops.\n *\n * @param {string} expr - Expression like \"12+3.4\"\n * @returns {string}\n */\nexport function evaluateExpression(expr) {\n  const match = expr.match(/^\\s*([-+]?[0-9]*\\.?[0-9]+)\\s*([+\\-*/])\\s*([-+]?[0-9]*\\.?[0-9]+)\\s*$/);\n  if (!match) {\n    throw new Error('Invalid expression');\n  }\n  const [, left, operator, right] = match;\n  const a = parseFloat(left);\n  const b = parseFloat(right);\n  let result;\n  switch (operator) {\n    case '+':\n      result = a + b;\n      break;\n    case '-':\n      result = a - b;\n      break;\n    case '*':\n      result = a * b;\n      break;\n    case '/':\n      if (b === 0) {\n        throw new Error('Division by zero');\n      }\n      result = a / b;\n      break;\n    default:\n      throw new Error('Unsupported operator');\n  }\n  // Limit to 12 significant digits to avoid floating‑point noise\n  return Number(result.toPrecision(12)).toString();\n}\n\n/**\n * Calculator UI controller.\n */\nclass CalculatorUI {\n  constructor() {\n    this.display = document.getElementById('display');\n    this.current = '';\n    this.previous = '';\n    this.operator = null;\n    this.bindEvents();\n  }\n\n  bindEvents() {\n    document.querySelectorAll('.btn').forEach(btn => {\n      btn.addEventListener('click', () => this.handleInput(btn.dataset.key));\n    });\n    document.addEventListener('keydown', e => {\n      const key = e.key;\n      if (/[0-9.]/.test(key)) this.handleInput(key);\n      else if (['+', '-', '*', '/'].includes(key)) this.handleInput(key);\n      else if (key === 'Enter') this.handleInput('Enter');\n      else if (key === 'c' || key === 'C') this.handleInput('c');\n    });\n  }\n\n  handleInput(key) {\n    if (key >= '0' && key <= '9' || key === '.') {\n      this.appendNumber(key);\n    } else if (['+', '-', '*', '/'].includes(key)) {\n      this.chooseOperator(key);\n    } else if (key === 'Enter') {\n      this.compute();\n    } else if (key === 'c') {\n      this.clear();\n    }\n    this.updateDisplay();\n  }\n\n  appendNumber(num) {\n    // Prevent multiple decimals\n    if (num === '.' && this.current.includes('.')) return;\n    this.current = this.current + num;\n  }\n\n  chooseOperator(op) {\n    if (this.current === '' && this.previous !== '') {\n      this.operator = op; // change operator before entering new number\n      return;\n    }\n    if (this.current === '') return;\n    if (this.previous !== '') {\n      this.compute();\n    }\n    this.operator = op;\n    this.previous = this.current;\n    this.current = '';\n  }\n\n  compute() {\n    if (this.operator === null || this.current === '' || this.previous === '') return;\n    const expr = `${this.previous}${this.operator}${this.current}`;\n    try {\n      const result = evaluateExpression(expr);\n      this.current = result;\n    } catch (e) {\n      this.current = 'Error';\n    }\n    this.operator = null;\n    this.previous = '';\n  }\n\n  clear() {\n    this.current = '';\n    this.previous = '';\n    this.operator = null;\n  }\n\n  updateDisplay() {\n    this.display.textContent = this.current || this.previous || '0';\n  }\n}\n\n// Initialize when DOM is ready\nwindow.addEventListener('DOMContentLoaded', () => {\n  new CalculatorUI();\n});\n",
+        "type": "source",
+        "language": "javascript"
+      },
+      {
+        "path": "package.json",
+        "content": "{\n  \"name\": \"simple-calculator\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A lightweight responsive calculator built with vanilla HTML, CSS and JavaScript.\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"test\": \"jest\",\n    \"start\": \"npx http-server -c-1 -p 8080\"\n  },\n  \"devDependencies\": {\n    \"jest\": \"^29.7.0\",\n    \"http-server\": \"^14.1.1\"\n  }\n}\n",
+        "type": "config",
+        "language": "json"
+      },
+      {
+        "path": "Dockerfile",
+        "content": "FROM nginx:alpine\nCOPY ./index.html /usr/share/nginx/html/index.html\nCOPY ./styles.css /usr/share/nginx/html/styles.css\nCOPY ./script.js /usr/share/nginx/html/script.js\nEXPOSE 80\n",
+        "type": "dockerfile",
+        "language": "dockerfile"
+      },
+      {
+        "path": "test/calculator.test.js",
+        "content": "import { evaluateExpression } from '../script.js';\n\ndescribe('evaluateExpression', () => {\n  test('adds two numbers', () => {\n    expect(evaluateExpression('2+3')).toBe('5');\n  });\n\n  test('subtracts with floating point', () => {\n    expect(evaluateExpression('5.5-2.2')).toBe('3.3');\n  });\n\n  test('multiplies', () => {\n    expect(evaluateExpression('4*2.5')).toBe('10');\n  });\n\n  test('division', () => {\n    expect(evaluateExpression('9/3')).toBe('3');\n  });\n\n  test('division by zero throws', () => {\n    expect(() => evaluateExpression('5/0')).toThrow('Division by zero');\n  });\n\n  test('invalid expression throws', () => {\n    expect(() => evaluateExpression('abc')).toThrow('Invalid expression');\n  });\n});\n",
+        "type": "test",
+        "language
+2025-12-12 10:18:37 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Expecting ',' delimiter: line 68 column 6 (char 10753)
+2025-12-12 10:18:37 | ERROR    | orchestrator.llm_client | Content content: {
+  "status": "success",
+  "task_id": "task-005",
+  "agent": "coder",
+  "payload": {
+    "files": [
+      {
+        "path": "index.html",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Simple Calculator</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class=\"calculator\" role=\"application\" aria-label=\"Simple calculator\">\n    <div id=\"display\" class=\"display\" aria-live=\"polite\" aria-atomic=\"true\">0</div>\n    <div class=\"buttons\">\n      <!-- Row 1 -->\n      <button class=\"btn\" data-key=\"7\">7</button>\n      <button class=\"btn\" data-key=\"8\">8</button>\n      <button class=\"btn\" data-key=\"9\">9</button>\n      <button class=\"btn operator\" data-key=\"/\">÷</button>\n\n      <!-- Row 2 -->\n      <button class=\"btn\" data-key=\"4\">4</button>\n      <button class=\"btn\" data-key=\"5\">5</button>\n      <button class=\"btn\" data-key=\"6\">6</button>\n      <button class=\"btn operator\" data-key=\"*\">×</button>\n\n      <!-- Row 3 -->\n      <button class=\"btn\" data-key=\"1\">1</button>\n      <button class=\"btn\" data-key=\"2\">2</button>\n      <button class=\"btn\" data-key=\"3\">3</button>\n      <button class=\"btn operator\" data-key=\"-\">−</button>\n\n      <!-- Row 4 -->\n      <button class=\"btn\" data-key=\"0\">0</button>\n      <button class=\"btn\" data-key=\".\">.</button>\n      <button class=\"btn\" data-key=\"Enter\">=</button>\n      <button class=\"btn operator\" data-key=\"+\">+</button>\n\n      <!-- Row 5 -->\n      <button class=\"btn clear\" data-key=\"Escape\">C</button>\n    </div>\n  </div>\n  <script src=\"script.js\" type=\"module\"></script>\n</body>\n</html>\n",
+        "type": "source",
+        "language": "html"
+      },
+      {
+        "path": "style.css",
+        "content": "body {\n  font-family: Arial, Helvetica, sans-serif;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n  margin: 0;\n  background: #f0f0f0;\n}\n\n.calculator {\n  background: #fff;\n  padding: 1rem;\n  border-radius: 8px;\n  box-shadow: 0 4px 10px rgba(0,0,0,0.1);\n  width: 320px;\n}\n\n.display {\n  background: #222;\n  color: #0f0;\n  font-size: 2rem;\n  text-align: right;\n  padding: 0.5rem;\n  border-radius: 4px;\n  margin-bottom: 0.5rem;\n  min-height: 2.5rem;\n  overflow-x: auto;\n}\n\n.buttons {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 0.5rem;\n}\n\nbutton {\n  font-size: 1.2rem;\n  padding: 0.75rem;\n  border: none;\n  border-radius: 4px;\n  background: #e0e0e0;\n  cursor: pointer;\n}\n\nbutton.operator {\n  background: #ff9500;\n  color: #fff;\n}\n\nbutton.clear {\n  grid-column: span 4;\n  background: #d9534f;\n  color: #fff;\n}\n\nbutton:focus {\n  outline: 2px solid #0066ff;\n}\n",
+        "type": "source",
+        "language": "css"
+      },
+      {
+        "path": "script.js",
+        "content": "/**\n * Simple Calculator logic.\n * Exposes a Calculator class for unit testing and wires UI interactions on DOM load.\n */\n\nexport class Calculator {\n  /**\n   * @param {HTMLElement} displayEl Element that shows the current value/result.\n   */\n  constructor(displayEl) {\n    this.displayEl = displayEl;\n    this.reset();\n  }\n\n  /** Reset calculator state */\n  reset() {\n    this.current = '';\n    this.operator = null;\n    this.previous = null;\n    this.resultDisplayed = false;\n    this._updateDisplay('0');\n  }\n\n  /** Handle a key/button press */\n  /** @param {string} key */\n  input(key) {\n    if (key >= '0' && key <= '9') {\n      this._handleDigit(key);\n    } else if (key === '.') {\n      this._handleDecimal();\n    } else if (['+', '-', '*', '/'].includes(key)) {\n      this._handleOperator(key);\n    } else if (key === 'Enter') {\n      this._calculate();\n    } else if (key === 'Escape') {\n      this.reset();\n    }\n  }\n\n  /** @private */\n  _handleDigit(digit) {\n    if (this.resultDisplayed) {\n      this.current = digit;\n      this.resultDisplayed = false;\n    } else {\n      this.current = this.current === '0' ? digit : this.current + digit;\n    }\n    this._updateDisplay(this.current);\n  }\n\n  /** @private */\n  _handleDecimal() {\n    if (this.resultDisplayed) {\n      this.current = '0.';\n      this.resultDisplayed = false;\n    } else if (!this.current.includes('.')) {\n      this.current = this.current === '' ? '0.' : this.current + '.';\n    }\n    this._updateDisplay(this.current);\n  }\n\n  /** @private */\n  _handleOperator(op) {\n    if (this.current === '' && this.previous === null) {\n      // No operand yet – ignore.\n      return;\n    }\n    if (this.previous !== null && this.current !== '') {\n      this._calculate();\n    }\n    this.operator = op;\n    this.previous = parseFloat(this.current);\n    this.current = '';\n  }\n\n  /** @private */\n  _calculate() {\n    if (this.operator === null || this.current === '' || this.previous === null) {\n      return;\n    }\n    const a = this.previous;\n    const b = parseFloat(this.current);\n    let result;\n    switch (this.operator) {\n      case '+':\n        result = a + b;\n        break;\n      case '-':\n        result = a - b;\n        break;\n      case '*':\n        result = a * b;\n        break;\n      case '/':\n        if (b === 0) {\n          this._updateDisplay('Error');\n          this.reset();\n          return;\n        }\n        result = a / b;\n        break;\n      default:\n        return;\n    }\n    // Round to avoid floating point noise (up to 12 decimal places)\n    result = Number.isInteger(result) ? result : parseFloat(result.toFixed(12));\n    this._updateDisplay(String(result));\n    this.current = String(result);\n    this.previous = null;\n    this.operator = null;\n    this.resultDisplayed = true;\n  }\n\n  /** @private */\n  _updateDisplay(text) {\n    this.displayEl.textContent = text;\n  }\n\n  /** Get current display text (useful for tests) */\n  getDisplay() {\n    return this.displayEl.textContent;\n  }\n}\n\n// UI wiring – executed only in browser environment\nif (typeof window !== 'undefined') {\n  document.addEventListener('DOMContentLoaded', () => {\n    const displayEl = document.getElementById('display');\n    const calc = new Calculator(displayEl);\n\n    // Click handling\n    document.querySelectorAll('button[data-key]').forEach(btn => {\n      btn.addEventListener('click', () => {\n        const key = btn.getAttribute('data-key');\n        calc.input(key);\n        // Announce via ARIA live region (display already updates)\n        btn.focus();\n      });\n    });\n\n    // Keyboard handling – focus on body to capture keys\n    document.body.addEventListener('keydown', e => {\n      const allowedKeys = ['0','1','2','3','4','5','6','7','8','9','.','+','-','*','/','Enter','Escape'];\n      if (allowedKeys.includes(e.key)) {\n        e.preventDefault();\n        calc.input(e.key);\n        // Find matching button to give visual focus for screen readers\n        const btn = document.querySelector(`button[data-key=\"${e.key}\"]`);\n        if (btn) btn.focus();\n      }\n    });\n  });\n}\n",
+        "type": "source",
+        "language": "javascript"
+      },
+      {
+        "path": "package.json",
+        "content": "{\n  \"name\": \"simple-calculator\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A lightweight accessible web calculator\",\n  \"main\": \"script.js\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"test\": \"jest\",\n    \"start\": \"npx http-server -p 8080\"\n  },\n  \"author\": \"\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"@testing-library/dom\": \"^9.3.1\",\n    \"@testing-library/jest-dom\": \"^5.16.5\",\n    \"jest\": \"^29.7.0\",\n    \"jsdom\": \"^22.1.0\",\n    \"http-server\": \"^14.1.1\"\n  }\n}\n",
+        "type": "config",
+        "language": "json"
+      },
+      {
+        "path": "jest.config.js",
+        "content": "export default {\n  testEnvironment: 'jsdom',\n  transform: {},\n  setupFilesAfterEnv: ['<rootDir>/jest.setup.js']\n};\n",
+        "type": "config",
+        "language": "javascript"
+      },
+      {
+        "path": "jest.setup.js",
+        "content": "import '@testing-library/jest-dom';\n",
+        "type": "config",
+        "language": "javascript"
+      },
+      {
+        "path": "tests/calculator.test.js",
+        "content": "import { JSDOM } from 'jsdom';\nimport { Calculator } from '../script.js';\n\ndescribe('Calculator core functionality', () => {\n  let dom;\n  let document;\n  let displayEl;\n  let calc;\n\n  beforeEach(() => {\n    dom = new JSDOM(`<!DOCTYPE html><div id=\"display\"></div>`);\n    document = dom.window.document;\n    displayEl = document.getElementById('display');\n    calc = new Calculator(displayEl);\n  });\n\n  test('initial display is 0', () => {\n    expect(calc.getDisplay()).toBe('0');\n  });\n\n  test('simple addition via input method', () => {\n    calc.input('2');\n    calc.input('+');\n    calc.input('3');\n    calc.input('Enter');\n    expect(calc.getDisplay()).toBe('5');\n  });\n\n  test('handles decimal numbers correctly', () => {\n    calc.input('1');\n    calc.input('.');\n    calc.input('5');\n    calc.input('+');\n    calc.input('2');\n    calc.input('.');\n    calc.input('25'); // simulate pressing '2' then '5'\n    calc.input('Enter');\n    expect(calc.getDisplay()).toBe('3.75');\n  });\n\n  test('division by zero shows error and resets', () => {\n    calc.input('8');\n    calc.input('/');\n    calc.input('0');\n    calc.input('Enter');\n    expect(calc.getDisplay()).toBe('0'); // after reset display returns to 0\n  });\n\n  test('clear (Escape) resets calculator', () => {\n    calc.input('9');\n    calc.input('*');\n    calc.input('9');\n    calc.input('Escape');\n    expect(calc.getDisplay()).toBe('0');\n  });\n});\n",
+        "type": "test",
+        "language": "javascript"
+      },
+      {
+        "path": "Dockerfile",
+        "content": "FROM node:20-alpine AS builder\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --omit=dev\nCOPY . .\n\nFROM nginx:alpine\nCOPY --from=builder /app /usr/share/nginx/html\nEXPOSE 80\nCMD [\"nginx\", \"-g\", \"daemon off;\"]\n",
+        "type": "dockerfile",
+        "language": "dockerfile"
+      },
+      {
+        "path": ".dockerignore",
+        "content": "node_modules\\nnpm-debug.log\\nDockerfile\\n.dockerignore\\njest.config.js\\njest.setup.js\\ntests\\n",
+        "type": "other",
+        "language": "text"
+      }
+    ],
+    "run_instructions": {
+      "install": "npm ci",
+      "run": "npm run start",
+      "test": "npm test",
+      "docker_build": "docker build -t simple-calculator .",
+      "docker_run": "docker run -p 8080:80 simple-calculator"
+    },
+    "dependencies": [
+      "jest@29.7.0",
+      "@testing-library/dom@9.3.
+2025-12-12 10:19:11 | INFO     | orchestrator.orchestrator | [76a4578d-2fda-489b-ba58-9401207a95f0] Phase 4: QA Validation
+2025-12-12 10:19:28 | INFO     | orchestrator.orchestrator | [76a4578d-2fda-489b-ba58-9401207a95f0] Phase 5: Documentation
+2025-12-12 10:19:49 | INFO     | orchestrator.orchestrator | [76a4578d-2fda-489b-ba58-9401207a95f0] Phase 6: CEO Finalization
+2025-12-12 10:20:00 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Completed: 76a4578d-2fda-489b-ba58-9401207a95f0
+2025-12-12 10:24:13 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:24:13 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:24:13 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-12 10:24:13 | INFO     | multiagent           | Application shutdown complete
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-12 10:24:13 | INFO     | multiagent.cleanup   | Cleanup completed successfully

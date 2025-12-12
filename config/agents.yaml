@@ -2,31 +2,37 @@ agents:
   ceo:
     enabled: true
     model: "openai/gpt-oss-120b:free"
+    api_key: "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"
     temperature: 0.7
     max_tokens: 4096
   pm:
     enabled: true
     model: "openai/gpt-oss-120b:free"
+    api_key: "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"
     temperature: 0.5
     max_tokens: 4096
   research:
     enabled: true
     model: "openai/gpt-oss-120b:free"
+    api_key: "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"
     temperature: 0.3
     max_tokens: 2048
   coder:
     enabled: true
     model: "openai/gpt-oss-120b:free"
+    api_key: "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"
     temperature: 0.2
     max_tokens: 8192
   qa:
     enabled: true
     model: "openai/gpt-oss-120b:free"
+    api_key: "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"
     temperature: 0.3
     max_tokens: 4096
   docs:
     enabled: true
     model: "openai/gpt-oss-120b:free"
+    api_key: "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"
     temperature: 0.4
     max_tokens: 4096
 

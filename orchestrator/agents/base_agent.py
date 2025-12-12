@@ -100,11 +100,15 @@ class BaseAgent(ABC):
                 {"role": "user", "content": prompt}
             ]
             
+            # Get API key from config if present
+            api_key = self.config.get('api_key')
+
             response = self.llm_client.complete_json(
                 messages=messages,
                 model=model,
                 temperature=temperature,
-                max_tokens=max_tokens
+                max_tokens=max_tokens,
+                api_key=api_key
             )
             
             result = response.get('parsed', {})

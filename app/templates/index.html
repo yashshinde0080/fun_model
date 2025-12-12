@@ -45,12 +45,17 @@
 
             <div class="tabs">
                 <div class="tab active" onclick="switchTab('summary')">Summary</div>
+                <div class="tab" onclick="switchTab('phases')">Phases</div>
                 <div class="tab" onclick="switchTab('files')">Deliverables</div>
                 <div class="tab" onclick="switchTab('logs')">Full Logs</div>
             </div>
 
             <div id="summaryContent" class="tab-content active">
                 <div id="finalSummary" style="line-height: 1.6;"></div>
+            </div>
+
+            <div id="phasesContent" class="tab-content">
+                <div id="phasesList" class="timeline"></div>
             </div>
 
             <div id="filesContent" class="tab-content">
@@ -156,21 +161,58 @@
             } else {
                 fileList.innerHTML = '<p style="color: var(--text-secondary);">No files generated.</p>';
             }
+
+            // Render Phases
+            renderPhases(data.result.events || []);
+        }
+
+        function renderPhases(events) {
+            const list = document.getElementById('phasesList');
+            list.innerHTML = '';
+            
+            if (!events || events.length === 0) {
+                list.innerHTML = '<p class="text-secondary">No timeline events available.</p>';
+                return;
+            }
+
+            events.forEach((evt, index) => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                item.style.padding = '1rem';
+                item.style.borderLeft = '2px solid var(--accent-primary)';
+                item.style.marginLeft = '1rem';
+                item.style.marginBottom = '1rem';
+                item.style.background = 'var(--bg-secondary)';
+                item.style.borderRadius = '0 8px 8px 0';
+                
+                const agent = evt.agent_name.toUpperCase();
+                const type = evt.event_type.replace('_', ' ').toUpperCase();
+                const status = evt.status || 'INFO';
+                
+                item.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                        <span style="font-weight:bold; color:var(--accent-primary);">${agent}</span>
+                        <span class="status-badge ${status === 'failed' ? 'failed' : 'pending'}" style="font-size:0.75rem;">${type}</span>
+                    </div>
+                    <div style="font-size:0.9rem; color:var(--text-secondary);">
+                        ${evt.task_id ? `Task ID: ${evt.task_id.substring(0,8)}...` : ''}
+                    </div>
+                    ${evt.payload && evt.payload.error ? `<div style="color:var(--status-failed); margin-top:0.5rem;">Error: ${evt.payload.error}</div>` : ''}
+                `;
+                list.appendChild(item);
+            });
         }
 
         function switchTab(tabName) {
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             
-            // Find the tab element by text content is tricky, so we rely on order or update HTML to have IDs
-            // Simpler: match by text logic or just use event target if passed, but here we passed string.
-            // Let's just select by index? No, let's update HTML to pass `this` is better but I cannot change HTML easily dynamically without rewrite.
-            // I'll implementation logic based on tabName
-            
             const tabs = document.querySelectorAll('.tab');
-            if (tabName === 'summary') tabs[0].classList.add('active');
-            if (tabName === 'files') tabs[1].classList.add('active');
-            if (tabName === 'logs') tabs[2].classList.add('active');
+            const tabMap = { 'summary': 0, 'phases': 1, 'files': 2, 'logs': 3 };
+            
+            if (tabs[tabMap[tabName]]) {
+                tabs[tabMap[tabName]].classList.add('active');
+            }
 
             document.getElementById(`${tabName}Content`).classList.add('active');
         }

@@ -2,37 +2,37 @@ agents:
   ceo:
     enabled: true
     model: "openai/gpt-oss-120b:free"
-    api_key: "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"
+    api_key: "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"
     temperature: 0.7
     max_tokens: 4096
   pm:
     enabled: true
     model: "openai/gpt-oss-120b:free"
-    api_key: "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"
+    api_key: "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"
     temperature: 0.7
     max_tokens: 4096
   research:
     enabled: true
     model: "openai/gpt-oss-120b:free"
-    api_key: "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"
+    api_key: "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"
     temperature: 0.7
     max_tokens: 2048
   coder:
     enabled: true
     model: "openai/gpt-oss-120b:free"
-    api_key: "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"
+    api_key: "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"
     temperature: 0.7
     max_tokens: 8192
   qa:
     enabled: true
     model: "openai/gpt-oss-120b:free"
-    api_key: "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"
+    api_key: "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"
     temperature: 0.7
     max_tokens: 4096
   docs:
     enabled: true
     model: "openai/gpt-oss-120b:free"
-    api_key: "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"
+    api_key: "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"
     temperature: 0.7
     max_tokens: 4096
 

@@ -1,0 +1,68 @@
+2025-12-13 09:30:59 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 09:30:59 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 09:30:59 | INFO     | multiagent           | ============================================================
+2025-12-13 09:30:59 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 09:30:59 | INFO     | multiagent           | ============================================================
+2025-12-13 09:30:59 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 09:30:59 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 09:30:59 | INFO     | multiagent           | Start time: 2025-12-13T04:00:59.135775+00:00
+2025-12-13 09:30:59 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 09:30:59 | INFO     | multiagent.config    | Environment: development
+2025-12-13 09:30:59 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 09:30:59 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 09:31:00 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-13 09:31:01 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-13 09:31:01 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-13 09:31:02 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-13 09:31:03 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 09:31:04 | INFO     | app.auth             | Supabase auth client initialized
+2025-12-13 09:31:04 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 09:31:04 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 09:31:04 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 09:31:04 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 09:31:04 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 09:31:04 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 09:31:04 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 09:31:04 | INFO     | multiagent           | Debug mode: True
+2025-12-13 09:31:04 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 09:31:04 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 09:31:04 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 09:31:04 | INFO     | multiagent           | ============================================================
+2025-12-13 09:31:04 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 09:31:04 | INFO     | multiagent           | ============================================================
+2025-12-13 09:31:04 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 09:31:04 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 09:31:04 | INFO     | multiagent           | Start time: 2025-12-13T04:01:04.521616+00:00
+2025-12-13 09:31:04 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 09:31:04 | INFO     | multiagent.config    | Environment: development
+2025-12-13 09:31:04 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 09:31:04 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 09:31:05 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-13 09:31:05 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-13 09:31:05 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-13 09:31:06 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-13 09:31:07 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 09:31:07 | INFO     | app.auth             | Supabase auth client initialized
+2025-12-13 09:31:08 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 09:31:08 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 09:31:08 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 09:31:08 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 09:31:08 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 09:31:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 09:31:08 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 09:31:08 | INFO     | multiagent           | Debug mode: True
+2025-12-13 09:31:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 09:31:08 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 09:34:34 | ERROR    | app.auth             | Token verification error: invalid JWT: unable to parse or verify signature, token is malformed: token contains an invalid number of segments
+2025-12-13 09:34:52 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 09:34:52 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 09:34:52 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 09:34:52 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 09:34:52 | INFO     | multiagent.cleanup   | Cleanup completed successfully

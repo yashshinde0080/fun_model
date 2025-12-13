@@ -1,0 +1,1 @@
+$env:DEV_MODE="true"; python run.py  

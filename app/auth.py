@@ -5,7 +5,7 @@ Supabase Authentication Middleware and Helpers
 import os
 import logging
 from functools import wraps
-from typing import Optional, Dict, Any, Callable
+from typing import Optional, Dict, Any, Callable, List
 from datetime import datetime, timezone
 
 from flask import request, jsonify, g, current_app
@@ -114,7 +114,7 @@ class SupabaseAuth:
         except Exception as e:
             logger.error(f"Error logging event: {e}")
             return None
-    
+
     def store_artifact(self, artifact_data: Dict[str, Any]) -> Optional[str]:
         """Store an artifact in Supabase."""
         try:
@@ -125,6 +125,17 @@ class SupabaseAuth:
         except Exception as e:
             logger.error(f"Error storing artifact: {e}")
             return None
+
+    def get_workflow_events(self, workflow_id: str) -> List[Dict[str, Any]]:
+        """Get events for a workflow."""
+        try:
+            if not self.admin_client:
+                return []
+            response = self.admin_client.table('events').select('*').eq('workflow_id', workflow_id).order('created_at').execute()
+            return response.data if response.data else []
+        except Exception as e:
+            logger.error(f"Error fetching workflow events: {e}")
+            return []
 
 
 class MockSupabaseAuth:
@@ -185,6 +196,10 @@ class MockSupabaseAuth:
         self.events.append(event_data)
         logger.debug(f"[MOCK] Logged event: {event_data.get('event_type')}")
         return str(len(self.events))
+
+    def get_workflow_events(self, workflow_id: str) -> List[Dict[str, Any]]:
+        """Get mock workflow events."""
+        return [e for e in self.events if e.get('workflow_id') == workflow_id]
 
     def store_artifact(self, artifact_data: Dict[str, Any]) -> Optional[str]:
         """Store mock artifact."""

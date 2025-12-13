@@ -205,3 +205,1017 @@
 2025-12-13 09:39:51 | INFO     | orchestrator.orchestrator | [18b6f7b0-7ff8-47fe-92f0-e3ef20c46e04] Phase 5: Documentation
 2025-12-13 09:40:06 | INFO     | orchestrator.orchestrator | [18b6f7b0-7ff8-47fe-92f0-e3ef20c46e04] Phase 6: CEO Finalization
 2025-12-13 09:40:20 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Completed: 18b6f7b0-7ff8-47fe-92f0-e3ef20c46e04
+2025-12-13 10:27:01 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:27:01 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:27:01 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:27:02 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:27:02 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:27:02 | INFO     | multiagent           | ============================================================
+2025-12-13 10:27:02 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:27:02 | INFO     | multiagent           | ============================================================
+2025-12-13 10:27:02 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:27:02 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:27:02 | INFO     | multiagent           | Start time: 2025-12-13T04:57:02.253448+00:00
+2025-12-13 10:27:02 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:27:02 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:27:02 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:27:02 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:27:04 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-13 10:27:05 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-13 10:27:05 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-13 10:27:06 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-13 10:27:06 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:27:07 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:27:07 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:27:07 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:27:07 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:27:07 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:27:07 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:27:07 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:27:07 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:27:07 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:27:07 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:27:07 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:27:07 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:27:14 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:27:14 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:27:14 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:27:14 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:27:14 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:27:14 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:27:15 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:27:15 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:27:15 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:27:15 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:27:15 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:27:15 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:27:41 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:27:41 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:27:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:27:41 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:27:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:27:41 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:27:41 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:27:41 | INFO     | multiagent           | Start time: 2025-12-13T04:57:41.391539+00:00
+2025-12-13 10:27:41 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:27:41 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:27:41 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:27:41 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:27:42 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-13 10:27:42 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-13 10:27:42 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-13 10:27:43 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-13 10:27:43 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:27:44 | INFO     | app.auth             | Supabase auth client initialized
+2025-12-13 10:27:44 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:27:44 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:27:44 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:27:44 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:27:44 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:27:44 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:27:44 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:27:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:27:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:32:20 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:32:20 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:32:20 | INFO     | multiagent           | ============================================================
+2025-12-13 10:32:20 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:32:20 | INFO     | multiagent           | ============================================================
+2025-12-13 10:32:20 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:32:20 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:32:20 | INFO     | multiagent           | Start time: 2025-12-13T05:02:20.785122+00:00
+2025-12-13 10:32:20 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:32:20 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:32:20 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:32:20 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:32:21 | INFO     | multiagent.startup   | ✓ Supabase connection successful
+2025-12-13 10:32:22 | INFO     | multiagent.startup   | ✓ OpenRouter API key valid
+2025-12-13 10:32:22 | INFO     | multiagent.startup   | ✓ Storage directory writable
+2025-12-13 10:32:23 | INFO     | multiagent.startup   | ✓ SMTP server reachable
+2025-12-13 10:32:23 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:32:23 | ERROR    | multiagent.app       | Failed to create application: name 'List' is not defined
+Traceback (most recent call last):
+  File "D:\fun_model\run.py", line 232, in create_application
+    app = create_app()
+  File "D:\fun_model\app\__init__.py", line 46, in create_app
+    from app.routes import main_bp, api_bp
+  File "D:\fun_model\app\routes.py", line 13, in <module>
+    from app.auth import require_auth, require_admin
+  File "D:\fun_model\app\auth.py", line 16, in <module>
+    class SupabaseAuth:
+    ...<121 lines>...
+                return []
+  File "D:\fun_model\app\auth.py", line 129, in SupabaseAuth
+    def get_workflow_events(self, workflow_id: str) -> List[Dict[str, Any]]:
+                                                       ^^^^
+NameError: name 'List' is not defined. Did you mean: 'list'?
+2025-12-13 10:32:23 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:32:23 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:33:16 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:33:16 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:33:16 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:16 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:33:16 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:16 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:33:16 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:33:16 | INFO     | multiagent           | Start time: 2025-12-13T05:03:16.040216+00:00
+2025-12-13 10:33:16 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:33:16 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:33:16 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:33:16 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:33:17 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:33:17 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:33:17 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:33:18 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:33:18 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:33:18 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:33:18 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:33:18 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:33:18 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:33:18 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:33:18 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:33:18 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:33:18 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:18 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:33:18 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:33:18 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:19 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:33:19 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:33:19 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:19 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:33:19 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:19 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:33:19 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:33:19 | INFO     | multiagent           | Start time: 2025-12-13T05:03:19.090531+00:00
+2025-12-13 10:33:19 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:33:19 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:33:19 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:33:19 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:33:20 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:33:20 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:33:20 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:33:21 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:33:21 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:33:22 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:33:22 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:33:22 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:33:22 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:33:22 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:33:22 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:33:22 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:33:22 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:22 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:33:22 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:33:22 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:22 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:33:43 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:33:43 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:33:43 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:43 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:33:43 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:43 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:33:43 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:33:43 | INFO     | multiagent           | Start time: 2025-12-13T05:03:43.921127+00:00
+2025-12-13 10:33:43 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:33:43 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:33:43 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:33:43 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:33:45 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:33:46 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:33:46 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:33:47 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:33:47 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:33:48 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:33:48 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:33:48 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:33:48 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:33:48 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:33:48 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:33:48 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:33:48 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:48 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:33:48 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:33:48 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:48 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:33:48 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:33:48 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:48 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:33:48 | INFO     | multiagent           | ============================================================
+2025-12-13 10:33:48 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:33:48 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:33:48 | INFO     | multiagent           | Start time: 2025-12-13T05:03:48.651896+00:00
+2025-12-13 10:33:48 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:33:48 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:33:48 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:33:48 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:33:49 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:33:50 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:33:50 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:33:50 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:33:51 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:33:51 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:33:51 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:33:51 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:33:51 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:33:51 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:33:51 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:33:51 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:33:51 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:51 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:33:51 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:33:51 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:33:51 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:35:26 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:35:26 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:35:26 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:35:26 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:35:26 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:35:28 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:35:28 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:35:28 | INFO     | multiagent           | ============================================================
+2025-12-13 10:35:28 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:35:28 | INFO     | multiagent           | ============================================================
+2025-12-13 10:35:28 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:35:28 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:35:28 | INFO     | multiagent           | Start time: 2025-12-13T05:05:28.383448+00:00
+2025-12-13 10:35:28 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:35:28 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:35:28 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:35:28 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:35:29 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:35:30 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:35:30 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:35:31 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:35:32 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:35:32 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:35:32 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:35:32 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:35:32 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:35:32 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:35:32 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:35:32 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:35:32 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:35:32 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:35:32 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:35:32 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:35:32 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:35:32 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:35:32 | INFO     | multiagent           | ============================================================
+2025-12-13 10:35:32 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:35:32 | INFO     | multiagent           | ============================================================
+2025-12-13 10:35:32 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:35:32 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:35:32 | INFO     | multiagent           | Start time: 2025-12-13T05:05:32.553691+00:00
+2025-12-13 10:35:32 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:35:32 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:35:32 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:35:32 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:35:33 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:35:33 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:35:34 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:35:34 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:35:34 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:35:35 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:35:35 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:35:35 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:35:35 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:35:35 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:35:35 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:35:35 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:35:35 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:35:35 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:35:35 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:35:35 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:35:35 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:36:14 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 5dc1b9c3-18f0-4b24-8cc9-aa98e21f76a1
+2025-12-13 10:36:14 | INFO     | app.routes           | Starting async workflow 5dc1b9c3-18f0-4b24-8cc9-aa98e21f76a1
+2025-12-13 10:36:14 | INFO     | orchestrator.orchestrator | [5dc1b9c3-18f0-4b24-8cc9-aa98e21f76a1] Phase 1: CEO Specification
+2025-12-13 10:36:16 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-13 10:36:16 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-13 10:36:16 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-13 10:36:16 | ERROR    | orchestrator.agents.base_agent | Agent ceo error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-13 10:36:16 | ERROR    | orchestrator.orchestrator | [5dc1b9c3-18f0-4b24-8cc9-aa98e21f76a1] Workflow error: CEO failed to create specification
+Traceback (most recent call last):
+  File "D:\fun_model\orchestrator\orchestrator.py", line 118, in execute
+    raise WorkflowError("CEO failed to create specification")
+orchestrator.orchestrator.WorkflowError: CEO failed to create specification
+2025-12-13 10:36:19 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Failed: 5dc1b9c3-18f0-4b24-8cc9-aa98e21f76a1
+2025-12-13 10:36:27 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:36:27 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:36:27 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:36:27 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:36:27 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:36:30 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:36:30 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:36:30 | INFO     | multiagent           | ============================================================
+2025-12-13 10:36:30 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:36:30 | INFO     | multiagent           | ============================================================
+2025-12-13 10:36:30 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:36:30 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:36:30 | INFO     | multiagent           | Start time: 2025-12-13T05:06:30.033321+00:00
+2025-12-13 10:36:30 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:36:30 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:36:30 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:36:30 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:36:30 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:36:31 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:36:31 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:36:32 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:36:32 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:36:32 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:36:32 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:36:33 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:36:33 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:36:33 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:36:33 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:36:33 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:36:33 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:36:33 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:36:33 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:36:33 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:36:33 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:36:33 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:36:33 | INFO     | multiagent           | ============================================================
+2025-12-13 10:36:33 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:36:33 | INFO     | multiagent           | ============================================================
+2025-12-13 10:36:33 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:36:33 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:36:33 | INFO     | multiagent           | Start time: 2025-12-13T05:06:33.208554+00:00
+2025-12-13 10:36:33 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:36:33 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:36:33 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:36:33 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:36:34 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:36:34 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:36:34 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:36:35 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:36:35 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:36:35 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:36:35 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:36:36 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:36:36 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:36:36 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:36:36 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:36:36 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:36:36 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:36:36 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:36:36 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:36:36 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:36:36 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:36:49 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 51013b86-0798-4d83-9cbd-94df80156a97
+2025-12-13 10:36:49 | INFO     | app.routes           | Starting async workflow 51013b86-0798-4d83-9cbd-94df80156a97
+2025-12-13 10:36:49 | INFO     | orchestrator.orchestrator | [51013b86-0798-4d83-9cbd-94df80156a97] Phase 1: CEO Specification
+2025-12-13 10:36:49 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-13 10:36:49 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-13 10:36:49 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-13 10:36:49 | ERROR    | orchestrator.agents.base_agent | Agent ceo error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-13 10:36:49 | ERROR    | orchestrator.orchestrator | [51013b86-0798-4d83-9cbd-94df80156a97] Workflow error: CEO failed to create specification
+Traceback (most recent call last):
+  File "D:\fun_model\orchestrator\orchestrator.py", line 118, in execute
+    raise WorkflowError("CEO failed to create specification")
+orchestrator.orchestrator.WorkflowError: CEO failed to create specification
+2025-12-13 10:36:53 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Failed: 51013b86-0798-4d83-9cbd-94df80156a97
+2025-12-13 10:37:58 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:37:58 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:37:58 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:37:58 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:37:58 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:38:43 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:38:43 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:38:43 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:38:44 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:38:44 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:38:44 | INFO     | multiagent           | ============================================================
+2025-12-13 10:38:44 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:38:44 | INFO     | multiagent           | ============================================================
+2025-12-13 10:38:44 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:38:44 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:38:44 | INFO     | multiagent           | Start time: 2025-12-13T05:08:44.394533+00:00
+2025-12-13 10:38:44 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:38:44 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:38:44 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:38:44 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:38:45 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:38:47 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:38:47 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:38:48 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:38:48 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:38:49 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:38:49 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:38:49 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:38:49 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:38:49 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:38:49 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:38:49 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:38:49 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:38:49 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:38:49 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:38:49 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:38:49 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:43:04 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:43:04 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:43:04 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:04 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:43:04 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:04 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:43:04 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:43:04 | INFO     | multiagent           | Start time: 2025-12-13T05:13:04.755357+00:00
+2025-12-13 10:43:04 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:43:04 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:43:04 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:43:04 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:43:05 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:43:06 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:43:06 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:43:07 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:43:07 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:43:07 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:43:07 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:43:08 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:43:08 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:43:08 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:43:08 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:43:08 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:43:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:08 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:43:08 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:43:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:08 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:43:08 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:43:08 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:08 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:43:08 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:08 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:43:08 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:43:08 | INFO     | multiagent           | Start time: 2025-12-13T05:13:08.392034+00:00
+2025-12-13 10:43:08 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:43:08 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:43:08 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:43:08 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:43:09 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:43:10 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:43:10 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:43:11 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:43:11 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:43:11 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:43:11 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:43:11 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:43:11 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:43:11 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:43:11 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:43:11 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:43:11 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:11 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:43:11 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:43:11 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:11 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:43:22 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:43:22 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:43:22 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:22 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:43:22 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:22 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:43:22 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:43:22 | INFO     | multiagent           | Start time: 2025-12-13T05:13:22.099121+00:00
+2025-12-13 10:43:22 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:43:22 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:43:22 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:43:22 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:43:22 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:43:23 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:43:23 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:43:24 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:43:24 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:43:24 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:43:24 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:43:24 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:43:24 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:43:24 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:43:24 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:43:24 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:43:24 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:24 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:43:24 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:43:24 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:25 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:43:25 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:43:25 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:25 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:43:25 | INFO     | multiagent           | ============================================================
+2025-12-13 10:43:25 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:43:25 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:43:25 | INFO     | multiagent           | Start time: 2025-12-13T05:13:25.107113+00:00
+2025-12-13 10:43:25 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:43:25 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:43:25 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:43:25 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:43:25 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:43:26 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:43:26 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:43:27 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:43:27 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:43:27 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:43:27 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:43:27 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:43:27 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:43:27 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:43:27 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:43:27 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:43:27 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:27 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:43:27 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:43:27 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:43:27 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:43:44 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 24351105-f8bd-4edc-86eb-31df2d59a2de
+2025-12-13 10:43:44 | INFO     | app.routes           | Starting async workflow 24351105-f8bd-4edc-86eb-31df2d59a2de
+2025-12-13 10:43:44 | INFO     | orchestrator.orchestrator | [24351105-f8bd-4edc-86eb-31df2d59a2de] Phase 1: CEO Specification
+2025-12-13 10:43:56 | INFO     | orchestrator.orchestrator | [24351105-f8bd-4edc-86eb-31df2d59a2de] Phase 2: PM Planning
+2025-12-13 10:44:16 | INFO     | orchestrator.orchestrator | [24351105-f8bd-4edc-86eb-31df2d59a2de] Phase 3: Task Execution
+2025-12-13 10:47:13 | INFO     | orchestrator.orchestrator | [24351105-f8bd-4edc-86eb-31df2d59a2de] Phase 4: QA Validation
+2025-12-13 10:47:29 | INFO     | orchestrator.orchestrator | [24351105-f8bd-4edc-86eb-31df2d59a2de] Phase 5: Documentation
+2025-12-13 10:47:50 | INFO     | orchestrator.orchestrator | [24351105-f8bd-4edc-86eb-31df2d59a2de] Phase 6: CEO Finalization
+2025-12-13 10:48:59 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:48:59 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:48:59 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:48:59 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:48:59 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:49:02 | ERROR    | orchestrator.tools.notifier | Failed to send email: Connection unexpectedly closed: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-12-13 10:51:03 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:51:03 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:51:03 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:51:03 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+y
+2025-12-13 10:51:03 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:51:04 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:51:04 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:51:04 | INFO     | multiagent           | ============================================================
+2025-12-13 10:51:04 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:51:04 | INFO     | multiagent           | ============================================================
+2025-12-13 10:51:04 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:51:04 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:51:04 | INFO     | multiagent           | Start time: 2025-12-13T05:21:04.214380+00:00
+2025-12-13 10:51:04 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:51:04 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:51:04 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:51:04 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:51:04 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:51:04 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:51:04 | INFO     | multiagent           | ============================================================
+2025-12-13 10:51:04 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:51:04 | INFO     | multiagent           | ============================================================
+2025-12-13 10:51:04 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:51:04 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:51:04 | INFO     | multiagent           | Start time: 2025-12-13T05:21:04.222092+00:00
+2025-12-13 10:51:04 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:51:04 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:51:04 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:51:04 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:51:05 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:51:05 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:51:07 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:51:08 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:51:08 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:51:08 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:51:08 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:51:08 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:51:08 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:51:08 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:51:08 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:51:08 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:51:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:51:08 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:51:08 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:51:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:51:08 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:51:08 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:51:08 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:51:08 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:51:08 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:51:08 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:51:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:51:08 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:51:08 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:51:08 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:51:08 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:54:59 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:54:59 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:54:59 | INFO     | multiagent           | ============================================================
+2025-12-13 10:54:59 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:54:59 | INFO     | multiagent           | ============================================================
+2025-12-13 10:54:59 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:54:59 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:54:59 | INFO     | multiagent           | Start time: 2025-12-13T05:24:59.287657+00:00
+2025-12-13 10:54:59 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:54:59 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:54:59 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:54:59 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:55:00 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:55:01 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:55:01 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:55:01 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:55:02 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:55:02 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:55:02 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:55:02 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:55:02 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:55:02 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:55:02 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:55:02 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:55:02 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:55:02 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:55:02 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:55:02 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:55:02 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:55:02 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:55:02 | INFO     | multiagent           | ============================================================
+2025-12-13 10:55:02 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:55:02 | INFO     | multiagent           | ============================================================
+2025-12-13 10:55:02 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:55:02 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:55:02 | INFO     | multiagent           | Start time: 2025-12-13T05:25:02.624791+00:00
+2025-12-13 10:55:02 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:55:02 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:55:02 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:55:02 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:55:03 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:55:04 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:55:04 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:55:04 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:55:05 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:55:05 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:55:05 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:55:05 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:55:05 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:55:05 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:55:05 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:55:05 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:55:05 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:55:05 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:55:05 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:55:05 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:55:05 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:55:40 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 8325ecd4-51b6-448d-b61a-59618aba705f
+2025-12-13 10:55:40 | INFO     | app.routes           | Starting async workflow 8325ecd4-51b6-448d-b61a-59618aba705f
+2025-12-13 10:55:40 | INFO     | orchestrator.orchestrator | [8325ecd4-51b6-448d-b61a-59618aba705f] Phase 1: CEO Specification
+2025-12-13 10:55:56 | INFO     | orchestrator.orchestrator | [8325ecd4-51b6-448d-b61a-59618aba705f] Phase 2: PM Planning
+2025-12-13 10:56:15 | INFO     | orchestrator.orchestrator | [8325ecd4-51b6-448d-b61a-59618aba705f] Phase 3: Task Execution
+2025-12-13 10:57:40 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Unterminated string starting at: line 45 column 20 (char 8377)
+2025-12-13 10:57:40 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:57:40 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:57:40 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:57:40 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:57:40 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:57:40 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:57:40 | ERROR    | orchestrator.llm_client | Content content: {
+  "status": "success",
+  "task_id": "task-003",
+  "agent": "coder",
+  "payload": {
+    "files": [
+      {
+        "path": "src/app.py",
+        "content": "from flask import Flask, render_template, request, session, jsonify, redirect, url_for\nfrom game import new_board, make_move, check_winner, is_draw\n\napp = Flask(__name__)\n# In production replace with a secure random key\napp.secret_key = \"replace-this-with-a-secure-key\"\n\n\ndef get_board() -> list[str]:\n    \"\"\"Retrieve the current board from the session, creating a new one if missing.\"\"\"\n    return session.get(\"board\", new_board())\n\n\ndef set_board(board: list[str]) -> None:\n    \"\"\"Store the board back into the session.\"\"\"\n    session[\"board\"] = board\n\n\ndef get_current_player() -> str:\n    \"\"\"Return the player whose turn it is (\"X\" or \"O\").\"\"\"\n    return session.get(\"player\", \"X\")\n\n\ndef set_current_player(player: str) -> None:\n    \"\"\"Store the next player in the session.\"\"\"\n    session[\"player\"] = player\n\n\n@app.route(\"/\")\ndef index():\n    board = get_board()\n    player = get_current_player()\n    return render_template(\"index.html\", board=board, player=player)\n\n\n@app.route(\"/move\", methods=[\"POST\"])\ndef move():\n    data = request.get_json()\n    if not data or \"position\" not in data:\n        return jsonify({\"status\": \"error\", \"message\": \"Invalid request payload\"}), 400\n    try:\n        position = int(data[\"position\"])\n    except (ValueError, TypeError):\n        return jsonify({\"status\": \"error\", \"message\": \"Position must be an integer\"}), 400\n\n    board = get_board()\n    player = get_current_player()\n    try:\n        board = make_move(board, position, player)\n    except ValueError as exc:\n        return jsonify({\"status\": \"error\", \"message\": str(exc)}), 400\n\n    winner = check_winner(board)\n    draw = is_draw(board)\n    if winner:\n        status = \"win\"\n        message = f\"Player {winner} wins!\"\n    elif draw:\n        status = \"draw\"\n        message = \"The game is a draw.\"\n    else:\n        status = \"continue\"\n        message = \"Move accepted.\"\n        # Switch turn\n        player = \"O\" if player == \"X\" else \"X\"\n        set_current_player(player)\n\n    set_board(board)\n    return jsonify({\n        \"status\": status,\n        \"message\": message,\n        \"board\": board,\n        \"next_player\": player\n    })\n\n\n@app.route(\"/reset\")\ndef reset():\n    session.clear()\n    return redirect(url_for(\"index\"))\n\n\nif __name__ == \"__main__\":\n    app.run(host=\"0.0.0.0\", port=5000)\n",
+        "type": "source",
+        "language": "python"
+      },
+      {
+        "path": "src/game.py",
+        "content": "from typing import List, Optional\n\nWIN_COMBINATIONS = [\n    (0, 1, 2),\n    (3, 4, 5),\n    (6, 7, 8),\n    (0, 3, 6),\n    (1, 4, 7),\n    (2, 5, 8),\n    (0, 4, 8),\n    (2, 4, 6),\n]\n\n\ndef new_board() -> List[str]:\n    \"\"\"Create a fresh empty Tic‑Tac‑Toe board.\n\n    Returns\n    -------\n    List[str]\n        A list of nine empty strings representing the cells.\n    \"\"\"\n    return [\"\" for _ in range(9)]\n\n\ndef make_move(board: List[str], position: int, player: str) -> List[str]:\n    \"\"\"Place a player's mark on the board.\n\n    Parameters\n    ----------\n    board : List[str]\n        Current board state.\n    position : int\n        Index from 0 to 8 where the player wants to move.\n    player : str\n        Either \"X\" or \"O\".\n\n    Returns\n    -------\n    List[str]\n        New board state after the move.\n\n    Raises\n    ------\n    ValueError\n        If the position is out of range or already occupied.\n    \"\"\"\n    if position < 0 or position > 8:\n        raise ValueError(\"Position must be between 0 and 8.\")\n    if board[position] != \"\":\n        raise ValueError(\"Cell already occupied.\")\n    new_board = board.copy()\n    new_board[position] = player\n    return new_board\n\n\ndef check_winner(board: List[str]) -> Optional[str]:\n    \"\"\"Determine if a player has won.\n\n    Returns\n    -------\n    Optional[str]\n        \"X\" or \"O\" if there is a winner, otherwise ``None``.\n    \"\"\"\n    for a, b, c in WIN_COMBINATIONS:\n        if board[a] and board[a] == board[b] == board[c]:\n            return board[a]\n    return None\n\n\ndef is_draw(board: List[str]) -> bool:\n    \"\"\"Return ``True`` if the board is full and there is no winner.\"\"\"\n    return all(cell != \"\" for cell in board) and check_winner(board) is None\n",
+        "type": "source",
+        "language": "python"
+      },
+      {
+        "path": "src/templates/index.html",
+        "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <title>Tic Tac Toe</title>\n    <style>\n        .board { display: grid; grid-template-columns: repeat(3, 100px); gap: 5px; }\n        .cell { width: 100px; height: 100px; font-size: 2em; text-align: center; line-height: 100px; border: 1px solid #000; cursor: pointer; }\n    </style>\n    <script>\n        async function makeMove(pos) {\n            const response = await fetch('/move', {\n                method: 'POST',\n                headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({ position: pos })\n            });\n            const data = await response.json();\n            if (response.ok) {\n                // Simple approach: reload page to reflect new state\n                location.reload();\n            } else {\n                alert(data.message || 'Error processing move');\n            }\n        }\n    </script>\n</head>\n<body>\n    <h1>Tic Tac Toe</h1>\n    <p>Current player: {{ player }}</p>\n    <div class=\"board\">\n        {% for i in range(9) %}\n            <div class=\"cell\" onclick=\"makeMove({{ i }})\">{{ board[i] if board[i] else '' }}</div>\n        {% endfor %}\n    </div>\n    <p><a href=\"/reset\">Reset Game</a></p>\n</body>\n</html>\n",
+        "type": "other",
+        "language": "html"
+      },
+      {
+        "path": "requirements.txt",
+        "content": "Flask==3.0.3\npytest==8.2.0\n",
+        "type": "config",
+        "language": "text"
+      },
+      {
+        "path": "Dockerfile",
+        "content": "FROM python:3.11-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\nCOPY src/ ./src/\nCOPY src/templates ./src/templates\nEXPOSE 5000\nENV FLASK_APP=src/app.py\nENV FLASK_RUN_HOST=0.0.0.0\nCMD [\"flask\", \"run\"]\n",
+        "type": "dockerfile",
+        "language": "dockerfile"
+      },
+      {
+        "path": "tests/test_game.py",
+        "content": "import pytest\nfrom src.game import new_board, make_move, check_winner, is_draw\n\ndef test_new_board_is_empty():\n    board = new_board()\n    assert len(board) == 9\n    assert all(cell == \"\" for cell in board)\n\ndef test_make_move_success():\n    board = new_board()\n    new = make_move(board, 0, \"X\")\n    assert new[0] == \"X\"\n    # original board unchanged (immutability)\n    assert board[0] == \"\"\n\ndef test_make_move_invalid_position():\n    board = new_board()\n    with pytest.raises(ValueError, match=\"Position must be between 0 and 8\"):\n        make_move(board, -1, \"X\")\n    with pytest.raises(ValueError, match=\"Position must be between 0 and 8\"):\n        make_move(board, 9, \"O\")\n\ndef test_make_move_occupied_cell():\n    board = new_board()\n    board = make_move(board, 4, \"X\")\n    with pytest.raises(ValueError, match=\"Cell already occupied\"):\n        make_move(board, 4, \"O\")\n\ndef test_winner_rows():\n    board = [\"X\", \"X\", \"X\", \"\", \"\", \"\", \"\", \"\", \"\"]\n    assert check_winner(board) == \"X\"\n\ndef test_winner_diagonal():\n    board = [\"O\", \"\", \"\", \"\", \"O\", \"\", \"\", \"\", \"O\"]\n    assert check_winner(board) == \"O\"\n\ndef test_no_winner():\n    board = [\"X\", \"O\", \"X\", \"X\", \"O\", \"O\", \"O\", \"X\", \"X\"]\n    assert check_winner(board) is None\n    assert is_draw(board) is True\n\ndef test_not_draw_when_empty_cells():\n    board = new_board()\n    board = make_move(board, 0, \"X\")\n    assert is_draw(board) is False\n",
+        "type": "test",
+        "language": "python"
+      },
+      {
+        "path": "tests/test_routes.py",
+        "content": "import json\nimport pytest\nfrom src.app import app\n\n@pytest.fixture\ndef client():\n    app.config[\"TESTING\"] = True\n    with app.test_client() as client:\n        yield client\n\ndef test_index_page(client):\n    response = client.get('/')\n    assert response.status_code == 200\n    assert b\"Tic Tac Toe\" in response.data\n\ndef test_valid_move(client):\n    # Ensure fresh session\n    client.get('/')\n    resp = client.post('/move', json={\"position\": 0})\n    assert resp.status_code == 200\n    data = resp.get_json()\n    assert data[\"status\"] == \"continue\"\n    assert data[\"board\"][0] == \"X\"\n\ndef test_invalid_move_out_of_range(client):\n    client.get('/')\n    resp = client.post('/move', json={\"position\": 9})\n    assert resp.status_code == 400\n    data = resp.get_json()\n    assert data[\"status\"] == \"error\"\n\ndef test_reset_clears_session(client):\n    client.get('/')\n    client.post('/move', json
+2025-12-13 10:57:40 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 10:57:40 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 10:57:40 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 10:57:41 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:57:41 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:57:41 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 10:57:41 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:57:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:57:41 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:57:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:57:41 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:57:41 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:57:41 | INFO     | multiagent           | Start time: 2025-12-13T05:27:41.110424+00:00
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:57:41 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:57:41 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:57:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:57:41 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:57:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:57:41 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:57:41 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:57:41 | INFO     | multiagent           | Start time: 2025-12-13T05:27:41.113645+00:00
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:57:41 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:57:41 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 10:57:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:57:41 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 10:57:41 | INFO     | multiagent           | ============================================================
+2025-12-13 10:57:41 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 10:57:41 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 10:57:41 | INFO     | multiagent           | Start time: 2025-12-13T05:27:41.114760+00:00
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Environment: development
+2025-12-13 10:57:41 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 10:57:41 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 10:57:42 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:57:42 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:57:42 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 10:57:43 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:57:43 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:57:43 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:57:43 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:57:43 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 10:57:43 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 10:57:44 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:57:44 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 10:57:44 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:57:44 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:57:44 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 10:57:44 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:57:44 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 10:57:44 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:57:44 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:57:44 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 10:57:45 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:57:45 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:57:45 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:57:45 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:57:45 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 10:57:45 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 10:57:45 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:57:45 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:57:45 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 10:57:45 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:57:45 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 10:57:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:57:45 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 10:57:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:57:45 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:57:45 | INFO     | multiagent.app       | Flask application created successfully
+5000
+2025-12-13 10:57:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:57:45 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 10:57:45 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:57:45 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:57:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:57:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:57:45 | INFO     | multiagent           | Debug mode: True
+2025-12-13 10:57:45 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 10:57:45 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:57:45 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 10:57:45 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 11:02:27 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 8110b6dd-ba06-49da-89cb-4e66c269f86c
+2025-12-13 11:02:27 | INFO     | app.routes           | Starting async workflow 8110b6dd-ba06-49da-89cb-4e66c269f86c
+2025-12-13 11:02:27 | INFO     | orchestrator.orchestrator | [8110b6dd-ba06-49da-89cb-4e66c269f86c] Phase 1: CEO Specification
+2025-12-13 11:02:39 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 11:02:39 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 11:02:39 | INFO     | multiagent           | ============================================================
+2025-12-13 11:02:39 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 11:02:39 | INFO     | multiagent           | ============================================================
+2025-12-13 11:02:39 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 11:02:39 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 11:02:39 | INFO     | multiagent           | Start time: 2025-12-13T05:32:39.672604+00:00
+2025-12-13 11:02:39 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 11:02:39 | INFO     | multiagent.config    | Environment: development
+2025-12-13 11:02:39 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 11:02:39 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 11:02:40 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 11:02:41 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 11:02:41 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 11:02:42 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 11:02:42 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 11:02:42 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 11:02:42 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 11:02:42 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 11:02:42 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 11:02:42 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 11:02:42 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 11:02:42 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 11:02:42 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 11:02:42 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 11:02:42 | INFO     | multiagent           | Debug mode: True
+2025-12-13 11:02:42 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 11:02:43 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-13 11:02:43 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251213.log
+2025-12-13 11:02:43 | INFO     | multiagent           | ============================================================
+2025-12-13 11:02:43 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-13 11:02:43 | INFO     | multiagent           | ============================================================
+2025-12-13 11:02:43 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-13 11:02:43 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-13 11:02:43 | INFO     | multiagent           | Start time: 2025-12-13T05:32:43.045428+00:00
+2025-12-13 11:02:43 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-13 11:02:43 | INFO     | multiagent.config    | Environment: development
+2025-12-13 11:02:43 | INFO     | multiagent.config    | Debug mode: True
+2025-12-13 11:02:43 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-13 11:02:43 | INFO     | orchestrator.orchestrator | [8110b6dd-ba06-49da-89cb-4e66c269f86c] Phase 2: PM Planning
+2025-12-13 11:02:43 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-13 11:02:44 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-13 11:02:44 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-13 11:02:45 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-13 11:02:45 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-13 11:02:45 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-13 11:02:45 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-13 11:02:46 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-13 11:02:46 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-13 11:02:46 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-13 11:02:46 | INFO     | app                  | Flask application initialized successfully
+2025-12-13 11:02:46 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-13 11:02:46 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 11:02:46 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-13 11:02:46 | INFO     | multiagent           | Debug mode: True
+2025-12-13 11:02:46 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-13 11:02:46 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-13 11:02:59 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: efc20343-2259-4d14-af5a-2616ff7cdbad
+2025-12-13 11:02:59 | INFO     | app.routes           | Starting async workflow efc20343-2259-4d14-af5a-2616ff7cdbad
+2025-12-13 11:02:59 | INFO     | orchestrator.orchestrator | [efc20343-2259-4d14-af5a-2616ff7cdbad] Phase 1: CEO Specification
+2025-12-13 11:03:06 | INFO     | orchestrator.orchestrator | [8110b6dd-ba06-49da-89cb-4e66c269f86c] Phase 3: Task Execution
+2025-12-13 11:03:12 | INFO     | orchestrator.orchestrator | [efc20343-2259-4d14-af5a-2616ff7cdbad] Phase 2: PM Planning
+2025-12-13 11:03:41 | INFO     | orchestrator.orchestrator | [efc20343-2259-4d14-af5a-2616ff7cdbad] Phase 3: Task Execution
+2025-12-13 11:04:50 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Unterminated string starting at: line 9 column 20 (char 157)
+2025-12-13 11:04:50 | ERROR    | orchestrator.llm_client | Content content: {
+  "status": "success",
+  "task_id": "task-004",
+  "agent": "coder",
+  "payload": {
+    "files": [
+      {
+        "path": "src/app.py",
+        "content": "'''Flask application for a two-player Tic-Tac-Toe game.'''\n\nfrom flask import Flask, render_template, request, jsonify, session\nfrom typing import List, Optional, Tuple\n\napp = Flask(__name__)\napp.secret_key = \"replace-with-a-secure-secret-key\"\n\n\ndef init_board() -> List[List[Optional[str]]]:\n    \"\"\"Create an empty 3x3 board.\"\"\"\n    return [[None, None, None] for _ in range(3)]\n\n\ndef check_winner(board: List[List[Optional[str]]]) -> Optional[str]:\n    \"\"\"Return 'X' or 'O' if there is a winner, otherwise None.\"\"\"\n    lines = []\n\n    # rows and columns\n    for i in range(3):\n        lines.append(board[i])  # row\n        lines.append([board[0][i], board[1][i], board[2][i]])  # column\n\n    # diagonals\n    lines.append([board[0][0], board[1][1], board[2][2]])\n    lines.append([board[0][2], board[1][1], board[2][0]])\n\n    for line in lines:\n        if line[0] and line[0] == line[1] == line[2]:\n            return line[0]\n    return None\n\n\ndef is_draw(board: List[List[Optional[str]]]) -> bool:\n    \"\"\"Return True if the board is full and there is no winner.\"\"\"\n    return all(cell is not None for row in board for cell in row) and not check_winner(board)\n\n\ndef switch_player(current: str) -> str:\n    \"\"\"Switch the current player.\"\"\"\n    return \"O\" if current == \"X\" else \"X\"\n\n\ndef get_state() -> Tuple[List[List[Optional[str]]], str, Optional[str], bool]:\n    \"\"\"Retrieve the game state from the session.\"\"\"\n    board = session.get(\"board\", init_board())\n    player = session.get(\"player\", \"X\")\n    winner = session.get(\"winner\")\n    draw = session.get(\"draw\", False)\n    return board, player, winner, draw\n\n\ndef save_state(board: List[List[Optional[str]]], player: str, winner: Optional[str], draw: bool) -> None:\n    \"\"\"Persist the game state into the session.\"\"\"\n    session[\"board\"] = board\n    session[\"player\"] = player\n    session[\"winner\"] = winner\n    session[
+2025-12-13 11:05:07 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Expecting ',' delimiter: line 30 column 8 (char 5066)
+2025-12-13 11:05:07 | ERROR    | orchestrator.llm_client | Content content: {
+  "status": "success",
+  "task_id": "task-003",
+  "agent": "coder",
+  "payload": {
+    "files": [
+      {
+        "path": "src/game/board.py",
+        "content": "'''Board module for Tic-Tac-Toe.'''\n\nfrom __future__ import annotations\nfrom typing import List, Optional, Tuple\n\nPlayer = str  # \"X\" or \"O\"\nBoard = List[List[Optional[Player]]]\n\nWIN_PATTERNS = [\n    # rows\n    [(0, 0), (0, 1), (0, 2)],\n    [(1, 0), (1, 1), (1, 2)],\n    [(2, 0), (2, 1), (2, 2)],\n    # columns\n    [(0, 0), (1, 0), (2, 0)],\n    [(0, 1), (1, 1), (2, 1)],\n    [(0, 2), (1, 2), (2, 2)],\n    # diagonals\n    [(0, 0), (1, 1), (2, 2)],\n    [(0, 2), (1, 1), (2, 0)],\n]\n\n\ndef init_board() -> Board:\n    \"\"\"Create an empty 3x3 Tic‑Tac‑Toe board.\"\"\"\n    return [[None for _ in range(3)] for _ in range(3)]\n\n\ndef is_valid_move(board: Board, row: int, col: int) -> bool:\n    \"\"\"Return True if the cell is inside the board and empty.\"\"\"\n    if not (0 <= row < 3 and 0 <= col < 3):\n        return False\n    return board[row][col] is None\n\n\ndef apply_move(board: Board, row: int, col: int, player: Player) -> Board:\n    \"\"\"\n    Place ``player`` on ``(row, col)`` and return the updated board.\n\n    Raises:\n        ValueError: If the move is invalid.\n    \"\"\"\n    if not is_valid_move(board, row, col):\n        raise ValueError(f\"Invalid move at ({row}, {col})\")\n    board[row][col] = player\n    return board\n\n\ndef check_winner(board: Board) -> Optional[Player]:\n    \"\"\"Return the winning player ('X' or 'O') if there is one, otherwise None.\"\"\"\n    for pattern in WIN_PATTERNS:\n        cells = [board[r][c] for r, c in pattern]\n        if cells[0] is not None and all(cell == cells[0] for cell in cells):\n            return cells[0]\n    return None\n\n\ndef is_draw(board: Board) -> bool:\n    \"\"\"Return True if the board is full and there is no winner.\"\"\"\n    return all(cell is not None for row in board for cell in row) and check_winner(board) is None\n\n\ndef switch_player(current: Player) -> Player:\n    \"\"\"Return the opposite player.\"\"\"\n    return \"O\" if current == \"X\" else \"X\"\n",
+        "type": "source",
+        "language": "python"
+      },
+      {
+        "path": "src/app.py",
+        "content": "\"\"\"Minimal Flask application for Tic‑Tac‑Toe using the board module.\"\"\"\n\nfrom flask import Flask, jsonify, request, session\nfrom typing import Tuple, List, Optional\n\nfrom game.board import (\n    init_board,\n    apply_move,\n    is_valid_move,\n    check_winner,\n    is_draw,\n    switch_player,\n    Board,\n)\n\napp = Flask(__name__)\napp.secret_key = \"replace-this-with-a-secure-key\"\n\n\ndef _get_state() -> Tuple[Board, str]:\n    board = session.get(\"board\")\n    player = session.get(\"player\", \"X\")\n    if board is None:\n        board = init_board()\n        session[\"board\"] = board\n        session[\"player\"] = player\n    return board, player\n\n\n@app.route(\"/api/state\", methods=[\"GET\"])\ndef get_state():\n    board, player = _get_state()\n    return jsonify({\n        \"board\": board,\n        \"current_player\": player,\n        \"winner\": check_winner(board),\n        \"draw\": is_draw(board),\n    })\n\n\n@app.route(\"/api/move\", methods=[\"POST\"])\ndef make_move():\n    data = request.get_json(silent=True) or {}\n    row = data.get(\"row\")\n    col = data.get(\"col\")\n    board, player = _get_state()\n    if row is None or col is None:\n        return jsonify({\"error\": \"row and col required\"}), 400\n    if not isinstance(row, int) or not isinstance(col, int):\n        return jsonify({\"error\": \"row and col must be integers\"}), 400\n    if not is_valid_move(board, row, col):\n        return jsonify({\"error\": \"invalid move\"}), 400\n    apply_move(board, row, col, player)\n    winner = check_winner(board)\n    draw = is_draw(board)\n    if not winner and not draw:\n        player = switch_player(player)\n        session[\"player\"] = player\n    session[\"board\"] = board\n    return jsonify({\n        \"board\": board,\n        \"current_player\": player,\n        \"winner\": winner,\n        \"draw\": draw,\n    })\n\n\n@app.route(\"/api/reset\", methods=[\"POST\"])\ndef reset():\n    session[\"board\"] = init_board()\n    session[\"player\"] = \"X\"\n    return jsonify({\"message\": \"board reset\"})\n\n\nif __name__ == \"__main__\":\n    app.run(host=\"0.0.0.0\", port=5000)\n",
+        "type": "source",
+        "language": "python"
+      },
+      {
+        "path": "requirements.txt",
+        "content": "Flask==3.0.3\npytest==8.2.2\n",
+        "type": "config",
+        "language": "text"
+      },
+      {
+        "path": "Dockerfile",
+        "content": "FROM python:3.11-slim\n\nWORKDIR /app\n\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\nCOPY src/ ./src/\nCOPY tests/ ./tests/\n\nEXPOSE 5000\n\nENV FLASK_APP=src/app.py\nENV FLASK_RUN_HOST=0.0.0.0\n\nCMD [\"flask\", \"run\"]\n",
+        "type": "dockerfile",
+        "language": "dockerfile"
+      },
+      {
+        "path": "tests/test_board.py",
+        "content": "import pytest\nfrom game.board import (\n    init_board,\n    apply_move,\n    is_valid_move,\n    check_winner,\n    is_draw,\n    switch_player,\n)\n\n\ndef test_initial_board_is_empty():\n    board = init_board()\n    assert all(cell is None for row in board for cell in row)\n\n\ndef test_valid_move_and_apply():\n    board = init_board()\n    assert is_valid_move(board, 0, 0)\n    apply_move(board, 0, 0, \"X\")\n    assert board[0][0] == \"X\"\n    assert not is_valid_move(board, 0, 0)\n\n\ndef test_invalid_move_raises():\n    board = init_board()\n    apply_move(board, 0, 0, \"X\")\n    with pytest.raises(ValueError):\n        apply_move(board, 0, 0, \"O\")\n\n\ndef test_win_rows():\n    board = init_board()\n    apply_move(board, 0, 0, \"X\")\n    apply_move(board, 0, 1, \"X\")\n    apply_move(board, 0, 2, \"X\")\n    assert check_winner(board) == \"X\"\n\n\ndef test_win_columns():\n    board = init_board()\n    apply_move(board, 0, 1, \"O\")\n    apply_move(board, 1, 1, \"O\")\n    apply_move(board, 2, 1, \"O\")\n    assert check_winner(board) == \"O\"\n\n\ndef test_win_di
+2025-12-13 11:05:28 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Unterminated string starting at: line 51 column 20 (char 11032)
+2025-12-13 11:05:28 | ERROR    | orchestrator.llm_client | Content content: {
+  "status": "success",
+  "task_id": "task-005",
+  "agent": "coder",
+  "payload": {
+    "files": [
+      {
+        "path": "src/game.py",
+        "content": "\"\"\"Tic-Tac-Toe game logic.\n\nProvides a simple class that maintains the board, current player, and\nhandles move validation, win/draw detection and board reset.\n\"\"\"\n\nfrom __future__ import annotations\n\nfrom typing import List, Tuple, Optional\n\n\nclass TicTacToe:\n    \"\"\"Core game engine for Tic‑Tac‑Toe.\n\n    The board is a 3x3 list of strings: \"\", \"X\" or \"O\".\n    \"\"\"\n\n    def __init__(self) -> None:\n        self.board: List[List[str]] = [[\"\" for _ in range(3)] for _ in range(3)]\n        self.current_player: str = \"X\"\n        self.winner: Optional[str] = None\n        self.draw: bool = False\n\n    def reset(self) -> None:\n        \"\"\"Reset the board to the initial empty state.\"\"\"\n        self.board = [[\"\" for _ in range(3)] for _ in range(3)]\n        self.current_player = \"X\"\n        self.winner = None\n        self.draw = False\n\n    def make_move(self, row: int, col: int) -> Tuple[bool, str]:\n        \"\"\"Attempt to place the current player's mark at ``row, col``.\n\n        Returns a tuple ``(success, message)``. ``message`` contains a win or\n        draw notification when appropriate.\n        \"\"\"\n        if self.winner or self.draw:\n            return False, \"Game already finished. Reset to play again.\"\n        if not (0 <= row < 3 and 0 <= col < 3):\n            return False, \"Invalid board position.\"\n        if self.board[row][col] != \"\":\n            return False, \"Cell already occupied.\"\n\n        self.board[row][col] = self.current_player\n        if self._check_winner(self.current_player):\n            self.winner = self.current_player\n            return True, f\"Player {self.current_player} wins!\"\n        if self._check_draw():\n            self.draw = True\n            return True, \"It's a draw!\"\n\n        # Switch player\n        self.current_player = \"O\" if self.current_player == \"X\" else \"X\"\n        return True, \"\"\n\n    def _check_winner(self, player: str) -> bool:\n        # Rows, columns, diagonals\n        lines = []\n        lines.extend(self.board)  # rows\n        lines.extend([[self.board[r][c] for r in range(3)] for c in range(3)])  # cols\n        lines.append([self.board[i][i] for i in range(3)])  # main diag\n        lines.append([self.board[i][2 - i] for i in range(3)])  # anti diag\n        return any(all(cell == player for cell in line) for line in lines)\n\n    def _check_draw(self) -> bool:\n        return all(cell != \"\" for row in self.board for cell in row)\n\n    def get_board(self) -> List[List[str]]:\n        \"\"\"Return a deep copy of the board for safe external use.\"\"\"\n        return [row.copy() for row in self.board]\n\n    def get_status(self) -> str:\n        \"\"\"Return a human readable status message (win/draw/empty).\"\"\"\n        if self.winner:\n            return f\"Player {self.winner} wins!\"\n        if self.draw:\n            return \"It's a draw!\"\n        return f\"Player {self.current_player}'s turn\"\n"
+        ,
+        "type": "source",
+        "language": "python"
+      },
+      {
+        "path": "src/app.py",
+        "content": "\"\"\"Flask application for the Tic‑Tac‑Toe web game.\n\nProvides three routes:\n* ``GET /`` – renders the main board page.\n* ``POST /move`` – accepts a JSON payload ``{\"row\": int, \"col\": int}``\n  and returns the updated board and any status message.\n* ``POST /reset`` – resets the game state.\n\"\"\"\n\nfrom __future__ import annotations\n\nimport json\nfrom typing import Any, Dict\n\nfrom flask import Flask, jsonify, render_template, request\n\nfrom .game import TicTacToe\n\napp = Flask(__name__, static_folder=\"static\", template_folder=\"templates\")\n\ngame = TicTacToe()\n\n\n@app.route(\"/\")\ndef index() -> str:\n    \"\"\"Render the main page with the current board state.\"\"\"\n    return render_template(\"index.html\", board=game.get_board(), status=game.get_status())\n\n\n@app.route(\"/move\", methods=[\"POST\"])\ndef move() -> Any:\n    \"\"\"Process a move request.\n\n    Expected JSON payload: ``{\"row\": int, \"col\": int}``.\n    Returns JSON with the new board, a status message and the next player.\n    \"\"\"\n    data: Dict[str, Any] = request.get_json(silent=True) or {}\n    row = data.get(\"row\")\n    col = data.get(\"col\")\n    if row is None or col is None:\n        return jsonify({\"error\": \"Missing row or col\"}), 400\n    success, message = game.make_move(int(row), int(col))\n    response = {\n        \"board\": game.get_board(),\n        \"message\": message or game.get_status(),\n        \"current_player\": game.current_player,\n        \"success\": success,\n    }\n    return jsonify(response)\n\n\n@app.route(\"/reset\", methods=[\"POST\"])\ndef reset() -> Any:\n    \"\"\"Reset the game and return the cleared board.\"\"\"\n    game.reset()\n    return jsonify({\n        \"board\": game.get_board(),\n        \"message\": game.get_status(),\n        \"current_player\": game.current_player,\n        \"success\": True,\n    })\n\n\nif __name__ == \"__main__\":\n    # Enable debug mode when run directly for convenience.\n    app.run(host=\"0.0.0.0\", port=5000, debug=True)\n"
+        ,
+        "type": "source",
+        "language": "python"
+      },
+      {
+        "path": "templates/index.html",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Tic‑Tac‑Toe</title>\n    <link rel=\"stylesheet\" href=\"{{ url_for('static', filename='style.css') }}\" />\n</head>\n<body>\n    <h1>Tic‑Tac‑Toe</h1>\n    <div id=\"status\">{{ status }}</div>\n    <table id=\"board\">\n        {% for r in range(3) %}\n        <tr>\n            {% for c in range(3) %}\n            <td data-row=\"{{ r }}\" data-col=\"{{ c }}\">{{ board[r][c] }}</td>\n            {% endfor %}\n        </tr>\n        {% endfor %}\n    </table>\n    <button id=\"resetBtn\">Reset Game</button>\n    <script src=\"{{ url_for('static', filename='script.js') }}\"></script>\n</body>\n</html>\n"
+        ,
+        "type": "source",
+        "language": "html"
+      },
+      {
+        "path": "static/style.css",
+        "content": "body {\n    font-family: Arial, Helvetica, sans-serif;\n    text-align: center;\n    margin-top: 30px;\n}\n\n#board {\n    margin: 0 auto;\n    border-collapse: collapse;\n}\n\n#board td {\n    width: 80px;\n    height: 80px;\n    border: 2px solid #333;\n    font-size: 48px;\n    cursor: pointer;\n    vertical-align: middle;\n    text-align: center;\n}\n\n#board td:hover {\n    background-color: #f0f0f0;\n}\n\n#status {\n    margin-bottom: 15px;\n    font-weight: bold;\n    font-size: 1.2em;\n}\n\n#resetBtn {\n    margin-top: 20px;\n    padding: 10px 20px;\n    font-size: 1em;\n    cursor: pointer;\n}\n"
+        ,
+        "type": "source",
+        "language": "css"
+      },
+      {
+        "path": "static/script.js",
+        "content": "// Vanilla JS to handle board clicks and reset without full reload.\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const board = document.getElementById(\"board\");\n    const statusDiv = document.getElementById(\"status\");\n    const resetBtn = document.getElementById(\"resetBtn\");\n\n    board.addEventListener(\"click\", async (e) => {\n        const cell = e.target.closest(\"td\");\n        if (!cell || cell.textContent.trim() !== \"\") return; // ignore occupied cells\n        const row = cell.dataset.row;\n        const col = cell.dataset.col;\n        const resp = await fetch(\"/move\", {\n            method: \"POST\",\n            headers: { \"Content-Type\": \"application/json\" },\n            body: JSON.stringify({ row: Number(row), col: Number(col) })\n        });\n        const data = await resp.json();\n        if (data.success) {\n            updateBoard(data.board);\n            statusDiv.textContent = data.message;\n        } else {\n            alert(data.message);\n        }\n    });\n\n    resetBtn.addEventListener(\"click\", async () => {\n        const resp = await fetch(\"/reset\", { method: \"POST\" });\n        const data = await resp.json();\n        updateBoard(data.board);\n        statusDiv.textContent = data.message;\n    });\n\n    function updateBoard(boardState) {\n        for (let r = 0; r < 3; r++) {\n            for (let c = 0; c < 3; c++) {\n                const cell = board.querySelector(`td[data-row=\"${r}\"][data-col=\"${c}\"]`);\n                cell.textContent = boardState[r][c];\n            }\n        }\n    }\n});\n"
+        ,
+        "type": "source",
+        "language": "javascript"
+      },
+      {
+        "path": "tests/test_game.py",
+        "content": "import pytest\nfrom src.game import TicTacToe\n\n@pytest.fixture\ndef fresh_game():\n    return TicTacToe()\n\ndef test_initial_state(fresh_game):\n    assert fresh_game.get_board() == [[\"\", \"\", \"\"], [\"\", \"\", \"\"], [\"\", \"\", \"\"]]\n    assert fresh_game.current_player == \"X\"\n    assert fresh_game.get_status() == \"Player X's turn\"\n\ndef test_make_move_success(fresh_game):\n    success, msg = fresh_game.make_move(0, 0)\n    assert success\n    assert fresh_game.board[0][0] == \"X\"\n    assert fresh_game.current_player == \"O\"\n    assert msg == \"\"\n\ndef test_invalid_move_out_of_bounds(fresh_game):\n    success, msg = fresh_game.make_move(3, 0)\n    assert not success\n    assert \"Invalid board position\" in msg\n\ndef test_cell_already_occupied(fresh_game):\n    fresh_game.make_move(0, 0)\n    success, msg = fresh_game.make_move(0, 0)\n    assert not success\n    assert \"Cell already occupied\" in msg\n\ndef test_win_detection_row(fresh_game):\n    fresh_game.make_move(0, 0)  # X\n    fresh_game.make_move(1, 0)  # O\n    fresh_game.make_move(0, 1)  # X\n    fresh_game.make_move(1, 1)  # O\n    success, msg = fresh_game.make_move(0, 2)  # X wins\n    assert success\n    assert fresh_game.winner == \"X\"\n    assert \"wins\" in msg\n\ndef test_draw_detection(fresh_game):\n    moves = [(0,0),(0,1),(0,2),(1,1),(1,0),(1,2),(2,1),(2,0),(2,2)]\n    # Alternate X/O moves; this sequence ends in a draw.\n    for i, (r,c) in enumerate(moves):\n        success, msg = fresh_game.make_move(r,c)\n        assert success\n    assert fresh_game.draw is True\n    assert fresh_game.winner is None\n    assert \"draw\" in fresh_game.get_status().lower()\n\ndef test_reset(fresh_game):\n    fresh_game.make_move(0,0)\n    fresh_game.reset()\n    assert fresh_game.board == [[\"\", \"\", \"\"], [\"\", \"\", \"\"], [\"\", \"\", \"\"]]\n    assert fresh_game.current_player == \"X\"\n    assert fresh_game.winner is None\n    assert fresh_game.draw is False\n"
+        ,
+        "type": "test",
+        "language": "python"
+      },
+      {
+        "path": "tests/test_routes.py",
+        "content": "import json\nimport pytest\nfrom src.app import app as flask_app\n\n@pytest.fixture\ndef client():\n    flask_app.config[\"TESTING\"] = True\n    with flask_app.test_client() as client:\n        yield client\n\ndef test_index_route(client):\n    resp = client.get(\"/\")\n    assert resp.status_code == 200\n    assert b\"Tic‑Tac‑Toe\" in resp.data\n\ndef test_move_route_success(client):\n    # First move by X at (0,0)\n    resp = client.post(\n        \"/move\",\n        data=json.dumps({\"row\": 0, \"col\": 0}),\n        content_type=\"application/json\",\n    )\n    assert resp.status_code == 200\n    data = resp.get_json()\n    assert data[\"success\"] is True\n    assert data[\"board\"][0][0] == \"X\"\n    assert data[\"current_player\"] == \"O\"\n\ndef test_move_route_invalid_position(client):\n    resp = client.post(\n        \"/move\",\n        data=json.dumps({\"row\": 3, \"col\": 0}),\n        content_type=\"application/json\",\n    )\n    assert resp.status_code == 200\n    data = resp.get_json()\n    assert data[\"success\"] is False\n    assert \"Invalid board position\" in data[\"message\"]\n\ndef test_reset_route(client):\n    # Make a move first\n    client.post(\n        \"/move\",\n        data=json.dumps({\"row\": 0
+2025-12-13 11:05:57 | INFO     | orchestrator.orchestrator | [8110b6dd-ba06-49da-89cb-4e66c269f86c] Phase 4: QA Validation
+2025-12-13 11:06:13 | INFO     | orchestrator.orchestrator | [8110b6dd-ba06-49da-89cb-4e66c269f86c] Phase 5: Documentation
+2025-12-13 11:06:31 | INFO     | orchestrator.orchestrator | [8110b6dd-ba06-49da-89cb-4e66c269f86c] Phase 6: CEO Finalization
+2025-12-13 11:06:45 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Completed: 8110b6dd-ba06-49da-89cb-4e66c269f86c
+2025-12-13 11:06:54 | INFO     | orchestrator.orchestrator | [efc20343-2259-4d14-af5a-2616ff7cdbad] Phase 4: QA Validation
+2025-12-13 11:07:11 | INFO     | orchestrator.orchestrator | [efc20343-2259-4d14-af5a-2616ff7cdbad] Phase 5: Documentation
+2025-12-13 11:07:30 | INFO     | orchestrator.orchestrator | [efc20343-2259-4d14-af5a-2616ff7cdbad] Phase 6: CEO Finalization
+2025-12-13 11:07:42 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Completed: efc20343-2259-4d14-af5a-2616ff7cdbad
+2025-12-13 11:12:44 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 11:12:44 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 11:12:44 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-13 11:12:44 | INFO     | multiagent           | Application shutdown complete
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-13 11:12:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully

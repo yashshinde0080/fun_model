@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi-Agent Corporate System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -15,17 +15,18 @@
         </header>
         
         <div class="card">
+            <h2 style="margin-top:0; font-size:1.25rem; margin-bottom:1.5rem;">New Project</h2>
             <div class="input-group">
                 <label for="request">Project Request</label>
-                <textarea id="request" placeholder="Describe the software project or task you want the agents to execute... (e.g., 'Create a Snake game in Python with a Tkinter UI')"></textarea>
+                <textarea id="request" rows="3" placeholder="Describe the software project or task you want the agents to execute... (e.g., 'Create a Snake game in Python with a Tkinter UI')"></textarea>
             </div>
             
             <div class="input-group">
                 <label for="priority">Priority</label>
-                <select id="priority" style="width: 100%; padding: 1rem; border-radius: 8px; background: var(--bg-primary); color: white; border: 1px solid var(--bg-tertiary);">
-                    <option value="low">Low</option>
-                    <option value="medium" selected>Medium</option>
-                    <option value="high">High</option>
+                <select id="priority">
+                    <option value="low">Low Priority</option>
+                    <option value="medium" selected>Medium Priority</option>
+                    <option value="high">High Priority</option>
                 </select>
             </div>
 
@@ -34,36 +35,32 @@
             </button>
         </div>
         
-        <div class="card" id="resultCard" style="display:none;">
-            <div class="workflow-status">
-                <div>
-                    <span style="color: var(--text-secondary); margin-right: 0.5rem;">Workflow ID:</span>
-                    <span id="workflowId" style="font-family: 'Fira Code', monospace; color: var(--accent-primary);"></span>
+        <div class="card" id="resultCard" style="display:none; transition: all 0.3s ease; padding: 0; overflow: hidden;">
+            <div class="workspace-grid">
+                <!-- Sidebar (Timeline/Steps) -->
+                <div class="sidebar">
+                    <div class="sidebar-header">
+                        <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem;">Workflow Steps</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);" id="workflowStatus">Initialize...</div>
+                    </div>
+                    <div class="sidebar-content" id="phasesList">
+                        <!-- Timeline items will go here -->
+                    </div>
                 </div>
-                <span id="statusBadge" class="status-badge pending">Pending</span>
-            </div>
 
-            <div class="tabs">
-                <div class="tab active" onclick="switchTab('summary')">Summary</div>
-                <div class="tab" onclick="switchTab('phases')">Phases</div>
-                <div class="tab" onclick="switchTab('files')">Deliverables</div>
-                <div class="tab" onclick="switchTab('logs')">Full Logs</div>
-            </div>
-
-            <div id="summaryContent" class="tab-content active">
-                <div id="finalSummary" style="line-height: 1.6;"></div>
-            </div>
-
-            <div id="phasesContent" class="tab-content">
-                <div id="phasesList" class="timeline"></div>
-            </div>
-
-            <div id="filesContent" class="tab-content">
-                <div id="fileList"></div>
-            </div>
-
-            <div id="logsContent" class="tab-content">
-                <div class="json-viewer" id="output"></div>
+                <!-- Main Content (Docs/Output) -->
+                <div class="main-content">
+                    <div class="doc-header">
+                        <div id="docTitle" style="font-weight: 700; color: var(--text-primary);">Project Overview</div>
+                        <div id="docMeta" style="font-size: 0.8rem; color: var(--text-secondary);"></div>
+                    </div>
+                    <div class="doc-body markdown-body" id="docViewer">
+                        <div class="empty-state">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">👋</div>
+                            <p>Select a step from the sidebar to view details and agent output.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -72,28 +69,38 @@
         <p>Powered by OpenRouter & Supabase • Secure Corporate Environment</p>
     </footer>
     
+    <!-- Marked library for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <script>
         // Mock token for dev mode - in prod, get from auth flow
-        const AUTH_TOKEN = 'test-token'; 
+        const AUTH_TOKEN = 'test-token';
+        let pollInterval = null;
+        let allEvents = []; // Store events locally
+        let selectedEventIndex = -1;
 
         async function runWorkflow() {
             const requestInput = document.getElementById('request');
             const runBtn = document.getElementById('runBtn');
             const resultCard = document.getElementById('resultCard');
-            const statusBadge = document.getElementById('statusBadge');
             
             const request = requestInput.value.trim();
             if (!request) return alert('Please enter a request description');
             
             // Reset UI
+            if (pollInterval) clearInterval(pollInterval);
+            allEvents = [];
+            selectedEventIndex = -1;
+            
             runBtn.disabled = true;
             runBtn.innerHTML = '<div class="spinner"></div> Processing...';
             resultCard.style.display = 'block';
-            statusBadge.className = 'status-badge running';
-            statusBadge.innerText = 'RUNNING';
-            document.getElementById('workflowId').innerText = 'Generating...';
-            document.getElementById('output').innerText = 'Initializing agents...';
-            document.getElementById('finalSummary').innerText = 'Agents are working on your request. This may take a minute...';
+            
+            document.getElementById('phasesList').innerHTML = '<div style="padding:1rem; color:var(--text-secondary); text-align:center;">Initializing agents...</div>';
+            document.getElementById('docViewer').innerHTML = '<div class="empty-state"><div class="spinner"></div><p>Starting workflow...</p></div>';
+            
+            // Auto scroll to results
+            resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
             
             try {
                 const response = await fetch('/api/run', {
@@ -113,108 +120,195 @@
                 const data = await response.json();
                 
                 if (response.ok) {
-                    renderResult(data);
+                    startPolling(data.workflow_id);
                 } else {
                     throw new Error(data.error || 'Unknown error occurred');
                 }
             } catch (error) {
-                statusBadge.className = 'status-badge failed';
-                statusBadge.innerText = 'FAILED';
-                document.getElementById('output').innerText = `Error: ${error.message}`;
-                document.getElementById('finalSummary').innerText = 'Workflow failed to complete.';
-            } finally {
+                handleError(error);
                 runBtn.disabled = false;
                 runBtn.innerHTML = '<span>🚀 Launch Agents</span>';
             }
         }
 
-        function renderResult(data) {
-            document.getElementById('workflowId').innerText = data.workflow_id;
-            const statusBadge = document.getElementById('statusBadge');
-            statusBadge.className = `status-badge ${data.status}`;
-            statusBadge.innerText = data.status.toUpperCase();
-            
-            // Render Full Logs
-            document.getElementById('output').innerText = JSON.stringify(data.result, null, 2);
-
-            // Render Summary
-            if (data.result && data.result.final_summary) {
-                document.getElementById('finalSummary').innerText = data.result.final_summary;
-            } else if (data.result.error) {
-                 document.getElementById('finalSummary').innerText = `Error: ${data.result.error}`;
-            }
-
-            // Render Files
-            const fileList = document.getElementById('fileList');
-            fileList.innerHTML = '';
-            if (data.result && data.result.deliverables && data.result.deliverables.files) {
-                data.result.deliverables.files.forEach(file => {
-                    const fileDiv = document.createElement('div');
-                    fileDiv.className = 'input-group';
-                    fileDiv.style.marginBottom = '1rem';
-                    fileDiv.innerHTML = `
-                        <label>${file.path}</label>
-                        <textarea readonly style="height: 150px; font-family: monospace; font-size: 0.85rem;">${file.content}</textarea>
-                    `;
-                    fileList.appendChild(fileDiv);
-                });
-            } else {
-                fileList.innerHTML = '<p style="color: var(--text-secondary);">No files generated.</p>';
-            }
-
-            // Render Phases
-            renderPhases(data.result.events || []);
+        function startPolling(workflowId) {
+            pollInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/api/workflows/${workflowId}`, {
+                        headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
+                    });
+                    
+                    if (!response.ok) throw new Error('Failed to poll workflow');
+                    
+                    const data = await response.json();
+                    renderResult(data);
+                    
+                    if (data.workflow.status === 'completed' || data.workflow.status === 'failed') {
+                        clearInterval(pollInterval);
+                        document.getElementById('runBtn').disabled = false;
+                        document.getElementById('runBtn').innerHTML = '<span>🚀 Launch Agents</span>';
+                    }
+                } catch (error) {
+                    console.error('Polling error:', error);
+                }
+            }, 2000);
         }
 
-        function renderPhases(events) {
+        function handleError(error) {
+            document.getElementById('docViewer').innerHTML = `<div style="color:var(--error); padding:2rem;"><h3>Error</h3><p>${error.message}</p></div>`;
+        }
+
+        function renderResult(data) {
+            const workflow = data.workflow;
+            const events = data.events || [];
+            allEvents = events; // Store for selection
+            
+            // Update Sidebar Status
+            const statusDiv = document.getElementById('workflowStatus');
+            statusDiv.innerHTML = `<span class="status-badge ${workflow.status}">${workflow.status}</span> • ID: ${workflow.id.substring(0,8)}`;
+
             const list = document.getElementById('phasesList');
             list.innerHTML = '';
             
-            if (!events || events.length === 0) {
-                list.innerHTML = '<p class="text-secondary">No timeline events available.</p>';
+            if (events.length === 0) {
+                list.innerHTML = '<div style="padding:1rem; color:var(--text-secondary); text-align:center;">Waiting for agent activity...</div>';
                 return;
             }
 
+            // Render Timeline Items
             events.forEach((evt, index) => {
                 const item = document.createElement('div');
-                item.className = 'timeline-item';
-                item.style.padding = '1rem';
-                item.style.borderLeft = '2px solid var(--accent-primary)';
-                item.style.marginLeft = '1rem';
-                item.style.marginBottom = '1rem';
-                item.style.background = 'var(--bg-secondary)';
-                item.style.borderRadius = '0 8px 8px 0';
+                item.className = `timeline-item ${index === selectedEventIndex ? 'active' : ''}`;
+                item.onclick = () => selectEvent(index);
                 
-                const agent = evt.agent_name.toUpperCase();
-                const type = evt.event_type.replace('_', ' ').toUpperCase();
+                const agent = (evt.agent_name || 'System').toUpperCase();
+                const type = (evt.event_type || 'Unknown').replace(/_/g, ' ').toUpperCase();
                 const status = evt.status || 'INFO';
                 
+                // Color code agents
+                let agentColor = 'var(--text-primary)';
+                if(agent === 'CEO') agentColor = '#a78bfa';
+                if(agent === 'PM') agentColor = '#60a5fa';
+                if(agent === 'CODER') agentColor = '#34d399';
+                if(agent === 'QA') agentColor = '#f472b6';
+                if(agent === 'DOCS') agentColor = '#fbbf24';
+                if(agent === 'RESEARCH') agentColor = '#22d3ee';
+                
+                // Status indicator color
+                let statusColor = 'var(--text-secondary)';
+                if(status === 'success') statusColor = 'var(--success)';
+                if(status === 'failed') statusColor = 'var(--error)';
+                if(status === 'running') statusColor = 'var(--accent-primary)';
+
                 item.innerHTML = `
-                    <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
-                        <span style="font-weight:bold; color:var(--accent-primary);">${agent}</span>
-                        <span class="status-badge ${status === 'failed' ? 'failed' : 'pending'}" style="font-size:0.75rem;">${type}</span>
+                    <div class="timeline-item-header">
+                        <span class="agent-name" style="color:${agentColor}">${agent}</span>
+                        <span class="event-type">${type}</span>
                     </div>
-                    <div style="font-size:0.9rem; color:var(--text-secondary);">
-                        ${evt.task_id ? `Task ID: ${evt.task_id.substring(0,8)}...` : ''}
+                    <div style="font-size:0.85rem; color:var(--text-secondary); display:flex; align-items:center;">
+                        <span class="status-dot" style="background:${statusColor}"></span>
+                        ${evt.task_id ? `Task: ${evt.task_id.substring(0,8)}...` : 'System Event'}
                     </div>
-                    ${evt.payload && evt.payload.error ? `<div style="color:var(--status-failed); margin-top:0.5rem;">Error: ${evt.payload.error}</div>` : ''}
                 `;
                 list.appendChild(item);
             });
+            
+            // Auto-select latest if nothing selected (or if initializing)
+            if (selectedEventIndex === -1 && events.length > 0) {
+                selectEvent(events.length - 1);
+            } else if (selectedEventIndex !== -1) {
+                // Refresh content of currently selected in case it updated
+                showDoc(selectedEventIndex);
+            }
         }
 
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        function selectEvent(index) {
+            selectedEventIndex = index;
             
-            const tabs = document.querySelectorAll('.tab');
-            const tabMap = { 'summary': 0, 'phases': 1, 'files': 2, 'logs': 3 };
+            // Update active state in sidebar
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach((item, i) => {
+                if (i === index) item.classList.add('active');
+                else item.classList.remove('active');
+            });
             
-            if (tabs[tabMap[tabName]]) {
-                tabs[tabMap[tabName]].classList.add('active');
-            }
+            showDoc(index);
+        }
 
-            document.getElementById(`${tabName}Content`).classList.add('active');
+        function showDoc(index) {
+            const evt = allEvents[index];
+            if (!evt) return;
+
+            const docViewer = document.getElementById('docViewer');
+            const docTitle = document.getElementById('docTitle');
+            const docMeta = document.getElementById('docMeta');
+            
+            const agent = (evt.agent_name || 'System').toUpperCase();
+            const type = (evt.event_type || 'Unknown').replace(/_/g, ' ');
+            
+            docTitle.innerText = `${agent}: ${type}`;
+            docMeta.innerText = `Task ID: ${evt.task_id || 'N/A'} • Status: ${evt.status || 'Info'}`;
+            
+            let content = '';
+            
+            // Determine best content to show
+            if (evt.payload) {
+                // 1. Check for 'output' (our new field)
+                if (evt.payload.output) {
+                    content = formatOutput(evt.payload.output);
+                } 
+                // 2. Fallback to other meaningful fields
+                else if (evt.payload.project_spec) {
+                    content = formatOutput(evt.payload.project_spec);
+                }
+                else if (evt.payload.request) {
+                    content = `## Request\n\n${evt.payload.request}`;
+                }
+                else if (evt.payload.task_description) {
+                    content = `## Task Description\n\n${evt.payload.task_description}`;
+                }
+                else if (evt.payload.error) {
+                    content = `## Error\n\n\`\`\`\n${evt.payload.error}\n\`\`\``;
+                }
+                else {
+                    // Default JSON dump
+                    content = `\`\`\`json\n${JSON.stringify(evt.payload, null, 2)}\n\`\`\``;
+                }
+            } else {
+                content = '_No content available_';
+            }
+            
+            docViewer.innerHTML = marked.parse(content);
+        }
+
+        function formatOutput(output) {
+            if (typeof output === 'string') return output;
+            
+            if (typeof output === 'object') {
+                // Try to extract markdown-like fields
+                if (output.content) return output.content;
+                if (output.readme) return output.readme;
+                if (output.summary) return `## Summary\n\n${output.summary}`;
+                
+                // Special handling for Code files
+                if (output.files) {
+                    return output.files.map(f => `### 📄 ${f.path}\n\`\`\`${f.language || ''}\n${f.content}\n\`\`\``).join('\n\n');
+                }
+                
+                // Formatting specific agent output structures
+                // CEO Spec
+                if (output.project_name) {
+                    let md = `# ${output.project_name}\n\n${output.description}\n\n## Data Structures\n`;
+                    if(output.data_structures) {
+                         output.data_structures.forEach(ds => md += `- **${ds.name}**: ${ds.description}\n`);
+                    }
+                    return md + `\n\`\`\`json\n${JSON.stringify(output, null, 2)}\n\`\`\``; 
+                }
+
+                return `\`\`\`json\n${JSON.stringify(output, null, 2)}\n\`\`\``;
+            }
+            
+            return String(output);
         }
     </script>
 </body>

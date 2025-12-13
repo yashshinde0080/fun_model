@@ -330,9 +330,9 @@ def perform_startup_checks(config: dict) -> bool:
             config['supabase']['anon_key']
         )
         # Simple query to test connectivity
-        logger.info("✓ Supabase connection successful")
+        logger.info("[OK] Supabase connection successful")
     except Exception as e:
-        logger.error(f"✗ Supabase connection failed: {e}")
+        logger.error(f"[FAIL] Supabase connection failed: {e}")
         checks_passed = False
     
     # Check 2: OpenRouter API key validity
@@ -344,11 +344,11 @@ def perform_startup_checks(config: dict) -> bool:
             timeout=10.0
         )
         if response.status_code == 200:
-            logger.info("✓ OpenRouter API key valid")
+            logger.info("[OK] OpenRouter API key valid")
         else:
-            logger.warning(f"⚠ OpenRouter API returned status {response.status_code}")
+            logger.warning(f"[WARN] OpenRouter API returned status {response.status_code}")
     except Exception as e:
-        logger.warning(f"⚠ Could not verify OpenRouter API key: {e}")
+        logger.warning(f"[WARN] Could not verify OpenRouter API key: {e}")
     
     # Check 3: Storage directory permissions
     try:
@@ -356,9 +356,9 @@ def perform_startup_checks(config: dict) -> bool:
         test_file = storage_dir / '.write_test'
         test_file.touch()
         test_file.unlink()
-        logger.info("✓ Storage directory writable")
+        logger.info("[OK] Storage directory writable")
     except Exception as e:
-        logger.error(f"✗ Storage directory not writable: {e}")
+        logger.error(f"[FAIL] Storage directory not writable: {e}")
         checks_passed = False
     
     # Check 4: SMTP connectivity (optional)
@@ -367,11 +367,11 @@ def perform_startup_checks(config: dict) -> bool:
             import smtplib
             with smtplib.SMTP(config['smtp']['host'], config['smtp']['port'], timeout=5) as server:
                 server.ehlo()
-                logger.info("✓ SMTP server reachable")
+                logger.info("[OK] SMTP server reachable")
         except Exception as e:
-            logger.warning(f"⚠ SMTP server not reachable: {e}")
+            logger.warning(f"[WARN] SMTP server not reachable: {e}")
     else:
-        logger.info("○ SMTP not configured (notifications disabled)")
+        logger.info("[INFO] SMTP not configured (notifications disabled)")
     
     if checks_passed:
         logger.info("All startup checks passed")
@@ -432,7 +432,7 @@ def main():
     
     logger.info("-" * 60)
     logger.info(f"Starting Flask server on http://{host}:{port}")
-    print(f"\n\033[92m🚀 Server running!\033[0m")
+    print(f"\n\033[92m>> Server running!\033[0m")
     if host == '0.0.0.0':
         print(f"\033[92m   Local:   http://localhost:{port}\033[0m")
     else:

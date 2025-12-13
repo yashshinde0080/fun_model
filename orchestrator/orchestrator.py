@@ -241,7 +241,8 @@ class Orchestrator:
             self._log_event(context, agent_name, 'task_completed', {
                 'task_id': task_id,
                 'status': result.get('status'),
-                'confidence': result.get('confidence')
+                'confidence': result.get('confidence'),
+                'output': result.get('payload')
             })
             
             return result

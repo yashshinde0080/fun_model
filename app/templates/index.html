@@ -3,313 +3,893 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Agent Corporate System</title>
+    <title>Multi-Agent Corp</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="{{ url_for('static', filename='auth.js') }}"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🏢 Multi-Agent Corp.</h1>
-            <p class="subtitle">Autonomous Enterprise Orchestration System</p>
-        </header>
-        
-        <div class="card">
-            <h2 style="margin-top:0; font-size:1.25rem; margin-bottom:1.5rem;">New Project</h2>
-            <div class="input-group">
-                <label for="request">Project Request</label>
-                <textarea id="request" rows="3" placeholder="Describe the software project or task you want the agents to execute... (e.g., 'Create a Snake game in Python with a Tkinter UI')"></textarea>
+    <header>
+        <div>
+            <h1><div class="brand-dot"></div> Multi-Agent Corp</h1>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+             <span id="mockBanner" style="display:none; background: rgba(245, 158, 11, 0.2); color: #f59e0b; padding: 4px 10px; border-radius: 99px; font-weight: 600; font-size: 0.7rem; border: 1px solid rgba(245, 158, 11, 0.3);">MOCK MODE</span>
+             <div id="statusIndicator" style="font-size:0.75rem; color:var(--text-secondary); opacity:0; margin-right: 10px; font-weight: 600;">INITIALIZING...</div>
+             <div id="authButtons">
+                <button id="loginBtn" onclick="showAuth('login')" class="primary-btn">Login</button>
+             </div>
+             <div id="userInfo" style="display:none; font-size: 0.8rem; color: var(--text-secondary); align-items: center; gap: 10px;">
+                <span id="userEmail"></span>
+                <button onclick="logout()">Logout</button>
+             </div>
+        </div>
+    </header>
+
+    <div id="authModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuth()">&times;</span>
+            <h2 id="authTitle" style="margin-top: 0; color: var(--text-primary);">Login</h2>
+            <p id="authInstruction" style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.5rem; display:none;"></p>
+            
+            <div id="authModeTabs" style="display:flex; gap:1rem; margin-bottom:1.5rem; justify-content:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem;">
+                <span onclick="setAuthMode('login')" id="tab-login" style="cursor:pointer; color:var(--accent-primary); font-weight:bold;">Login</span>
+                <span onclick="setAuthMode('signup')" id="tab-signup" style="cursor:pointer; color:var(--text-secondary);">Sign Up</span>
+            </div>
+
+            <div style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 6px; font-size: 0.8rem; color: var(--text-secondary);" id="localHint">
+                <strong>Dev Credentials:</strong><br>
+                User: test@localhost / password123<br>
+                Admin: admin@localhost / admin123
             </div>
             
-            <div class="input-group">
-                <label for="priority">Priority</label>
-                <select id="priority">
-                    <option value="low">Low Priority</option>
-                    <option value="medium" selected>Medium Priority</option>
-                    <option value="high">High Priority</option>
-                </select>
+            <input type="email" id="email" placeholder="Email Address">
+            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
+            
+            <div id="forgotPasswordLink" style="text-align: right; font-size: 0.8rem; margin: 0.5rem 0 1rem;">
+                <a href="#" onclick="showAuth('forgot_password'); return false;" style="color: var(--text-secondary);">Forgot Password?</a>
             </div>
 
-            <button onclick="runWorkflow()" id="runBtn">
-                <span>🚀 Launch Agents</span>
-            </button>
+            <button onclick="handleAuthSubmit()" id="authSubmitBtn" class="primary-btn">Login</button>
+            <div id="authError" style="color: var(--error); margin-top: 1rem; font-size: 0.9rem; text-align: center; min-height: 1.2em;"></div>
+            
+            <div id="backToLoginLink" style="margin-top: 1rem; font-size: 0.9rem; display:none; text-align: center;">
+                 <a href="#" onclick="showAuth('login'); return false;" style="color: var(--accent-primary);">Back to Login</a>
+            </div>
         </div>
-        
-        <div class="card" id="resultCard" style="display:none; transition: all 0.3s ease; padding: 0; overflow: hidden;">
-            <div class="workspace-grid">
-                <!-- Sidebar (Timeline/Steps) -->
-                <div class="sidebar">
-                    <div class="sidebar-header">
-                        <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem;">Workflow Steps</div>
-                        <div style="font-size: 0.8rem; color: var(--text-secondary);" id="workflowStatus">Initialize...</div>
-                    </div>
-                    <div class="sidebar-content" id="phasesList">
-                        <!-- Timeline items will go here -->
+    </div>
+
+    <div class="app-container">
+        <!-- LEFT: CHAT INTERFACE -->
+        <div class="left-panel">
+            <div class="chat-history" id="chatHistory">
+                <!-- Welcome Message -->
+                <div class="chat-message agent">
+                    <div class="sender-name">System</div>
+                    <div class="bubble">
+                        Hello! I am your Multi-Agent Orchestrator.
+                        Describe your project below, and I will assemble a team of agents (CEO, PM, Research, QA, Coder) to build it for you in real-time.
                     </div>
                 </div>
+            </div>
 
-                <!-- Main Content (Docs/Output) -->
-                <div class="main-content">
-                    <div class="doc-header">
-                        <div id="docTitle" style="font-weight: 700; color: var(--text-primary);">Project Overview</div>
-                        <div id="docMeta" style="font-size: 0.8rem; color: var(--text-secondary);"></div>
-                    </div>
-                    <div class="doc-body markdown-body" id="docViewer">
-                        <div class="empty-state">
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">👋</div>
-                            <p>Select a step from the sidebar to view details and agent output.</p>
-                        </div>
-                    </div>
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="chatInput" rows="1" placeholder="Type your project request here... (e.g., 'Build a Tetris game in Python')" onkeydown="handleEnter(event)"></textarea>
+                    <button id="sendBtn" onclick="sendMessage()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER: TIMELINE -->
+        <div class="center-panel">
+            <div class="panel-header" style="display:flex; justify-content:space-between; align-items:center;">
+                Work Timeline
+                <button onclick="resetDB()" style="font-size: 0.7rem; padding: 2px 6px; background: #333; border: 1px solid #444; color: #aaa;">Reset DB</button>
+            </div>
+            <div class="timeline-container" id="timelineContainer">
+                <!-- Initial State -->
+                <div class="empty-state" style="opacity:0.3; font-size:0.8rem;">Waiting for project...</div>
+            </div>
+        </div>
+
+        <!-- RIGHT: TABS & ARTIFACTS -->
+        <div class="right-panel">
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="switchTab('planning', this)">Planning</button>
+                <button class="tab-btn" onclick="switchTab('research', this)">Research</button>
+                <button class="tab-btn" onclick="switchTab('qa', this)">QA</button>
+                <button class="tab-btn" onclick="switchTab('code', this)">Code</button>
+                <button class="tab-btn" onclick="switchTab('docs', this)">Docs</button>
+                <button class="tab-btn" onclick="switchTab('logs', this)">Logs</button>
+            </div>
+
+            <div class="tab-content" id="tabContent">
+                <div id="tab-planning" class="tab-pane active markdown-body">
+                    <div class="empty-state">No planning generated yet.</div>
+                </div>
+                <div id="tab-research" class="tab-pane markdown-body" style="display:none;">
+                    <div class="empty-state">No research generated yet.</div>
+                </div>
+                <div id="tab-qa" class="tab-pane markdown-body" style="display:none;">
+                     <div class="empty-state">No QA generated yet.</div>
+                </div>
+                <div id="tab-code" class="tab-pane markdown-body" style="display:none;">
+                     <div class="empty-state">No code generated yet.</div>
+                </div>
+                <div id="tab-docs" class="tab-pane markdown-body" style="display:none;">
+                     <div class="empty-state">No documentation generated yet.</div>
+                </div>
+                 <div id="tab-logs" class="tab-pane markdown-body" style="display:none;">
+                     <div id="logs-content" style="font-family: monospace; font-size: 0.8rem; white-space: pre-wrap;">Loading logs...</div>
+                     <button onclick="fetchLogs()" style="margin-top: 10px;">Refresh Logs</button>
                 </div>
             </div>
         </div>
     </div>
-    
-    <footer>
-        <p>Powered by OpenRouter & Supabase • Secure Corporate Environment</p>
-    </footer>
-    
-    <!-- Marked library for Markdown rendering -->
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
     <script>
-        // Mock token for dev mode - in prod, get from auth flow
-        const AUTH_TOKEN = 'test-token';
-        let pollInterval = null;
-        let allEvents = []; // Store events locally
-        let selectedEventIndex = -1;
+        // Initialize AuthManager
+        // Config injected from server
+        const SUPABASE_URL = '{{ supabase_url }}' || '';
+        const SUPABASE_KEY = '{{ supabase_anon_key }}' || '';
+        const authManager = new AuthManager(SUPABASE_URL, SUPABASE_KEY);
 
-        async function runWorkflow() {
-            const requestInput = document.getElementById('request');
-            const runBtn = document.getElementById('runBtn');
-            const resultCard = document.getElementById('resultCard');
-            
-            const request = requestInput.value.trim();
-            if (!request) return alert('Please enter a request description');
-            
-            // Reset UI
-            if (pollInterval) clearInterval(pollInterval);
-            allEvents = [];
-            selectedEventIndex = -1;
-            
-            runBtn.disabled = true;
-            runBtn.innerHTML = '<div class="spinner"></div> Processing...';
-            resultCard.style.display = 'block';
-            
-            document.getElementById('phasesList').innerHTML = '<div style="padding:1rem; color:var(--text-secondary); text-align:center;">Initializing agents...</div>';
-            document.getElementById('docViewer').innerHTML = '<div class="empty-state"><div class="spinner"></div><p>Starting workflow...</p></div>';
-            
-            // Auto scroll to results
-            resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            
-            try {
-                const response = await fetch('/api/run', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${AUTH_TOKEN}`
-                    },
-                    body: JSON.stringify({ 
-                        request,
-                        options: {
-                            priority: document.getElementById('priority').value
-                        }
-                    })
-                });
-                
-                const data = await response.json();
-                
-                if (response.ok) {
-                    startPolling(data.workflow_id);
-                } else {
-                    throw new Error(data.error || 'Unknown error occurred');
-                }
-            } catch (error) {
-                handleError(error);
-                runBtn.disabled = false;
-                runBtn.innerHTML = '<span>🚀 Launch Agents</span>';
+        let pollInterval = null;
+        let eventCache = [];
+        let isProcessing = false;
+        let authMode = 'login'; // login or signup
+
+        // On Load
+        document.addEventListener('DOMContentLoaded', async () => {
+             // Mock Banner Logic
+             if (authManager.mockMode || window.location.hostname === 'localhost') {
+                 if (authManager.mockMode) document.getElementById('mockBanner').style.display = 'inline-block';
+                 // If mock mode, pre-fill hints
+                 document.getElementById('email').value = 'test@localhost';
+                 document.getElementById('password').value = 'password123';
+             } else {
+                document.getElementById('localHint').style.display = 'none';
+             }
+
+             // Listen to Auth Changes
+             authManager.onAuthStateChange((event, session) => {
+                 updateAuthUI(session);
+                 if (event === 'PASSWORD_RECOVERY') {
+                     showAuth('update_password');
+                 }
+             });
+
+             // Check initial session
+             const { data } = await authManager.getSession();
+             updateAuthUI(data.session);
+        });
+
+        function updateAuthUI(session) {
+            const loginBtn = document.getElementById('loginBtn');
+            const authButtons = document.getElementById('authButtons');
+            const userInfo = document.getElementById('userInfo');
+            const userEmail = document.getElementById('userEmail');
+
+            if (session) {
+                authButtons.style.display = 'none';
+                userInfo.style.display = 'flex';
+                if (session.user) userEmail.innerText = session.user.email;
+                closeAuth();
+            } else {
+                authButtons.style.display = 'block';
+                userInfo.style.display = 'none';
+                userEmail.innerText = '';
+                // Instead of "Logged In" text on login button, revert to normal
+                loginBtn.innerText = 'Login';
             }
         }
 
-        function startPolling(workflowId) {
-            pollInterval = setInterval(async () => {
-                try {
-                    const response = await fetch(`/api/workflows/${workflowId}`, {
-                        headers: { 'Authorization': `Bearer ${AUTH_TOKEN}` }
-                    });
-                    
-                    if (!response.ok) throw new Error('Failed to poll workflow');
-                    
-                    const data = await response.json();
-                    renderResult(data);
-                    
-                    if (data.workflow.status === 'completed' || data.workflow.status === 'failed') {
-                        clearInterval(pollInterval);
-                        document.getElementById('runBtn').disabled = false;
-                        document.getElementById('runBtn').innerHTML = '<span>🚀 Launch Agents</span>';
-                    }
-                } catch (error) {
-                    console.error('Polling error:', error);
+        function handleEnter(e) {
+            if(e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        }
+
+        // --- Auth UI Logic ---
+        function showAuth(mode) { 
+            setAuthMode(mode);
+            document.getElementById('authModal').style.display = 'block'; 
+        }
+        function closeAuth() { document.getElementById('authModal').style.display = 'none'; }
+        
+        function setAuthMode(mode) {
+            authMode = mode;
+            const emailInput = document.getElementById('email');
+            const passInput = document.getElementById('password');
+            const confirmInput = document.getElementById('confirmPassword');
+            const forgotLink = document.getElementById('forgotPasswordLink');
+            const backLink = document.getElementById('backToLoginLink');
+            const tabs = document.getElementById('authModeTabs');
+            const title = document.getElementById('authTitle');
+            const instruction = document.getElementById('authInstruction');
+            const submitBtn = document.getElementById('authSubmitBtn');
+            const errDiv = document.getElementById('authError');
+
+            // Reset visibility
+            emailInput.style.display = 'block';
+            passInput.style.display = 'block';
+            confirmInput.style.display = 'none';
+            forgotLink.style.display = 'none';
+            backLink.style.display = 'none';
+            tabs.style.display = 'flex';
+            if(instruction) instruction.style.display = 'none';
+            errDiv.innerText = '';
+            
+            // Reset Placeholders
+            passInput.placeholder = 'Password';
+            confirmInput.placeholder = 'Confirm Password';
+
+            // Tab Styling
+            document.getElementById('tab-login').style.color = '#888';
+            document.getElementById('tab-login').style.fontWeight = 'normal';
+            document.getElementById('tab-signup').style.color = '#888';
+            document.getElementById('tab-signup').style.fontWeight = 'normal';
+
+            if (mode === 'login') {
+                document.getElementById('tab-login').style.color = 'var(--accent-primary)';
+                document.getElementById('tab-login').style.fontWeight = 'bold';
+                forgotLink.style.display = 'block';
+                title.innerText = 'Login';
+                submitBtn.innerText = 'Login';
+            } else if (mode === 'signup') {
+                document.getElementById('tab-signup').style.color = 'var(--accent-primary)';
+                document.getElementById('tab-signup').style.fontWeight = 'bold';
+                confirmInput.style.display = 'block';
+                title.innerText = 'Sign Up';
+                submitBtn.innerText = 'Sign Up';
+            } else if (mode === 'forgot_password') {
+                tabs.style.display = 'none';
+                passInput.style.display = 'none';
+                backLink.style.display = 'block';
+                if(instruction) {
+                    instruction.style.display = 'block';
+                    instruction.innerText = 'Enter your email address to receive a password reset link.';
                 }
-            }, 2000);
+                title.innerText = 'Forgot Password';
+                submitBtn.innerText = 'Send Reset Link';
+            } else if (mode === 'update_password') {
+                tabs.style.display = 'none';
+                emailInput.style.display = 'none';
+                confirmInput.style.display = 'block';
+                passInput.placeholder = 'New Password';
+                confirmInput.placeholder = 'Confirm New Password';
+                if(instruction) {
+                    instruction.style.display = 'block';
+                    instruction.innerText = 'Create a new password for your account.';
+                }
+                title.innerText = 'Reset Password';
+                submitBtn.innerText = 'Reset Password';
+            }
         }
 
-        function handleError(error) {
-            document.getElementById('docViewer').innerHTML = `<div style="color:var(--error); padding:2rem;"><h3>Error</h3><p>${error.message}</p></div>`;
+        async function handleAuthSubmit() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+            const errDiv = document.getElementById('authError');
+            errDiv.innerText = 'Processing...';
+
+            let result;
+            
+            // Validation
+            if (authMode === 'signup' || authMode === 'update_password') {
+                if (password !== confirmPass) {
+                    errDiv.innerText = "Passwords do not match.";
+                    return;
+                }
+                if (password.length < 6) {
+                     errDiv.innerText = "Password must be at least 6 characters.";
+                     return;
+                }
+            }
+
+            try {
+                if (authMode === 'login') {
+                    result = await authManager.signIn(email, password);
+                } else if (authMode === 'signup') {
+                    result = await authManager.signUp(email, password);
+                } else if (authMode === 'forgot_password') {
+                     if (!email) { errDiv.innerText = "Please enter your email."; return; }
+                    result = await authManager.resetPassword(email);
+                } else if (authMode === 'update_password') {
+                    result = await authManager.updatePassword(password);
+                }
+
+                if (result.error) {
+                    errDiv.innerText = result.error.message || 'Action failed';
+                } else {
+                    errDiv.innerText = '';
+                    if (authMode === 'signup' && !result.data.session) {
+                        errDiv.innerText = 'Check your email for confirmation link.';
+                        errDiv.style.color = 'var(--success)';
+                    } else if (authMode === 'forgot_password') {
+                        errDiv.innerText = 'Mock Mode: Password reset to "password123".';
+                        errDiv.style.color = 'var(--success)';
+                    } else if (authMode === 'update_password') {
+                         closeAuth();
+                         addMessage('agent', 'System', 'Password updated successfully.');
+                         // Optionally redirect or reset state
+                         window.location.hash = ''; 
+                    } else {
+                        closeAuth();
+                        addMessage('agent', 'System', `Successfully ${authMode === 'login' ? 'logged in' : 'signed up'}.`);
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+                errDiv.innerText = "An unexpected error occurred.";
+            }
+        }
+        
+        // Global Fetch Wrapper to handle 401s
+        const originalFetch = window.fetch;
+        window.fetch = async function(...args) {
+            const response = await originalFetch(...args);
+            if (response.status === 401) {
+                // If unauthorized, and we are not currently trying to login
+                const url = args[0];
+                if (!url.includes('/auth/login') && !url.includes('/auth/signup')) {
+                    console.warn('Unauthorized access. Logging out...');
+                    await authManager.signOut();
+                    updateAuthUI(null);
+                    showAuth('login');
+                    document.getElementById('authError').innerText = "Session expired. Please login again.";
+                }
+            }
+            return response;
+        };
+
+        async function logout() {
+            await authManager.signOut();
+            addMessage('agent', 'System', 'Logged out.');
         }
 
-        function renderResult(data) {
-            const workflow = data.workflow;
-            const events = data.events || [];
-            allEvents = events; // Store for selection
-            
-            // Update Sidebar Status
-            const statusDiv = document.getElementById('workflowStatus');
-            statusDiv.innerHTML = `<span class="status-badge ${workflow.status}">${workflow.status}</span> • ID: ${workflow.id.substring(0,8)}`;
+        // --- DB Reset ---
+        async function resetDB() {
+            if (!confirm("Are you sure you want to reset the database? This will clear all data.")) return;
+            const authHeader = authManager.getAuthHeader();
+            if (!authHeader) {
+                alert('You must be logged in.');
+                return;
+            }
+            try {
+                const res = await fetch('/api/reset', { method: 'POST', headers: { 'Authorization': authHeader } });
+                if (res.ok) {
+                    addMessage('agent', 'System', 'Database reset complete.');
+                    location.reload();
+                } else {
+                    alert('Reset failed');
+                }
+            } catch(e) { console.error(e); }
+        }
 
-            const list = document.getElementById('phasesList');
-            list.innerHTML = '';
-            
-            if (events.length === 0) {
-                list.innerHTML = '<div style="padding:1rem; color:var(--text-secondary); text-align:center;">Waiting for agent activity...</div>';
+        async function sendMessage() {
+            if (isProcessing) return;
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const authHeader = authManager.getAuthHeader();
+            if (!authHeader) {
+                addMessage('agent', 'Error', 'Please login first.');
+                showAuth('login');
                 return;
             }
 
-            // Render Timeline Items
-            events.forEach((evt, index) => {
-                const item = document.createElement('div');
-                item.className = `timeline-item ${index === selectedEventIndex ? 'active' : ''}`;
-                item.onclick = () => selectEvent(index);
-                
-                const agent = (evt.agent_name || 'System').toUpperCase();
-                const type = (evt.event_type || 'Unknown').replace(/_/g, ' ').toUpperCase();
-                const status = evt.status || 'INFO';
-                
-                // Color code agents
-                let agentColor = 'var(--text-primary)';
-                if(agent === 'CEO') agentColor = '#a78bfa';
-                if(agent === 'PM') agentColor = '#60a5fa';
-                if(agent === 'CODER') agentColor = '#34d399';
-                if(agent === 'QA') agentColor = '#f472b6';
-                if(agent === 'DOCS') agentColor = '#fbbf24';
-                if(agent === 'RESEARCH') agentColor = '#22d3ee';
-                
-                // Status indicator color
-                let statusColor = 'var(--text-secondary)';
-                if(status === 'success') statusColor = 'var(--success)';
-                if(status === 'failed') statusColor = 'var(--error)';
-                if(status === 'running') statusColor = 'var(--accent-primary)';
+            // 1. Add User Message
+            addMessage('user', 'You', text);
+            input.value = '';
 
-                item.innerHTML = `
-                    <div class="timeline-item-header">
-                        <span class="agent-name" style="color:${agentColor}">${agent}</span>
-                        <span class="event-type">${type}</span>
-                    </div>
-                    <div style="font-size:0.85rem; color:var(--text-secondary); display:flex; align-items:center;">
-                        <span class="status-dot" style="background:${statusColor}"></span>
-                        ${evt.task_id ? `Task: ${evt.task_id.substring(0,8)}...` : 'System Event'}
+            // 2. Lock Input
+            document.getElementById('sendBtn').disabled = true;
+            isProcessing = true;
+            document.getElementById('statusIndicator').style.opacity = 1;
+            document.getElementById('statusIndicator').innerText = "STARTING AGENTS...";
+
+            // 3. Call Backend
+            try {
+                const resp = await fetch('/api/run', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': authHeader },
+                    body: JSON.stringify({
+                        request: text,
+                        options: { priority: 'high' }
+                    })
+                });
+                const data = await resp.json();
+
+                if (resp.ok) {
+                    addMessage('agent', 'System', "Agents deployed. Monitoring workflow...");
+                    startPolling(data.workflow_id);
+                } else {
+                    addMessage('agent', 'Error', "Failed to start: " + (data.error || 'Unknown error'));
+                    isProcessing = false;
+                    document.getElementById('sendBtn').disabled = false;
+                }
+            } catch (e) {
+                console.error(e);
+                addMessage('agent', 'Error', "Network connection failed.");
+                isProcessing = false;
+                document.getElementById('sendBtn').disabled = false;
+            }
+        }
+
+        function addMessage(type, sender, content) {
+            const history = document.getElementById('chatHistory');
+            const msg = document.createElement('div');
+            msg.className = `chat-message ${type}`;
+
+            // For agents, formatted; for user, plain text
+            let innerHTML = '';
+            if (type === 'agent') {
+                innerHTML = marked.parse(content);
+            } else {
+                innerHTML = content.replace(/\n/g, '<br>');
+            }
+
+            msg.innerHTML = `
+                <div class="sender-name">${sender}</div>
+                <div class="bubble">${innerHTML}</div>
+            `;
+            history.appendChild(msg);
+            history.scrollTop = history.scrollHeight;
+        }
+
+        function startPolling(wid) {
+            pollInterval = setInterval(async () => {
+                try {
+                    const authHeader = authManager.getAuthHeader();
+                    if (!authHeader) return; // Should probably stop polling
+
+                    const resp = await fetch(`/api/workflows/${wid}`, {
+                        headers: { 'Authorization': authHeader }
+                    });
+                    const data = await resp.json();
+                    updateUI(data);
+
+                    if(data.workflow.status === 'completed' || data.workflow.status === 'failed') {
+                        clearInterval(pollInterval);
+                        
+                        // Check for specific Clarification Needed state
+                        let statusMsg = `Workflow ${data.workflow.status}`;
+                        if (data.workflow.final_output && data.workflow.final_output.error === 'Clarification Needed') {
+                            statusMsg = "Workflow Paused: Clarification Needed.";
+                            if (data.workflow.final_output.questions) {
+                                addMessage('agent', 'System', `**Clarification Needed:**\n${data.workflow.final_output.questions.join('\n- ')}`);
+                            }
+                        } else {
+                            addMessage('agent', 'System', `${statusMsg}. Check tabs for details.`);
+                        }
+
+                        isProcessing = false;
+                        document.getElementById('sendBtn').disabled = false;
+                        document.getElementById('statusIndicator').innerText = data.workflow.status.toUpperCase();
+                        document.getElementById('statusIndicator').style.color = data.workflow.status === 'completed' ? 'var(--success)' : 'var(--error)';
+                    } else {
+                        document.getElementById('statusIndicator').innerText = "AGENTS WORKING...";
+                    }
+                } catch(e) { console.error(e); }
+            }, 1000);
+        }
+
+        // --- Logs ---
+        async function fetchLogs() {
+             const el = document.getElementById('logs-content');
+             el.innerText = 'Loading...';
+             try {
+                 const res = await fetch('/api/logs');
+                 const text = await res.text();
+                 el.innerText = text;
+                 el.scrollTop = el.scrollHeight;
+             } catch(e) {
+                 el.innerText = 'Failed to load logs.';
+             }
+        }
+
+        // --- UI Updates ---
+        function updateUI(data) {
+            const events = data.events || [];
+            if (events.length === eventCache.length) return;
+
+            // Find new events
+            const newEvents = events.slice(eventCache.length);
+            eventCache = events;
+
+            newEvents.forEach(evt => {
+                // Add important updates to Chat
+                const agent = (evt.agent_name || 'System').toUpperCase();
+                const type = evt.event_type;
+                const phase = evt.payload?.phase || '';
+
+                // Only show "Meaningful" updates in chat to avoid spam
+                if (type === 'task_started' || type === 'task_completed' || type === 'started' || type === 'failed') {
+                    const desc = getHumanReadableDesc(evt);
+                    addMessage('agent', agent, desc);
+                }
+            });
+
+            // Update Timeline
+            updateTimeline(events);
+
+            // Update Tabs (Full Re-render for simplicity/consistency)
+            renderTabs(events);
+        }
+
+        // --- Timeline Logic ---
+        function updateTimeline(events) {
+             const container = document.getElementById('timelineContainer');
+             if (!container) return;
+
+             // 1. Check if we have a PM Plan to build the dynamic structure
+             let planTasks = [];
+             const planEvent = events.find(e => e.event_type === 'task_completed' && (e.agent_name === 'pm' || e.payload?.phase === 'planning'));
+
+             if (planEvent && planEvent.payload && planEvent.payload.output && planEvent.payload.output.tasks) {
+                 planTasks = planEvent.payload.output.tasks;
+             }
+
+             // If no plan yet, show default static phases
+             if (planTasks.length === 0) {
+                 const phases = [
+                    { id: 'ceo-spec', name: 'Requirement Analysis' },
+                    { id: 'pm-planning', name: 'Strategic Planning' }
+                 ];
+                 renderTimelineItems(container, phases, events);
+                 return;
+             }
+
+             // If we have a plan, map tasks to timeline items
+             const timelineItems = [
+                 { id: 'ceo-spec', name: 'Requirement Analysis' },
+                 { id: 'pm-planning', name: 'Strategic Planning' },
+                 ...planTasks.map(t => ({ id: t.id, name: t.name, assigned: t.assigned_to })),
+                 { id: 'qa-validation', name: 'Final QA' },
+                 { id: 'ceo-finalize', name: 'Project Delivery' }
+             ];
+
+             renderTimelineItems(container, timelineItems, events);
+        }
+
+        function renderTimelineItems(container, items, events) {
+            let html = '';
+
+            items.forEach(item => {
+                // Determine status based on events
+                let status = 'pending';
+
+                // Check if this task/phase started or completed
+                // We look for events where task_id matches item.id OR phase matches item.id
+                const startEvt = events.find(e =>
+                    e.event_type === 'task_started' && (e.payload?.task_id === item.id || e.payload?.phase === item.id)
+                );
+                const endEvt = events.find(e =>
+                    e.event_type === 'task_completed' && (e.payload?.task_id === item.id || e.payload?.phase === item.id)
+                );
+
+                if (endEvt) status = 'completed';
+                else if (startEvt) status = 'active';
+
+                // Icon Logic
+                let icon = '';
+                if (status === 'completed') icon = '✓';
+                else if (status === 'active') icon = '⟳';
+                else icon = '○';
+
+                const className = `timeline-item ${status}`;
+
+                html += `
+                    <div class="${className}">
+                        <div class="timeline-dot">${icon}</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">${item.name}</div>
+                            <div class="timeline-meta">
+                                ${item.assigned ? `<span class="tag">${item.assigned}</span>` : ''}
+                                <span class="status-text">${status.toUpperCase()}</span>
+                            </div>
+                        </div>
                     </div>
                 `;
-                list.appendChild(item);
             });
-            
-            // Auto-select latest if nothing selected (or if initializing)
-            if (selectedEventIndex === -1 && events.length > 0) {
-                selectEvent(events.length - 1);
-            } else if (selectedEventIndex !== -1) {
-                // Refresh content of currently selected in case it updated
-                showDoc(selectedEventIndex);
+
+            container.innerHTML = html;
+        }
+
+        function getHumanReadableDesc(evt) {
+            const phase = evt.payload?.phase || '';
+            const status = evt.payload?.status || evt.status;
+
+            if (evt.event_type === 'task_started') {
+                return `**Started task**: ${phase} \n> ${evt.payload?.task_description || ''}`;
             }
+            if (evt.event_type === 'task_completed') {
+                return `**Completed task**: ${phase}`;
+            }
+            return `${evt.event_type.replace(/_/g, ' ')}`;
         }
 
-        function selectEvent(index) {
-            selectedEventIndex = index;
-            
-            // Update active state in sidebar
-            const items = document.querySelectorAll('.timeline-item');
-            items.forEach((item, i) => {
-                if (i === index) item.classList.add('active');
-                else item.classList.remove('active');
+        function renderTabs(events) {
+            const buckets = { 'planning': [], 'research': [], 'qa': [], 'code': [], 'docs': [] };
+
+            // Only show the LATEST meaningful output for each agent to avoid iteration spam
+            const latestOutputs = {};
+
+            events.forEach(evt => {
+                const a = (evt.agent_name || '').toLowerCase();
+                if (evt.event_type === 'task_completed' && evt.payload && evt.payload.output) {
+                    // Store latest output for this agent/task
+                    const key = `${a}_${evt.payload.task_id || 'main'}`;
+                    latestOutputs[key] = evt;
+                }
             });
-            
-            showDoc(index);
+
+            // If no completed events yet, maybe show started events?
+            // For now, let's just show completed outputs to keep it clean, as requested "don't iterate the output"
+
+            Object.values(latestOutputs).forEach(evt => {
+                const a = (evt.agent_name || '').toLowerCase();
+
+                if(a.includes('ceo') || a.includes('pm')) buckets.planning.push(evt);
+                else if(a.includes('research')) buckets.research.push(evt);
+                else if(a.includes('qa')) buckets.qa.push(evt);
+                else if(a.includes('coder')) buckets.code.push(evt);
+                else if(a.includes('doc')) buckets.docs.push(evt);
+            });
+
+            Object.keys(buckets).forEach(k => {
+                const el = document.getElementById(`tab-${k}`);
+                if (!el) return;
+
+                if(buckets[k].length > 0) {
+                     el.innerHTML = buckets[k].map(evt => renderEventCard(evt)).join('');
+                } else {
+                     if(!el.querySelector('.empty-state')) {
+                         el.innerHTML = '<div class="empty-state">No ' + k + ' generated yet.</div>';
+                     }
+                }
+            });
         }
 
-        function showDoc(index) {
-            const evt = allEvents[index];
-            if (!evt) return;
 
-            const docViewer = document.getElementById('docViewer');
-            const docTitle = document.getElementById('docTitle');
-            const docMeta = document.getElementById('docMeta');
-            
-            const agent = (evt.agent_name || 'System').toUpperCase();
-            const type = (evt.event_type || 'Unknown').replace(/_/g, ' ');
-            
-            docTitle.innerText = `${agent}: ${type}`;
-            docMeta.innerText = `Task ID: ${evt.task_id || 'N/A'} • Status: ${evt.status || 'Info'}`;
-            
+        function renderEventCard(evt) {
+            // Render full details for tabs
+            const agent = evt.agent_name?.toUpperCase() || 'SYSTEM';
             let content = '';
-            
-            // Determine best content to show
-            if (evt.payload) {
-                // 1. Check for 'output' (our new field)
-                if (evt.payload.output) {
-                    content = formatOutput(evt.payload.output);
-                } 
-                // 2. Fallback to other meaningful fields
-                else if (evt.payload.project_spec) {
-                    content = formatOutput(evt.payload.project_spec);
-                }
-                else if (evt.payload.request) {
-                    content = `## Request\n\n${evt.payload.request}`;
-                }
-                else if (evt.payload.task_description) {
-                    content = `## Task Description\n\n${evt.payload.task_description}`;
-                }
-                else if (evt.payload.error) {
-                    content = `## Error\n\n\`\`\`\n${evt.payload.error}\n\`\`\``;
-                }
-                else {
-                    // Default JSON dump
-                    content = `\`\`\`json\n${JSON.stringify(evt.payload, null, 2)}\n\`\`\``;
-                }
+
+            // Logic to extract valuable content to show
+            const p = evt.payload || {};
+
+            // Try to get the actual output data
+            let dataToRender = p.output || p;
+
+            // Check if we have meaningful content to display
+            if (dataToRender.project_spec || dataToRender.files || dataToRender.summary ||
+                dataToRender.tasks || dataToRender.findings || dataToRender.validation_results ||
+                dataToRender.readme) {
+                content = formatContent(dataToRender);
+            } else if (p.content) {
+                content = marked.parse(p.content);
+            } else if (dataToRender.error) {
+                // Show errors prominently
+                content = `<div style="color: var(--error); padding: 1rem; background: rgba(255,0,0,0.1); border-radius: 6px;">
+                    <strong>Error:</strong> ${escapeHtml(dataToRender.error)}
+                    ${dataToRender.raw_content ? 
+                        `<div style="margin-top:10px; border-top:1px solid rgba(255,0,0,0.2); padding-top:10px;">
+                            <small style="opacity:0.7">Received Raw Content:</small>
+                            <pre style="white-space:pre-wrap; font-size:0.8rem; color:var(--text-secondary); max-height:300px; overflow-y:auto;">${escapeHtml(dataToRender.raw_content)}</pre>
+                        </div>` 
+                        : ''}
+                </div>`;
             } else {
-                content = '_No content available_';
+                // Try fallback to just dumping payload if it has meaningful keys
+                const meaningfulKeys = Object.keys(p).filter(k =>
+                    !['task_id', 'agent', 'status', 'confidence', 'meta', 'phase', 'event_type'].includes(k)
+                );
+                if(meaningfulKeys.length > 0) {
+                    content = `<div class="json-pretty">${jsonToHtml(p)}</div>`;
+                } else {
+                    return ''; // Skip empty events
+                }
             }
-            
-            docViewer.innerHTML = marked.parse(content);
+
+            return `
+                <div style="margin-bottom:2rem; border-bottom:1px solid #333; padding-bottom:1rem;">
+                    <h3 style="margin-top:0; font-size:1rem; color:var(--accent-primary);">${agent}: ${evt.event_type}</h3>
+                    ${content}
+                </div>
+            `;
         }
 
-        function formatOutput(output) {
-            if (typeof output === 'string') return output;
-            
-            if (typeof output === 'object') {
-                // Try to extract markdown-like fields
-                if (output.content) return output.content;
-                if (output.readme) return output.readme;
-                if (output.summary) return `## Summary\n\n${output.summary}`;
-                
-                // Special handling for Code files
-                if (output.files) {
-                    return output.files.map(f => `### 📄 ${f.path}\n\`\`\`${f.language || ''}\n${f.content}\n\`\`\``).join('\n\n');
-                }
-                
-                // Formatting specific agent output structures
-                // CEO Spec
-                if (output.project_name) {
-                    let md = `# ${output.project_name}\n\n${output.description}\n\n## Data Structures\n`;
-                    if(output.data_structures) {
-                         output.data_structures.forEach(ds => md += `- **${ds.name}**: ${ds.description}\n`);
-                    }
-                    return md + `\n\`\`\`json\n${JSON.stringify(output, null, 2)}\n\`\`\``; 
-                }
+        function formatContent(data) {
+             if (!data) return '';
+             if (typeof data === 'string') return marked.parse(data);
+             if (data.content) return marked.parse(data.content);
+             if (data.readme) return marked.parse(data.readme);
 
-                return `\`\`\`json\n${JSON.stringify(output, null, 2)}\n\`\`\``;
+             // Files rendering
+             if (data.files) {
+                 return data.files.map(f => `
+                    <div style="background:#111; margin-top:1rem; border-radius:6px; overflow:hidden; border:1px solid #333;">
+                        <div style="padding:0.5rem; background:#222; font-family:monospace; font-size:0.8rem; display:flex; justify-content:space-between;">
+                            <span>${f.path}</span>
+                            <span style="opacity:0.5">FILE</span>
+                        </div>
+                        <pre style="margin:0; padding:1rem; overflow-x:auto;"><code>${escapeHtml(f.content)}</code></pre>
+                    </div>
+                 `).join('');
+             }
+
+             // Research/Summary rendering
+             if (data.summary) {
+                 let html = marked.parse(data.summary);
+
+                 // Add findings if present
+                 if (data.findings && Array.isArray(data.findings)) {
+                     html += '<h4>Key Findings</h4><div style="margin-left: 1rem;">';
+                     data.findings.forEach(f => {
+                         html += `<div style="margin-bottom: 1rem; padding: 0.5rem; background: rgba(255,255,255,0.05); border-radius: 4px;">
+                             <strong style="color: var(--accent-primary);">${f.topic || 'Finding'}</strong><br/>
+                             ${f.content || ''}<br/>
+                             ${f.relevance ? `<em style="color: var(--text-secondary); font-size: 0.9rem;">Relevance: ${f.relevance}</em>` : ''}
+                         </div>`;
+                     });
+                     html += '</div>';
+                 }
+
+                 // Add citations
+                 if (data.citations) {
+                     html += '<h4>Citations</h4><ul>';
+                     data.citations.forEach(c => {
+                         html += `<li><a href="${c.reference || c.url || '#'}" target="_blank" style="color:var(--accent-primary)">${c.source}</a></li>`;
+                     });
+                     html += '</ul>';
+                 }
+
+                 // Add recommendations if present
+                 if (data.recommendations && Array.isArray(data.recommendations)) {
+                     html += '<h4>Recommendations</h4><ul>';
+                     data.recommendations.forEach(r => {
+                         html += `<li>${r}</li>`;
+                     });
+                     html += '</ul>';
+                 }
+
+                 return html;
+             }
+
+             // Validation results (QA)
+             if (data.validation_results && Array.isArray(data.validation_results)) {
+                 let html = '<h4>Validation Results</h4>';
+                 data.validation_results.forEach(item => {
+                     const status = item.status === 'pass' ? "✅" : "❌";
+                     const test = item.test || 'Check';
+                     const msg = item.message || '';
+                     html += `<div style="margin-bottom: 0.5rem;">
+                         <span style="font-size: 1.2rem;">${status}</span>
+                         <strong>${test}</strong>: ${msg}
+                     </div>`;
+                 });
+                 if (data.approval_status) {
+                     html += `<div style="margin-top: 1rem; padding: 0.5rem; background: ${data.approval_status === 'approved' ? 'rgba(0,255,0,0.1)' : 'rgba(255,0,0,0.1)'}; border-radius: 4px;">
+                         <strong>Status:</strong> ${data.approval_status.toUpperCase()}
+                     </div>`;
+                 }
+                 return html;
+             }
+
+             // For any other JSON object, pretty print it
+             return `<div class="json-pretty">${jsonToHtml(data)}</div>`;
+        }
+
+        function jsonToHtml(obj) {
+            if (typeof obj !== 'object' || obj === null) {
+                return String(obj);
             }
-            
-            return String(output);
+
+            if (Array.isArray(obj)) {
+                if (obj.length === 0) return '[]';
+                let html = '<ul style="padding-left: 20px; list-style-type: none; border-left: 2px solid #333; margin: 4px 0;">';
+                obj.forEach(item => {
+                    html += `<li style="margin-bottom: 4px;">${jsonToHtml(item)}</li>`;
+                });
+                html += '</ul>';
+                return html;
+            }
+
+            let html = '<div style="padding-left: 10px; border-left: 2px solid #555; margin: 4px 0;">';
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    let val = obj[key];
+                    let displayVal = jsonToHtml(val);
+                    html += `<div style="margin-bottom: 4px;">
+                        <span style="color: var(--accent-primary); font-weight: bold;">${key}:</span>
+                        <span style="color: var(--text-secondary);">${displayVal}</span>
+                    </div>`;
+                }
+            }
+            html += '</div>';
+            return html;
+        }
+
+        function escapeHtml(text) {
+             if (!text) return '';
+             return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#039;").replace(/"/g, "&quot;");
+        }
+
+        function switchTab(id, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
+
+            btn.classList.add('active');
+            document.getElementById(`tab-${id}`).style.display = 'block';
+
+            if(id === 'logs') {
+                fetchLogs();
+            }
         }
     </script>
+    <style>
+        /* Login Modal */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #1e1e1e;
+            margin: 15% auto;
+            padding: 2rem;
+            border: 1px solid #333;
+            width: 300px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover { color: #fff; }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background: var(--accent-primary);
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { opacity: 0.9; }
+    </style>
 </body>
 </html>

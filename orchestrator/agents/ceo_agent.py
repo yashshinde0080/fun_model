@@ -9,13 +9,13 @@ from orchestrator.agents.base_agent import BaseAgent
 
 class CEOAgent(BaseAgent):
     """CEO Agent for project specification and approval."""
-    
+
     AGENT_NAME = "ceo"
-    
+
     def _get_template_params(self, task_id: str, phase: str, inputs: Dict[str, Any]) -> Dict[str, Any]:
         """Prepare parameters for CEO prompt."""
         params = super()._get_template_params(task_id, phase, inputs)
-        
+
         # Add phase instructions
         if phase == 'specification':
             params['phase_instructions'] = (
@@ -30,11 +30,11 @@ class CEOAgent(BaseAgent):
             )
         else:
             params['phase_instructions'] = "Perform the task as requested."
-            
+
         # Add additional context if available
         if 'all_outputs' in inputs:
             params['additional_context'] = f"All Outputs:\n{json.dumps(inputs['all_outputs'], indent=2)}"
         elif 'qa_report' in inputs:
             params['additional_context'] = f"QA Report:\n{json.dumps(inputs['qa_report'], indent=2)}"
-        
+
         return params

@@ -13,13 +13,13 @@ logger = logging.getLogger(__name__)
 
 class MemoryStore:
     """Local memory store using SQLite."""
-    
+
     def __init__(self, db_path: str = "storage/data/memory.db"):
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_db()
         logger.info(f"Memory store initialized: {db_path}")
-    
+
     def _init_db(self):
         with sqlite3.connect(self.db_path) as conn:
             conn.executescript("""
@@ -37,7 +37,7 @@ class MemoryStore:
                     created_at TEXT
                 );
             """)
-    
+
     def save_workflow_state(self, workflow_id: str, state: Dict[str, Any]) -> None:
         from datetime import datetime, timezone
         now = datetime.now(timezone.utc).isoformat()
@@ -46,7 +46,7 @@ class MemoryStore:
                 "INSERT OR REPLACE INTO workflow_state VALUES (?, ?, ?, ?)",
                 (workflow_id, json.dumps(state), now, now)
             )
-    
+
     def get_workflow_state(self, workflow_id: str) -> Optional[Dict[str, Any]]:
         with sqlite3.connect(self.db_path) as conn:
             row = conn.execute(
@@ -54,24 +54,24 @@ class MemoryStore:
                 (workflow_id,)
             ).fetchone()
             return json.loads(row[0]) if row else None
-    
+
     def add_conversation_message(self, workflow_id: str, agent: str, role: str, content: str) -> None:
         """Add a message to conversation history."""
         from datetime import datetime, timezone
         now = datetime.now(timezone.utc).isoformat()
-        
+
         context = json.dumps({
             'role': role,
             'content': content,
             'timestamp': now
         })
-        
+
         with sqlite3.connect(self.db_path) as conn:
             conn.execute(
                 "INSERT INTO agent_context (workflow_id, agent_name, context, created_at) VALUES (?, ?, ?, ?)",
                 (workflow_id, agent, context, now)
             )
-            
+
     def get_conversation_history(self, workflow_id: str, agent: str) -> List[Dict[str, Any]]:
         """Get conversation history for an agent."""
         with sqlite3.connect(self.db_path) as conn:

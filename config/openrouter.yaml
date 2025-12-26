@@ -1,26 +1,25 @@
 # openrouter config
 openrouter:
   base_url: "https://openrouter.ai/api/v1"
-  base_url: "https://openrouter.ai/api/v1"
   # api_key is now defined per-agent in agents.yaml
-  
+
   # Request defaults
   defaults:
     stream: false
     response_format:
       type: "json_object"
-      
+
   # Rate limiting
   rate_limit:
     requests_per_minute: 60
     tokens_per_minute: 100000
-    
+
   # Retry configuration
   retry:
     max_attempts: 3
     backoff_factor: 2
     initial_delay_ms: 1000
-    
+
   # Model fallbacks
   fallbacks:
     "openai/gpt-oss-120b:free": "openai/gpt-oss-120b:free"

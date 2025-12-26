@@ -118,3 +118,40 @@
 13:37:09 | INFO     | Mock Notifier initialized
 09:21:35 | WARNING  | Failed to initialize Supabase Auth: cannot import name 'SupabaseAuth' from 'app.auth' (D:\fun_model\app\auth.py). Falling back to Mock.
 09:21:35 | INFO     | Using MOCK Auth
+11:09:19 | INFO     | Using MOCK Auth
+11:12:09 | INFO     | Using MOCK Auth
+11:13:18 | INFO     | Using MOCK Auth
+11:13:18 | INFO     | Database initialized: /app/storage/data/local.db
+11:13:18 | INFO     | Mock Auth initialized
+11:13:18 | INFO     | Using MOCK LLM
+11:13:18 | INFO     | Mock LLM Client initialized (no API key needed)
+11:13:18 | INFO     | Mock Notifier initialized
+11:13:18 | INFO     | Loading config from: /app/config
+11:13:18 | INFO     | Loaded agents.yaml
+11:13:18 | INFO     | Loaded openrouter.yaml
+11:13:18 | INFO     | Orchestrator initialized
+11:13:18 | INFO     | Starting Flask server on http://localhost:5000
+11:13:19 | INFO     | Using MOCK Auth
+11:13:19 | INFO     | Database initialized: /app/storage/data/local.db
+11:13:19 | INFO     | Mock Auth initialized
+11:13:19 | INFO     | Using MOCK LLM
+11:13:19 | INFO     | Mock LLM Client initialized (no API key needed)
+11:13:19 | INFO     | Mock Notifier initialized
+11:13:19 | INFO     | Loading config from: /app/config
+11:13:19 | INFO     | Loaded agents.yaml
+11:13:19 | INFO     | Loaded openrouter.yaml
+11:13:19 | INFO     | Orchestrator initialized
+11:13:19 | INFO     | Starting Flask server on http://localhost:5000
+11:13:19 | WARNING  |  * Debugger is active!
+16:11:18 | INFO     | Using MOCK Auth
+16:11:18 | INFO     | Database initialized: /app/storage/data/local.db
+16:11:18 | INFO     | Mock Auth initialized
+16:11:18 | INFO     | Using MOCK LLM
+16:11:18 | INFO     | Mock LLM Client initialized (no API key needed)
+16:11:18 | INFO     | Mock Notifier initialized
+16:11:18 | INFO     | Loading config from: /app/config
+16:11:18 | INFO     | Loaded agents.yaml
+16:11:18 | INFO     | Loaded openrouter.yaml
+16:11:18 | INFO     | Orchestrator initialized
+16:11:18 | INFO     | Starting Flask server on http://localhost:5000
+16:11:18 | WARNING  |  * Debugger is active!

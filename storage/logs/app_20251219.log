@@ -1,0 +1,77 @@
+2025-12-19 22:58:17 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-19 22:58:17 | INFO     | multiagent           | Log files: D:\try\storage\logs\app_20251219.log
+2025-12-19 22:58:17 | INFO     | multiagent           | ============================================================
+2025-12-19 22:58:17 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-19 22:58:17 | INFO     | multiagent           | ============================================================
+2025-12-19 22:58:17 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-19 22:58:17 | INFO     | multiagent           | Project root: D:\try
+2025-12-19 22:58:17 | INFO     | multiagent           | Start time: 2025-12-19T17:28:17.705216+00:00
+2025-12-19 22:58:17 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-19 22:58:17 | INFO     | multiagent.config    | Environment: development
+2025-12-19 22:58:17 | INFO     | multiagent.config    | Debug mode: True
+2025-12-19 22:58:17 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-19 22:58:28 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-19 22:58:30 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-19 22:58:30 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-19 22:58:30 | INFO     | multiagent.startup   | [INFO] SMTP not configured (notifications disabled)
+2025-12-19 22:58:30 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-19 22:58:30 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-19 22:58:30 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-19 22:58:30 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-19 22:58:30 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-19 22:58:30 | INFO     | orchestrator.tools.notifier | SMTP notifier disabled (no configuration)
+2025-12-19 22:58:30 | INFO     | orchestrator.config  | Loading config from: D:\try\config
+2025-12-19 22:58:30 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-19 22:58:30 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-19 22:58:31 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-19 22:58:31 | INFO     | app                  | Flask application initialized successfully
+2025-12-19 22:58:31 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-19 22:58:31 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-19 22:58:31 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-19 22:58:31 | INFO     | multiagent           | Debug mode: True
+2025-12-19 22:58:31 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-19 22:58:31 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-19 22:58:31 | INFO     | multiagent           | Log files: D:\try\storage\logs\app_20251219.log
+2025-12-19 22:58:31 | INFO     | multiagent           | ============================================================
+2025-12-19 22:58:31 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-19 22:58:31 | INFO     | multiagent           | ============================================================
+2025-12-19 22:58:31 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-19 22:58:31 | INFO     | multiagent           | Project root: D:\try
+2025-12-19 22:58:31 | INFO     | multiagent           | Start time: 2025-12-19T17:28:31.387086+00:00
+2025-12-19 22:58:31 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-19 22:58:31 | INFO     | multiagent.config    | Environment: development
+2025-12-19 22:58:31 | INFO     | multiagent.config    | Debug mode: True
+2025-12-19 22:58:31 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-19 22:58:32 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-19 22:58:32 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-19 22:58:32 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-19 22:58:32 | INFO     | multiagent.startup   | [INFO] SMTP not configured (notifications disabled)
+2025-12-19 22:58:32 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-19 22:58:33 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-19 22:58:33 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-19 22:58:33 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-19 22:58:33 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-19 22:58:33 | INFO     | orchestrator.tools.notifier | SMTP notifier disabled (no configuration)
+2025-12-19 22:58:33 | INFO     | orchestrator.config  | Loading config from: D:\try\config
+2025-12-19 22:58:33 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-19 22:58:33 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-19 22:58:33 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-19 22:58:33 | INFO     | app                  | Flask application initialized successfully
+2025-12-19 22:58:33 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-19 22:58:33 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-19 22:58:33 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-19 22:58:33 | INFO     | multiagent           | Debug mode: True
+2025-12-19 22:58:33 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-19 22:58:33 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-19 22:59:11 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-19 22:59:11 | INFO     | multiagent           | Application shutdown complete
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-19 22:59:11 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-19 22:59:11 | INFO     | multiagent           | Application shutdown complete
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-19 22:59:11 | INFO     | multiagent.cleanup   | Cleanup completed successfully

@@ -15,7 +15,7 @@ _config_cache: Optional[Dict[str, Any]] = None
 def load_config(config_dir: str = "config") -> Dict[str, Any]:
     """Load all configuration files."""
     global _config_cache
-    
+
     config = {
         'agents': {
             'ceo': {'enabled': True, 'model': 'anthropic/claude-3-sonnet', 'temperature': 0.7, 'max_tokens': 4096},
@@ -34,24 +34,41 @@ def load_config(config_dir: str = "config") -> Dict[str, Any]:
             'parallel_execution': False
         }
     }
-    
+
     # Try to load YAML config if available
     try:
         import yaml
-        config_path = Path(config_dir)
-        
+        # Resolve config_dir relative to project root (assuming this file is in orchestrator/)
+        project_root = Path(__file__).parent.parent
+        config_path = project_root / config_dir
+
+        logger.info(f"Loading config from: {config_path}")
+
         for filename in ['agents.yaml', 'openrouter.yaml']:
             filepath = config_path / filename
             if filepath.exists():
                 with open(filepath, 'r') as f:
                     file_config = yaml.safe_load(f)
                     if file_config:
+                        # Deep update for agents
+                        if 'agents' in file_config:
+                            for agent, settings in file_config['agents'].items():
+                                if agent in config['agents']:
+                                    config['agents'][agent].update(settings)
+                                else:
+                                    config['agents'][agent] = settings
+                            # Remove agents from root to avoid duplicate merge
+                            del file_config['agents']
+
                         config.update(file_config)
+                logger.info(f"Loaded {filename}")
+            else:
+                logger.debug(f"Config file not found: {filepath}")
     except ImportError:
-        logger.debug("PyYAML not installed, using default config")
+        logger.warning("PyYAML not installed, using default config")
     except Exception as e:
         logger.warning(f"Could not load config files: {e}")
-    
+
     _config_cache = config
     return config
 

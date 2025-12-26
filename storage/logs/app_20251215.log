@@ -1,0 +1,226 @@
+2025-12-15 12:30:28 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-15 12:30:28 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251215.log
+2025-12-15 12:30:28 | INFO     | multiagent           | ============================================================
+2025-12-15 12:30:28 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-15 12:30:28 | INFO     | multiagent           | ============================================================
+2025-12-15 12:30:28 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-15 12:30:28 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-15 12:30:28 | INFO     | multiagent           | Start time: 2025-12-15T07:00:28.605399+00:00
+2025-12-15 12:30:28 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-15 12:30:28 | INFO     | multiagent.config    | Environment: development
+2025-12-15 12:30:28 | INFO     | multiagent.config    | Debug mode: True
+2025-12-15 12:30:28 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-15 12:30:31 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-15 12:30:31 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-15 12:30:31 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-15 12:30:31 | INFO     | multiagent.startup   | [INFO] SMTP not configured (notifications disabled)
+2025-12-15 12:30:31 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-15 12:30:32 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-15 12:30:32 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-15 12:30:32 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-15 12:30:32 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-15 12:30:32 | INFO     | orchestrator.tools.notifier | SMTP notifier disabled (no configuration)
+2025-12-15 12:30:32 | INFO     | orchestrator.config  | Loading config from: D:\fun_model\config
+2025-12-15 12:30:32 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-15 12:30:32 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-15 12:30:32 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-15 12:30:32 | INFO     | app                  | Flask application initialized successfully
+2025-12-15 12:30:32 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-15 12:30:32 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:30:32 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-15 12:30:32 | INFO     | multiagent           | Debug mode: True
+2025-12-15 12:30:32 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:30:32 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-15 12:30:32 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251215.log
+2025-12-15 12:30:32 | INFO     | multiagent           | ============================================================
+2025-12-15 12:30:32 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-15 12:30:32 | INFO     | multiagent           | ============================================================
+2025-12-15 12:30:32 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-15 12:30:32 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-15 12:30:32 | INFO     | multiagent           | Start time: 2025-12-15T07:00:32.931454+00:00
+2025-12-15 12:30:32 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-15 12:30:32 | INFO     | multiagent.config    | Environment: development
+2025-12-15 12:30:32 | INFO     | multiagent.config    | Debug mode: True
+2025-12-15 12:30:32 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-15 12:30:34 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-15 12:30:34 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-15 12:30:34 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-15 12:30:34 | INFO     | multiagent.startup   | [INFO] SMTP not configured (notifications disabled)
+2025-12-15 12:30:34 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-15 12:30:35 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-15 12:30:35 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-15 12:30:35 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-15 12:30:35 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-15 12:30:35 | INFO     | orchestrator.tools.notifier | SMTP notifier disabled (no configuration)
+2025-12-15 12:30:35 | INFO     | orchestrator.config  | Loading config from: D:\fun_model\config
+2025-12-15 12:30:35 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-15 12:30:35 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-15 12:30:35 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-15 12:30:35 | INFO     | app                  | Flask application initialized successfully
+2025-12-15 12:30:35 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-15 12:30:35 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:30:35 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-15 12:30:35 | INFO     | multiagent           | Debug mode: True
+2025-12-15 12:30:35 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:30:35 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-15 12:30:55 | INFO     | app.routes           | Starting async workflow d3d8f056-02ef-438d-9cd8-ad471c00c873
+2025-12-15 12:30:55 | INFO     | orchestrator.orchestrator | [d3d8f056-02ef-438d-9cd8-ad471c00c873] Phase 1: CEO Specification
+2025-12-15 12:30:55 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:31:00 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:31:01 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:31:01 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['project_spec', 'objectives', 'constraints', 'success_criteria']
+2025-12-15 12:31:01 | INFO     | orchestrator.orchestrator | [d3d8f056-02ef-438d-9cd8-ad471c00c873] Phase 2: PM Planning
+2025-12-15 12:31:01 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:31:06 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:31:07 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:31:07 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['tasks', 'dependencies', 'execution_order', 'timeline_estimate', 'risk_assessment']
+2025-12-15 12:31:07 | INFO     | orchestrator.orchestrator | [d3d8f056-02ef-438d-9cd8-ad471c00c873] Phase 3: Task Execution
+2025-12-15 12:31:12 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:31:17 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:31:18 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:31:18 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['summary', 'findings', 'citations', 'recommendations']
+2025-12-15 12:31:23 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:31:28 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:31:29 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:31:29 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['files', 'run_instructions', 'dependencies']
+2025-12-15 12:31:29 | INFO     | orchestrator.orchestrator | [d3d8f056-02ef-438d-9cd8-ad471c00c873] Phase 4: QA Validation
+2025-12-15 12:31:29 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:31:34 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:31:35 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:31:35 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['validation_results', 'approval_status']
+2025-12-15 12:31:35 | INFO     | orchestrator.orchestrator | [d3d8f056-02ef-438d-9cd8-ad471c00c873] Phase 5: Documentation
+2025-12-15 12:31:35 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:31:40 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:31:40 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:31:40 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['readme', 'summary', 'release_notes']
+2025-12-15 12:31:40 | INFO     | orchestrator.orchestrator | [d3d8f056-02ef-438d-9cd8-ad471c00c873] Phase 6: CEO Finalization
+2025-12-15 12:31:40 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:31:45 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:31:46 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:31:46 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['project_spec', 'objectives', 'constraints', 'success_criteria']
+2025-12-15 12:32:08 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-15 12:32:08 | INFO     | multiagent           | Application shutdown complete
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-15 12:32:08 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-15 12:32:08 | INFO     | multiagent           | Application shutdown complete
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:32:08 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-15 12:32:11 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-15 12:32:11 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251215.log
+2025-12-15 12:32:11 | INFO     | multiagent           | ============================================================
+2025-12-15 12:32:11 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-15 12:32:11 | INFO     | multiagent           | ============================================================
+2025-12-15 12:32:11 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-15 12:32:11 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-15 12:32:11 | INFO     | multiagent           | Start time: 2025-12-15T07:02:11.282898+00:00
+2025-12-15 12:32:11 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-15 12:32:11 | INFO     | multiagent.config    | Environment: development
+2025-12-15 12:32:11 | INFO     | multiagent.config    | Debug mode: True
+2025-12-15 12:32:11 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-15 12:32:12 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-15 12:32:13 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-15 12:32:13 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-15 12:32:13 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-15 12:32:14 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-15 12:32:14 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-15 12:32:14 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-15 12:32:14 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-15 12:32:14 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-15 12:32:14 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-15 12:32:14 | INFO     | orchestrator.config  | Loading config from: D:\fun_model\config
+2025-12-15 12:32:14 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-15 12:32:14 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-15 12:32:14 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-15 12:32:14 | INFO     | app                  | Flask application initialized successfully
+2025-12-15 12:32:14 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-15 12:32:14 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:32:14 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-15 12:32:14 | INFO     | multiagent           | Debug mode: True
+2025-12-15 12:32:14 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:32:14 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-15 12:32:14 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251215.log
+2025-12-15 12:32:14 | INFO     | multiagent           | ============================================================
+2025-12-15 12:32:14 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-15 12:32:14 | INFO     | multiagent           | ============================================================
+2025-12-15 12:32:14 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-15 12:32:14 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-15 12:32:14 | INFO     | multiagent           | Start time: 2025-12-15T07:02:14.976236+00:00
+2025-12-15 12:32:14 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-15 12:32:14 | INFO     | multiagent.config    | Environment: development
+2025-12-15 12:32:14 | INFO     | multiagent.config    | Debug mode: True
+2025-12-15 12:32:14 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-15 12:32:16 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-15 12:32:17 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-15 12:32:17 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-15 12:32:17 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-15 12:32:17 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-15 12:32:18 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-15 12:32:18 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-15 12:32:18 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-15 12:32:18 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-15 12:32:18 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-15 12:32:18 | INFO     | orchestrator.config  | Loading config from: D:\fun_model\config
+2025-12-15 12:32:18 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-15 12:32:18 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-15 12:32:18 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-15 12:32:18 | INFO     | app                  | Flask application initialized successfully
+2025-12-15 12:32:18 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-15 12:32:18 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:32:18 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-15 12:32:18 | INFO     | multiagent           | Debug mode: True
+2025-12-15 12:32:18 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-15 12:32:18 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-15 12:32:44 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: b8a8a610-4c49-4ddd-aad4-a39e48967e9f
+2025-12-15 12:32:44 | INFO     | app.routes           | Starting async workflow b8a8a610-4c49-4ddd-aad4-a39e48967e9f
+2025-12-15 12:32:44 | INFO     | orchestrator.orchestrator | [b8a8a610-4c49-4ddd-aad4-a39e48967e9f] Phase 1: CEO Specification
+2025-12-15 12:32:44 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:32:49 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:32:51 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:32:51 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['project_spec', 'objectives', 'constraints', 'success_criteria']
+2025-12-15 12:32:51 | INFO     | orchestrator.orchestrator | [b8a8a610-4c49-4ddd-aad4-a39e48967e9f] Phase 2: PM Planning
+2025-12-15 12:32:51 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:32:56 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:32:57 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:32:57 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['tasks', 'dependencies', 'execution_order', 'timeline_estimate', 'risk_assessment']
+2025-12-15 12:32:57 | INFO     | orchestrator.orchestrator | [b8a8a610-4c49-4ddd-aad4-a39e48967e9f] Phase 3: Task Execution
+2025-12-15 12:33:02 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:33:07 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:33:07 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:33:07 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['summary', 'findings', 'citations', 'recommendations']
+2025-12-15 12:33:13 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:33:18 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:33:18 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:33:18 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['files', 'run_instructions', 'dependencies']
+2025-12-15 12:33:19 | INFO     | orchestrator.orchestrator | [b8a8a610-4c49-4ddd-aad4-a39e48967e9f] Phase 4: QA Validation
+2025-12-15 12:33:19 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:33:24 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:33:24 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:33:24 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['validation_results', 'approval_status']
+2025-12-15 12:33:24 | INFO     | orchestrator.orchestrator | [b8a8a610-4c49-4ddd-aad4-a39e48967e9f] Phase 5: Documentation
+2025-12-15 12:33:25 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:33:30 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:33:30 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:33:30 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['readme', 'summary', 'release_notes']
+2025-12-15 12:33:30 | INFO     | orchestrator.orchestrator | [b8a8a610-4c49-4ddd-aad4-a39e48967e9f] Phase 6: CEO Finalization
+2025-12-15 12:33:30 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-15 12:33:35 | INFO     | orchestrator.llm_client | Sending request to mistralai/mistral-7b-instruct:free (Attempt 1/5)
+2025-12-15 12:33:35 | WARNING  | orchestrator.llm_client | 401 Unauthorized from OpenRouter. Falling back to MOCK response for demo.
+2025-12-15 12:33:35 | INFO     | orchestrator.llm_client | Successfully parsed JSON from mistralai/mistral-7b-instruct:free. Keys: ['project_spec', 'objectives', 'constraints', 'success_criteria']
+2025-12-15 12:33:39 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Completed: b8a8a610-4c49-4ddd-aad4-a39e48967e9f
+2025-12-15 12:35:47 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-15 12:35:47 | INFO     | multiagent           | Application shutdown complete
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-15 12:35:47 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-15 12:35:47 | INFO     | multiagent           | Application shutdown complete
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-15 12:35:47 | INFO     | multiagent.cleanup   | Cleanup completed successfully

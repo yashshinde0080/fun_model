@@ -1,0 +1,488 @@
+2025-12-17 15:18:58 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-17 15:18:58 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251217.log
+2025-12-17 15:18:58 | INFO     | multiagent           | ============================================================
+2025-12-17 15:18:58 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-17 15:18:58 | INFO     | multiagent           | ============================================================
+2025-12-17 15:18:58 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-17 15:18:58 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-17 15:18:58 | INFO     | multiagent           | Start time: 2025-12-17T09:48:58.552718+00:00
+2025-12-17 15:18:58 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-17 15:18:58 | INFO     | multiagent.config    | Environment: development
+2025-12-17 15:18:58 | INFO     | multiagent.config    | Debug mode: True
+2025-12-17 15:18:58 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-17 15:19:01 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-17 15:19:02 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-17 15:19:02 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-17 15:19:03 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-17 15:19:03 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-17 15:19:04 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-17 15:19:04 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-17 15:19:04 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-17 15:19:04 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-17 15:19:04 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-17 15:19:04 | INFO     | orchestrator.config  | Loading config from: D:\fun_model\config
+2025-12-17 15:19:05 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-17 15:19:05 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-17 15:19:05 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-17 15:19:05 | INFO     | app                  | Flask application initialized successfully
+2025-12-17 15:19:05 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-17 15:19:05 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 15:19:05 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-17 15:19:05 | INFO     | multiagent           | Debug mode: True
+2025-12-17 15:19:05 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 15:19:07 | INFO     | multiagent           | Logging initialized at level INFO
+2025-12-17 15:19:07 | INFO     | multiagent           | Log files: D:\fun_model\storage\logs\app_20251217.log
+2025-12-17 15:19:07 | INFO     | multiagent           | ============================================================
+2025-12-17 15:19:07 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-17 15:19:07 | INFO     | multiagent           | ============================================================
+2025-12-17 15:19:07 | INFO     | multiagent           | Python version: 3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+2025-12-17 15:19:07 | INFO     | multiagent           | Project root: D:\fun_model
+2025-12-17 15:19:07 | INFO     | multiagent           | Start time: 2025-12-17T09:49:07.294722+00:00
+2025-12-17 15:19:07 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-17 15:19:07 | INFO     | multiagent.config    | Environment: development
+2025-12-17 15:19:07 | INFO     | multiagent.config    | Debug mode: True
+2025-12-17 15:19:07 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-17 15:19:12 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-17 15:19:12 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-17 15:19:12 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-17 15:19:13 | INFO     | multiagent.startup   | [OK] SMTP server reachable
+2025-12-17 15:19:13 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-17 15:19:15 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-17 15:19:15 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-17 15:19:15 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-17 15:19:15 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-17 15:19:15 | INFO     | orchestrator.tools.notifier | SMTP notifier initialized
+2025-12-17 15:19:16 | INFO     | orchestrator.config  | Loading config from: D:\fun_model\config
+2025-12-17 15:19:16 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-17 15:19:16 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-17 15:19:16 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-17 15:19:16 | INFO     | app                  | Flask application initialized successfully
+2025-12-17 15:19:16 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-17 15:19:16 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 15:19:16 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-17 15:19:16 | INFO     | multiagent           | Debug mode: True
+2025-12-17 15:19:16 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 15:19:16 | WARNING  | werkzeug             |  * Debugger is active!
+2025-12-17 15:19:42 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Started: 1843a095-31fc-4578-9597-92a9f3fcbd03
+2025-12-17 15:19:42 | INFO     | app.routes           | Starting async workflow 1843a095-31fc-4578-9597-92a9f3fcbd03
+2025-12-17 15:19:42 | INFO     | orchestrator.orchestrator | [1843a095-31fc-4578-9597-92a9f3fcbd03] Phase 1: CEO Specification
+2025-12-17 15:19:42 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:19:47 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:19:59 | INFO     | orchestrator.llm_client | Request successful. Tokens: 1678
+2025-12-17 15:19:59 | INFO     | orchestrator.llm_client | Successfully parsed JSON from openai/gpt-oss-120b:free. Keys: ['status', 'task_id', 'agent', 'payload', 'confidence', 'meta']
+2025-12-17 15:19:59 | INFO     | orchestrator.orchestrator | [1843a095-31fc-4578-9597-92a9f3fcbd03] Phase 2: PM Planning
+2025-12-17 15:19:59 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:20:04 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:20:26 | INFO     | orchestrator.llm_client | Request successful. Tokens: 3011
+2025-12-17 15:20:26 | INFO     | orchestrator.llm_client | Successfully parsed JSON from openai/gpt-oss-120b:free. Keys: ['status', 'task_id', 'agent', 'payload', 'confidence', 'meta']
+2025-12-17 15:20:26 | INFO     | orchestrator.orchestrator | [1843a095-31fc-4578-9597-92a9f3fcbd03] Phase 3: Task Execution
+2025-12-17 15:20:31 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:20:36 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:20:52 | INFO     | orchestrator.llm_client | Request successful. Tokens: 2235
+2025-12-17 15:20:52 | INFO     | orchestrator.llm_client | Successfully parsed JSON from openai/gpt-oss-120b:free. Keys: ['status', 'task_id', 'agent', 'payload', 'confidence', 'meta']
+2025-12-17 15:20:57 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:21:02 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:21:28 | INFO     | orchestrator.llm_client | Request successful. Tokens: 3495
+2025-12-17 15:21:28 | INFO     | orchestrator.llm_client | Successfully parsed JSON from openai/gpt-oss-120b:free. Keys: ['status', 'task_id', 'agent', 'payload', 'confidence', 'meta']
+2025-12-17 15:21:33 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:21:38 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:22:22 | INFO     | orchestrator.llm_client | Request successful. Tokens: 4865
+2025-12-17 15:22:22 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Unterminated string starting at: line 57 column 20 (char 10693)
+2025-12-17 15:22:22 | INFO     | orchestrator.orchestrator | Retrying task task-003 (Attempt 2/3)
+2025-12-17 15:22:24 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:22:29 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:23:14 | INFO     | orchestrator.llm_client | Request successful. Tokens: 4865
+2025-12-17 15:23:14 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Expecting ',' delimiter: line 92 column 6 (char 11697)
+2025-12-17 15:23:14 | INFO     | orchestrator.orchestrator | Retrying task task-003 (Attempt 3/3)
+2025-12-17 15:23:16 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:23:21 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:23:56 | INFO     | orchestrator.llm_client | Request successful. Tokens: 4865
+2025-12-17 15:23:56 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Unterminated string starting at: line 75 column 20 (char 10534)
+2025-12-17 15:24:02 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:24:07 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:24:41 | INFO     | orchestrator.llm_client | Request successful. Tokens: 4840
+2025-12-17 15:24:41 | ERROR    | orchestrator.llm_client | Failed to parse JSON: Expecting ',' delimiter: line 42 column 8 (char 12262)
+2025-12-17 15:24:41 | INFO     | orchestrator.orchestrator | Retrying task task-004 (Attempt 2/3)
+2025-12-17 15:24:43 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:24:49 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:24:51 | WARNING  | orchestrator.llm_client | Rate limited (429). Retrying in 5.0s...
+2025-12-17 15:24:56 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:24:58 | WARNING  | orchestrator.llm_client | Rate limited (429). Retrying in 10.0s...
+2025-12-17 15:25:08 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:25:10 | WARNING  | orchestrator.llm_client | Rate limited (429). Retrying in 20.0s...
+2025-12-17 15:25:30 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:25:32 | WARNING  | orchestrator.llm_client | Rate limited (429). Retrying in 40.0s...
+2025-12-17 15:26:12 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:26:13 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:13 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:13 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:13 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:13 | ERROR    | orchestrator.agents.base_agent | Agent coder error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:13 | INFO     | orchestrator.orchestrator | Retrying task task-004 (Attempt 3/3)
+2025-12-17 15:26:15 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:26:20 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:21 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:21 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:21 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:21 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:21 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:26:22 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:22 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:22 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:22 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:22 | ERROR    | orchestrator.agents.base_agent | Agent coder error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:27 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:26:32 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:32 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:32 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:32 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:32 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:32 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:32 | ERROR    | orchestrator.agents.base_agent | Agent coder error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:32 | INFO     | orchestrator.orchestrator | Retrying task task-005 (Attempt 2/3)
+2025-12-17 15:26:34 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:26:39 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:40 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:40 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:40 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:40 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:40 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:40 | ERROR    | orchestrator.agents.base_agent | Agent coder error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:40 | INFO     | orchestrator.orchestrator | Retrying task task-005 (Attempt 3/3)
+2025-12-17 15:26:42 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:26:47 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:48 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:48 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:48 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:48 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:26:49 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:49 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:49 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:49 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:26:49 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:49 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:49 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:49 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:49 | ERROR    | orchestrator.agents.base_agent | Agent coder error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:54 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:26:59 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:59 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:59 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:59 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:59 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:26:59 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:26:59 | ERROR    | orchestrator.agents.base_agent | Agent qa error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:00 | INFO     | orchestrator.orchestrator | Retrying task task-006 (Attempt 2/3)
+2025-12-17 15:27:02 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:27:07 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:07 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:07 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:07 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:07 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:27:08 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:08 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:08 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:08 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:27:08 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:08 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:08 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:08 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:08 | ERROR    | orchestrator.agents.base_agent | Agent qa error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:08 | INFO     | orchestrator.orchestrator | Retrying task task-006 (Attempt 3/3)
+2025-12-17 15:27:10 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:27:15 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:15 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:15 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:15 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:15 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:15 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:27:16 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:16 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:16 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:16 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:16 | ERROR    | orchestrator.agents.base_agent | Agent qa error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:21 | INFO     | orchestrator.orchestrator | [1843a095-31fc-4578-9597-92a9f3fcbd03] Phase 4: QA Validation
+2025-12-17 15:27:21 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:27:26 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:26 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:26 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:26 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:26 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:26 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:26 | ERROR    | orchestrator.agents.base_agent | Agent qa error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:26 | INFO     | orchestrator.orchestrator | [1843a095-31fc-4578-9597-92a9f3fcbd03] Phase 5: Documentation
+2025-12-17 15:27:26 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:27:31 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:27:32 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:32 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:32 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:33 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:33 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:33 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:33 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:33 | ERROR    | orchestrator.agents.base_agent | Agent docs error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:33 | INFO     | orchestrator.orchestrator | [1843a095-31fc-4578-9597-92a9f3fcbd03] Phase 6: CEO Finalization
+2025-12-17 15:27:33 | INFO     | orchestrator.llm_client | Acquired lock. Waiting 5s before sending request...
+2025-12-17 15:27:38 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 1/5)
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:39 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 2/5)
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:39 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 3/5)
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:39 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 4/5)
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:39 | INFO     | orchestrator.llm_client | Sending request to openai/gpt-oss-120b:free (Attempt 5/5)
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | 401 Unauthorized: Invalid API Key or Headers
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Status: 401
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | OpenRouter Error Body: {"error":{"message":"User not found.","code":401}}
+2025-12-17 15:27:39 | ERROR    | orchestrator.llm_client | LLM completion error: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:39 | ERROR    | orchestrator.agents.base_agent | Agent ceo error: Completion failed: Client error '401 Unauthorized' for url 'https://openrouter.ai/api/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-12-17 15:27:42 | INFO     | orchestrator.tools.notifier | Email sent to dev@example.com: Workflow Completed: 1843a095-31fc-4578-9597-92a9f3fcbd03
+2025-12-17 15:28:44 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-17 15:28:44 | INFO     | multiagent           | Application shutdown complete
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-17 15:28:44 | INFO     | multiagent           | Received SIGINT signal, initiating graceful shutdown...
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-17 15:28:44 | INFO     | multiagent           | Application shutdown complete
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Performing cleanup tasks...
+2025-12-17 15:28:44 | INFO     | multiagent.cleanup   | Cleanup completed successfully
+2025-12-17 16:12:33 | INFO     | multiagent           | Logging initialized at level DEBUG
+2025-12-17 16:12:33 | INFO     | multiagent           | Log files: /app/storage/logs/app_20251217.log
+2025-12-17 16:12:33 | INFO     | multiagent           | ============================================================
+2025-12-17 16:12:33 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-17 16:12:33 | INFO     | multiagent           | ============================================================
+2025-12-17 16:12:33 | INFO     | multiagent           | Python version: 3.12.12 (main, Nov  7 2025, 00:07:10) [GCC 13.3.0]
+2025-12-17 16:12:33 | INFO     | multiagent           | Project root: /app
+2025-12-17 16:12:33 | INFO     | multiagent           | Start time: 2025-12-17T16:12:33.304803+00:00
+2025-12-17 16:12:33 | WARNING  | multiagent.config    | Using default FLASK_SECRET_KEY (development only)
+2025-12-17 16:12:33 | ERROR    | multiagent.config    | Configuration error: SUPABASE_URL is required
+2025-12-17 16:12:33 | ERROR    | multiagent.config    | Configuration error: SUPABASE_ANON_KEY is required
+2025-12-17 16:12:33 | ERROR    | multiagent.config    | Configuration error: SUPABASE_SERVICE_ROLE_KEY is required
+2025-12-17 16:12:33 | ERROR    | multiagent.config    | Configuration error: OPENROUTER_API_KEY is required
+2025-12-17 16:12:33 | ERROR    | multiagent.config    | Please check your .env file or environment variables
+2025-12-17 16:14:21 | INFO     | multiagent           | Logging initialized at level DEBUG
+2025-12-17 16:14:21 | INFO     | multiagent           | Log files: /app/storage/logs/app_20251217.log
+2025-12-17 16:14:21 | INFO     | multiagent           | ============================================================
+2025-12-17 16:14:21 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-17 16:14:21 | INFO     | multiagent           | ============================================================
+2025-12-17 16:14:21 | INFO     | multiagent           | Python version: 3.12.12 (main, Nov  7 2025, 00:07:10) [GCC 13.3.0]
+2025-12-17 16:14:21 | INFO     | multiagent           | Project root: /app
+2025-12-17 16:14:21 | INFO     | multiagent           | Start time: 2025-12-17T16:14:21.417306+00:00
+2025-12-17 16:14:21 | WARNING  | multiagent.config    | Using default FLASK_SECRET_KEY (development only)
+2025-12-17 16:14:21 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-17 16:14:21 | INFO     | multiagent.config    | Environment: development
+2025-12-17 16:14:21 | INFO     | multiagent.config    | Debug mode: True
+2025-12-17 16:14:21 | DEBUG    | multiagent           | Signal handlers registered
+2025-12-17 16:14:21 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-17 16:14:23 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-17 16:14:23 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-17 16:14:23 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-17 16:14:23 | INFO     | multiagent.startup   | [INFO] SMTP not configured (notifications disabled)
+2025-12-17 16:14:23 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-17 16:14:24 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-17 16:14:24 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-17 16:14:24 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-17 16:14:24 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-17 16:14:24 | INFO     | orchestrator.tools.notifier | SMTP notifier disabled (no configuration)
+2025-12-17 16:14:24 | INFO     | orchestrator.config  | Loading config from: /app/config
+2025-12-17 16:14:24 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-17 16:14:24 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-17 16:14:24 | DEBUG    | orchestrator.agents.base_agent | Initialized ceo agent
+2025-12-17 16:14:24 | DEBUG    | orchestrator.agents.base_agent | Initialized pm agent
+2025-12-17 16:14:24 | DEBUG    | orchestrator.agents.base_agent | Initialized research agent
+2025-12-17 16:14:24 | DEBUG    | orchestrator.agents.base_agent | Initialized coder agent
+2025-12-17 16:14:24 | DEBUG    | orchestrator.agents.base_agent | Initialized qa agent
+2025-12-17 16:14:24 | DEBUG    | orchestrator.agents.base_agent | Initialized docs agent
+2025-12-17 16:14:24 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-17 16:14:24 | INFO     | app                  | Flask application initialized successfully
+2025-12-17 16:14:24 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-17 16:14:24 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 16:14:24 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-17 16:14:24 | INFO     | multiagent           | Debug mode: True
+2025-12-17 16:14:24 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 16:14:24 | INFO     | multiagent           | Logging initialized at level DEBUG
+2025-12-17 16:14:24 | INFO     | multiagent           | Log files: /app/storage/logs/app_20251217.log
+2025-12-17 16:14:24 | INFO     | multiagent           | ============================================================
+2025-12-17 16:14:24 | INFO     | multiagent           | Multi-Agent Corporate System Starting
+2025-12-17 16:14:24 | INFO     | multiagent           | ============================================================
+2025-12-17 16:14:24 | INFO     | multiagent           | Python version: 3.12.12 (main, Nov  7 2025, 00:07:10) [GCC 13.3.0]
+2025-12-17 16:14:24 | INFO     | multiagent           | Project root: /app
+2025-12-17 16:14:24 | INFO     | multiagent           | Start time: 2025-12-17T16:14:24.461396+00:00
+2025-12-17 16:14:24 | WARNING  | multiagent.config    | Using default FLASK_SECRET_KEY (development only)
+2025-12-17 16:14:24 | INFO     | multiagent.config    | Configuration validated successfully
+2025-12-17 16:14:24 | INFO     | multiagent.config    | Environment: development
+2025-12-17 16:14:24 | INFO     | multiagent.config    | Debug mode: True
+2025-12-17 16:14:24 | DEBUG    | multiagent           | Signal handlers registered
+2025-12-17 16:14:24 | INFO     | multiagent.startup   | Performing startup health checks...
+2025-12-17 16:14:26 | INFO     | multiagent.startup   | [OK] Supabase connection successful
+2025-12-17 16:14:26 | INFO     | multiagent.startup   | [OK] OpenRouter API key valid
+2025-12-17 16:14:26 | INFO     | multiagent.startup   | [OK] Storage directory writable
+2025-12-17 16:14:26 | INFO     | multiagent.startup   | [INFO] SMTP not configured (notifications disabled)
+2025-12-17 16:14:26 | INFO     | multiagent.startup   | All startup checks passed
+2025-12-17 16:14:26 | WARNING  | app                  | Initializing MockSupabaseAuth for DEV_MODE
+2025-12-17 16:14:26 | INFO     | app.auth             | Mock Supabase auth client initialized (DEV MODE)
+2025-12-17 16:14:26 | INFO     | app.auth             | Loaded mock DB from storage/mock_db.json
+2025-12-17 16:14:26 | INFO     | orchestrator.llm_client | OpenRouter client initialized
+2025-12-17 16:14:26 | INFO     | orchestrator.tools.notifier | SMTP notifier disabled (no configuration)
+2025-12-17 16:14:26 | INFO     | orchestrator.config  | Loading config from: /app/config
+2025-12-17 16:14:26 | INFO     | orchestrator.config  | Loaded agents.yaml
+2025-12-17 16:14:26 | INFO     | orchestrator.config  | Loaded openrouter.yaml
+2025-12-17 16:14:26 | DEBUG    | orchestrator.agents.base_agent | Initialized ceo agent
+2025-12-17 16:14:26 | DEBUG    | orchestrator.agents.base_agent | Initialized pm agent
+2025-12-17 16:14:26 | DEBUG    | orchestrator.agents.base_agent | Initialized research agent
+2025-12-17 16:14:26 | DEBUG    | orchestrator.agents.base_agent | Initialized coder agent
+2025-12-17 16:14:26 | DEBUG    | orchestrator.agents.base_agent | Initialized qa agent
+2025-12-17 16:14:26 | DEBUG    | orchestrator.agents.base_agent | Initialized docs agent
+2025-12-17 16:14:26 | INFO     | orchestrator.orchestrator | Orchestrator initialized
+2025-12-17 16:14:26 | INFO     | app                  | Flask application initialized successfully
+2025-12-17 16:14:26 | INFO     | multiagent.app       | Flask application created successfully
+2025-12-17 16:14:26 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 16:14:26 | INFO     | multiagent           | Starting Flask server on http://0.0.0.0:5000
+2025-12-17 16:14:26 | INFO     | multiagent           | Debug mode: True
+2025-12-17 16:14:26 | INFO     | multiagent           | ------------------------------------------------------------
+2025-12-17 16:14:26 | WARNING  | werkzeug             |  * Debugger is active!

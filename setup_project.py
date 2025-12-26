@@ -56,15 +56,15 @@ logger = logging.getLogger(__name__)
 def create_app(config_name: str = None) -> Flask:
     """
     Application factory for creating Flask app.
-    
+
     Args:
         config_name: Configuration environment name
-        
+
     Returns:
         Configured Flask application
     """
     app = Flask(__name__)
-    
+
     # Load configuration
     app.config.update(
         SECRET_KEY=os.getenv('FLASK_SECRET_KEY', 'dev-secret-key-change-in-production'),
@@ -74,7 +74,7 @@ def create_app(config_name: str = None) -> Flask:
         OPENROUTER_API_KEY=os.getenv('OPENROUTER_API_KEY'),
         MAX_CONTENT_LENGTH=16 * 1024 * 1024  # 16MB max request size
     )
-    
+
     # Enable CORS
     CORS(app, resources={
         r"/api/*": {
@@ -83,18 +83,18 @@ def create_app(config_name: str = None) -> Flask:
             "allow_headers": ["Content-Type", "Authorization"]
         }
     })
-    
+
     # Register blueprints
     from app.routes import main_bp, api_bp
     app.register_blueprint(main_bp)
     app.register_blueprint(api_bp, url_prefix='/api')
-    
+
     # Initialize services
     with app.app_context():
         _initialize_services(app)
-    
+
     logger.info("Flask application initialized successfully")
-    
+
     return app
 
 
@@ -104,22 +104,22 @@ def _initialize_services(app: Flask) -> None:
     from orchestrator.llm_client import OpenRouterClient
     from orchestrator.tools.notifier import SMTPNotifier
     from orchestrator.orchestrator import Orchestrator
-    
+
     # Initialize Supabase auth
     app.supabase_auth = SupabaseAuth(
         url=app.config['SUPABASE_URL'],
         anon_key=app.config['SUPABASE_ANON_KEY'],
         service_role_key=app.config['SUPABASE_SERVICE_ROLE_KEY']
     )
-    
+
     # Initialize OpenRouter client
     app.llm_client = OpenRouterClient(
         api_key=app.config['OPENROUTER_API_KEY']
     )
-    
+
     # Initialize SMTP notifier
     app.notifier = SMTPNotifier()
-    
+
     # Initialize orchestrator
     app.orchestrator = Orchestrator(
         llm_client=app.llm_client,
@@ -148,7 +148,7 @@ logger = logging.getLogger(__name__)
 
 class SupabaseAuth:
     """Supabase authentication handler."""
-    
+
     def __init__(self, url: str, anon_key: str, service_role_key: str):
         """
         Initialize Supabase auth client.
@@ -157,7 +157,7 @@ class SupabaseAuth:
         self.anon_key = anon_key
         self.service_role_key = service_role_key
         self.jwt_secret = os.getenv('SUPABASE_JWT_SECRET')
-        
+
         try:
             from supabase import create_client, Client
             self.client: Client = create_client(url, anon_key)
@@ -167,13 +167,13 @@ class SupabaseAuth:
             logger.error(f"Failed to initialize Supabase client: {e}")
             self.client = None
             self.admin_client = None
-    
+
     def verify_token(self, token: str) -> Optional[Dict[str, Any]]:
         """Verify a JWT token and return the decoded payload."""
         try:
             if not self.client:
                 return None
-                
+
             # Try to verify with Supabase
             user = self.client.auth.get_user(token)
             if user and user.user:
@@ -186,7 +186,7 @@ class SupabaseAuth:
         except Exception as e:
             logger.error(f"Token verification error: {e}")
             return None
-    
+
     def get_user_by_id(self, user_id: str) -> Optional[Dict[str, Any]]:
         """Get user details by ID."""
         try:
@@ -202,7 +202,7 @@ class SupabaseAuth:
         except Exception as e:
             logger.error(f"Error fetching user: {e}")
             return None
-    
+
     def log_workflow(self, workflow_data: Dict[str, Any]) -> Optional[str]:
         """Log a workflow to Supabase."""
         try:
@@ -213,7 +213,7 @@ class SupabaseAuth:
         except Exception as e:
             logger.error(f"Error logging workflow: {e}")
             return workflow_data.get('id')
-    
+
     def update_workflow(self, workflow_id: str, updates: Dict[str, Any]) -> bool:
         """Update a workflow in Supabase."""
         try:
@@ -225,7 +225,7 @@ class SupabaseAuth:
         except Exception as e:
             logger.error(f"Error updating workflow: {e}")
             return False
-    
+
     def log_event(self, event_data: Dict[str, Any]) -> Optional[str]:
         """Log an event to Supabase."""
         try:
@@ -236,7 +236,7 @@ class SupabaseAuth:
         except Exception as e:
             logger.error(f"Error logging event: {e}")
             return None
-    
+
     def store_artifact(self, artifact_data: Dict[str, Any]) -> Optional[str]:
         """Store an artifact in Supabase."""
         try:
@@ -254,37 +254,37 @@ def require_auth(f: Callable) -> Callable:
     @wraps(f)
     def decorated_function(*args, **kwargs):
         auth_header = request.headers.get('Authorization')
-        
+
         if not auth_header:
             return jsonify({
                 'error': 'Missing Authorization header',
                 'code': 'AUTH_MISSING'
             }), 401
-        
+
         parts = auth_header.split()
         if len(parts) != 2 or parts[0].lower() != 'bearer':
             return jsonify({
                 'error': 'Invalid Authorization header format',
                 'code': 'AUTH_INVALID_FORMAT'
             }), 401
-        
+
         token = parts[1]
-        
+
         supabase_auth: SupabaseAuth = current_app.supabase_auth
         payload = supabase_auth.verify_token(token)
-        
+
         if not payload:
             return jsonify({
                 'error': 'Invalid or expired token',
                 'code': 'AUTH_INVALID_TOKEN'
             }), 401
-        
+
         g.user_id = payload.get('sub')
         g.user_email = payload.get('email')
         g.user_role = payload.get('role', 'authenticated')
-        
+
         return f(*args, **kwargs)
-    
+
     return decorated_function
 
 
@@ -345,25 +345,25 @@ def run_workflow():
     """Execute a multi-agent workflow."""
     try:
         data = request.get_json()
-        
+
         if not data or 'request' not in data:
             return jsonify({
                 'error': 'Missing required field: request',
                 'code': 'VALIDATION_ERROR'
             }), 400
-        
+
         user_request = data['request'].strip()
         if not user_request:
             return jsonify({
                 'error': 'Request cannot be empty',
                 'code': 'VALIDATION_ERROR'
             }), 400
-        
+
         options = data.get('options', {})
         notify_email = options.get('notify_email', g.user_email)
-        
+
         workflow_id = str(uuid.uuid4())
-        
+
         supabase_auth = current_app.supabase_auth
         supabase_auth.log_workflow({
             'id': workflow_id,
@@ -378,7 +378,7 @@ def run_workflow():
                 'priority': options.get('priority', 'medium')
             }
         })
-        
+
         notifier = current_app.notifier
         if notify_email:
             notifier.send_workflow_started(
@@ -386,7 +386,7 @@ def run_workflow():
                 workflow_id=workflow_id,
                 request_summary=user_request[:200]
             )
-        
+
         orchestrator = current_app.orchestrator
         result = orchestrator.execute(
             workflow_id=workflow_id,
@@ -394,7 +394,7 @@ def run_workflow():
             user_request=user_request,
             options=options
         )
-        
+
         final_status = 'completed' if result.get('success') else 'failed'
         supabase_auth.update_workflow(workflow_id, {
             'status': final_status,
@@ -402,7 +402,7 @@ def run_workflow():
             'completed_at': datetime.now(timezone.utc).isoformat(),
             'iteration_count': result.get('iterations', 0)
         })
-        
+
         if notify_email:
             if result.get('success'):
                 notifier.send_workflow_completed(
@@ -417,13 +417,13 @@ def run_workflow():
                     workflow_id=workflow_id,
                     error_message=result.get('error', 'Unknown error')
                 )
-        
+
         return jsonify({
             'workflow_id': workflow_id,
             'status': final_status,
             'result': result
         })
-        
+
     except Exception as e:
         logger.exception(f"Error executing workflow: {e}")
         return jsonify({
@@ -497,7 +497,7 @@ _config_cache: Optional[Dict[str, Any]] = None
 def load_config(config_dir: str = "config") -> Dict[str, Any]:
     """Load all configuration files."""
     global _config_cache
-    
+
     config = {
         'agents': {
             'ceo': {'enabled': True, 'model': 'anthropic/claude-3-sonnet', 'temperature': 0.7, 'max_tokens': 4096},
@@ -516,12 +516,12 @@ def load_config(config_dir: str = "config") -> Dict[str, Any]:
             'parallel_execution': False
         }
     }
-    
+
     # Try to load YAML config if available
     try:
         import yaml
         config_path = Path(config_dir)
-        
+
         for filename in ['agents.yaml', 'openrouter.yaml']:
             filepath = config_path / filename
             if filepath.exists():
@@ -533,7 +533,7 @@ def load_config(config_dir: str = "config") -> Dict[str, Any]:
         logger.debug("PyYAML not installed, using default config")
     except Exception as e:
         logger.warning(f"Could not load config files: {e}")
-    
+
     _config_cache = config
     return config
 
@@ -592,16 +592,16 @@ class RateLimitError(LLMError):
 
 class OpenRouterClient:
     """Client for OpenRouter API."""
-    
+
     BASE_URL = "https://openrouter.ai/api/v1"
-    
+
     def __init__(self, api_key: str = None, timeout: float = 60.0):
         self.api_key = api_key or os.getenv('OPENROUTER_API_KEY')
         self.timeout = timeout
-        
+
         if not self.api_key:
             raise ValueError("OpenRouter API key is required")
-        
+
         try:
             import httpx
             self.client = httpx.Client(
@@ -618,7 +618,7 @@ class OpenRouterClient:
         except ImportError:
             logger.error("httpx not installed")
             self.client = None
-    
+
     def complete(
         self,
         messages: List[Dict[str, str]],
@@ -630,9 +630,9 @@ class OpenRouterClient:
         """Generate a completion."""
         if not self.client:
             raise LLMError("HTTP client not initialized")
-        
+
         start_time = time.time()
-        
+
         payload = {
             'model': model,
             'messages': messages,
@@ -640,12 +640,12 @@ class OpenRouterClient:
             'max_tokens': max_tokens,
             **kwargs
         }
-        
+
         try:
             response = self.client.post('/chat/completions', json=payload)
             response.raise_for_status()
             data = response.json()
-            
+
             return {
                 'content': data['choices'][0]['message']['content'],
                 'model': data.get('model', model),
@@ -655,7 +655,7 @@ class OpenRouterClient:
         except Exception as e:
             logger.error(f"LLM completion error: {e}")
             raise LLMError(f"Completion failed: {e}") from e
-    
+
     def complete_json(
         self,
         messages: List[Dict[str, str]],
@@ -665,7 +665,7 @@ class OpenRouterClient:
         """Generate a JSON completion."""
         response = self.complete(messages=messages, model=model, **kwargs)
         content = response['content']
-        
+
         # Parse JSON
         try:
             if '```json' in content:
@@ -676,13 +676,13 @@ class OpenRouterClient:
                 start = content.find('```') + 3
                 end = content.find('```', start)
                 content = content[start:end].strip()
-            
+
             response['parsed'] = json.loads(content)
             return response
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse JSON: {e}")
             raise LLMError(f"Invalid JSON in response: {e}") from e
-    
+
     def close(self):
         if self.client:
             self.client.close()
@@ -758,19 +758,19 @@ class WorkflowError(Exception):
 
 class Orchestrator:
     """Main orchestrator that coordinates multi-agent workflows."""
-    
+
     def __init__(self, llm_client: OpenRouterClient, supabase_auth, notifier):
         self.llm_client = llm_client
         self.supabase_auth = supabase_auth
         self.notifier = notifier
         self.config = get_orchestration_config()
-        
+
         # Initialize agents
         from orchestrator.agents import (
-            CEOAgent, PMAgent, ResearchAgent, 
+            CEOAgent, PMAgent, ResearchAgent,
             CoderAgent, QAAgent, DocsAgent
         )
-        
+
         self.agents = {
             'ceo': CEOAgent(llm_client),
             'pm': PMAgent(llm_client),
@@ -779,9 +779,9 @@ class Orchestrator:
             'qa': QAAgent(llm_client),
             'docs': DocsAgent(llm_client)
         }
-        
+
         logger.info("Orchestrator initialized")
-    
+
     def execute(
         self,
         workflow_id: str,
@@ -795,24 +795,24 @@ class Orchestrator:
             user_id=user_id,
             user_request=user_request
         )
-        
+
         try:
             context.status = WorkflowStatus.RUNNING
             self._log_event(context, 'workflow', 'started', {'request': user_request})
-            
+
             # Phase 1: CEO Specification
             logger.info(f"[{workflow_id}] Phase 1: CEO Specification")
             ceo_result = self._execute_agent_task(
                 context, 'ceo', 'ceo-spec', 'specification',
                 {'user_request': user_request}
             )
-            
+
             if ceo_result['status'] != 'success':
                 raise WorkflowError("CEO failed to create specification")
-            
+
             context.project_spec = ceo_result['payload'].get('project_spec', {})
             context.agent_outputs['ceo_spec'] = ceo_result
-            
+
             # Phase 2: PM Planning
             logger.info(f"[{workflow_id}] Phase 2: PM Planning")
             pm_result = self._execute_agent_task(
@@ -823,25 +823,25 @@ class Orchestrator:
                     'constraints': ceo_result['payload'].get('constraints', [])
                 }
             )
-            
+
             if pm_result['status'] != 'success':
                 raise WorkflowError("PM failed to create plan")
-            
+
             context.agent_outputs['pm'] = pm_result
-            
+
             # Phase 3: Execute tasks
             logger.info(f"[{workflow_id}] Phase 3: Task Execution")
             execution_order = pm_result['payload'].get('execution_order', [])
             tasks = pm_result['payload'].get('tasks', [])
-            
+
             for task_data in tasks:
                 task_id = task_data.get('id', str(uuid.uuid4()))
                 agent_name = task_data.get('assigned_to', 'coder')
-                
+
                 context.iteration += 1
                 if context.iteration > self.config.get('max_iterations_per_workflow', 6):
                     break
-                
+
                 result = self._execute_agent_task(
                     context, agent_name, task_id, 'execution',
                     {
@@ -852,12 +852,12 @@ class Orchestrator:
                     }
                 )
                 context.agent_outputs[f"{agent_name}_{task_id}"] = result
-            
+
             # Phase 4: QA Validation
             if self.config.get('require_qa_approval', True):
                 logger.info(f"[{workflow_id}] Phase 4: QA Validation")
                 coder_output = self._get_agent_output(context, 'coder')
-                
+
                 qa_result = self._execute_agent_task(
                     context, 'qa', 'qa-validation', 'validation',
                     {
@@ -868,7 +868,7 @@ class Orchestrator:
                     }
                 )
                 context.agent_outputs['qa'] = qa_result
-            
+
             # Phase 5: Documentation
             logger.info(f"[{workflow_id}] Phase 5: Documentation")
             docs_result = self._execute_agent_task(
@@ -881,7 +881,7 @@ class Orchestrator:
                 }
             )
             context.agent_outputs['docs'] = docs_result
-            
+
             # Phase 6: CEO Finalization
             if self.config.get('require_ceo_finalization', True):
                 logger.info(f"[{workflow_id}] Phase 6: CEO Finalization")
@@ -895,16 +895,16 @@ class Orchestrator:
                     }
                 )
                 context.agent_outputs['ceo_final'] = final_result
-            
+
             context.status = WorkflowStatus.COMPLETED
             elapsed = time.time() - context.start_time
-            
+
             return self._compile_result(context, elapsed)
-            
+
         except Exception as e:
             logger.exception(f"[{workflow_id}] Workflow error: {e}")
             context.status = WorkflowStatus.FAILED
-            
+
             return {
                 'success': False,
                 'workflow_id': workflow_id,
@@ -912,7 +912,7 @@ class Orchestrator:
                 'iterations': context.iteration,
                 'duration': time.time() - context.start_time
             }
-    
+
     def _execute_agent_task(
         self,
         context: WorkflowContext,
@@ -925,23 +925,23 @@ class Orchestrator:
         agent = self.agents.get(agent_name)
         if not agent:
             return self._error_response(task_id, agent_name, f"Unknown agent: {agent_name}")
-        
+
         try:
             self._log_event(context, agent_name, 'task_started', {'task_id': task_id, 'phase': phase})
-            
+
             result = agent.execute(task_id=task_id, phase=phase, inputs=inputs)
-            
+
             self._log_event(context, agent_name, 'task_completed', {
                 'task_id': task_id,
                 'status': result.get('status'),
                 'confidence': result.get('confidence')
             })
-            
+
             return result
         except Exception as e:
             logger.error(f"Agent {agent_name} failed: {e}")
             return self._error_response(task_id, agent_name, str(e))
-    
+
     def _error_response(self, task_id: str, agent_name: str, error: str) -> Dict[str, Any]:
         return {
             'status': 'failed',
@@ -951,25 +951,25 @@ class Orchestrator:
             'confidence': 'low',
             'meta': {'elapsed': 0}
         }
-    
+
     def _get_agent_output(self, context: WorkflowContext, agent_name: str) -> Optional[Dict[str, Any]]:
         """Get output from a specific agent."""
         for key, value in context.agent_outputs.items():
             if key.startswith(agent_name):
                 return value.get('payload', {})
         return {}
-    
+
     def _summarize_outputs(self, context: WorkflowContext) -> Dict[str, Any]:
         """Summarize all agent outputs."""
         return {k: {'status': v.get('status')} for k, v in context.agent_outputs.items()}
-    
+
     def _compile_result(self, context: WorkflowContext, elapsed: float) -> Dict[str, Any]:
         """Compile final workflow result."""
         coder_output = self._get_agent_output(context, 'coder') or {}
         docs_output = self._get_agent_output(context, 'docs') or {}
         qa_output = context.agent_outputs.get('qa', {}).get('payload', {})
         ceo_final = context.agent_outputs.get('ceo_final', {}).get('payload', {})
-        
+
         return {
             'success': True,
             'workflow_id': context.workflow_id,
@@ -993,7 +993,7 @@ class Orchestrator:
             'final_summary': ceo_final.get('final_summary', ''),
             'agent_outputs': context.agent_outputs
         }
-    
+
     def _log_event(self, context: WorkflowContext, agent_name: str, event_type: str, data: Dict[str, Any]):
         """Log an event."""
         event = {
@@ -1005,7 +1005,7 @@ class Orchestrator:
             'payload': data
         }
         context.events.append(event)
-        
+
         try:
             self.supabase_auth.log_event(event)
         except Exception as e:
@@ -1059,24 +1059,24 @@ logger = logging.getLogger(__name__)
 
 class BaseAgent(ABC):
     """Abstract base class for all agents."""
-    
+
     AGENT_NAME: str = "base"
-    
+
     def __init__(self, llm_client: OpenRouterClient):
         self.llm_client = llm_client
         self.config = get_agent_config(self.AGENT_NAME)
         logger.debug(f"Initialized {self.AGENT_NAME} agent")
-    
+
     @abstractmethod
     def _get_system_prompt(self) -> str:
         """Return the system prompt for this agent."""
         pass
-    
+
     @abstractmethod
     def _get_payload_schema(self) -> Dict[str, Any]:
         """Return the JSON schema for the agent's payload."""
         pass
-    
+
     def execute(
         self,
         task_id: str,
@@ -1086,44 +1086,44 @@ class BaseAgent(ABC):
     ) -> Dict[str, Any]:
         """Execute the agent's task."""
         start_time = time.time()
-        
+
         try:
             prompt = self._build_prompt(task_id, phase, inputs)
-            
+
             model = self.config.get('model', 'anthropic/claude-3-sonnet')
             temperature = self.config.get('temperature', 0.5)
             max_tokens = self.config.get('max_tokens', 4096)
-            
+
             messages = [
                 {"role": "system", "content": self._get_system_prompt()},
                 {"role": "user", "content": prompt}
             ]
-            
+
             response = self.llm_client.complete_json(
                 messages=messages,
                 model=model,
                 temperature=temperature,
                 max_tokens=max_tokens
             )
-            
+
             result = response.get('parsed', {})
             result['task_id'] = task_id
             result['agent'] = self.AGENT_NAME
-            
+
             if 'meta' not in result:
                 result['meta'] = {}
             result['meta']['elapsed'] = time.time() - start_time
             result['meta']['model_used'] = response.get('model', model)
-            
+
             if 'status' not in result:
                 result['status'] = 'success'
             if 'confidence' not in result:
                 result['confidence'] = 'medium'
             if 'payload' not in result:
                 result['payload'] = {}
-            
+
             return result
-            
+
         except Exception as e:
             logger.error(f"Agent {self.AGENT_NAME} error: {e}")
             return {
@@ -1134,18 +1134,18 @@ class BaseAgent(ABC):
                 'confidence': 'low',
                 'meta': {'elapsed': time.time() - start_time}
             }
-    
+
     def _build_prompt(self, task_id: str, phase: str, inputs: Dict[str, Any]) -> str:
         """Build the prompt from inputs."""
         prompt_parts = [f"Task ID: {task_id}", f"Phase: {phase}", ""]
-        
+
         for key, value in inputs.items():
             if value:
                 if isinstance(value, (dict, list)):
                     prompt_parts.append(f"{key}:\\n{json.dumps(value, indent=2)}")
                 else:
                     prompt_parts.append(f"{key}: {value}")
-        
+
         return "\\n".join(prompt_parts)
 '''
 
@@ -1162,9 +1162,9 @@ from orchestrator.agents.base_agent import BaseAgent
 
 class CEOAgent(BaseAgent):
     """CEO Agent for project specification and approval."""
-    
+
     AGENT_NAME = "ceo"
-    
+
     def _get_system_prompt(self) -> str:
         return """You are the CEO Agent of a software development organization.
 
@@ -1196,7 +1196,7 @@ You MUST respond with valid JSON only, matching this structure:
 }
 
 Output ONLY valid JSON. No markdown, no prose."""
-    
+
     def _get_payload_schema(self) -> Dict[str, Any]:
         return {"type": "object"}
 '''
@@ -1214,9 +1214,9 @@ from orchestrator.agents.base_agent import BaseAgent
 
 class PMAgent(BaseAgent):
     """Project Manager Agent for task planning."""
-    
+
     AGENT_NAME = "pm"
-    
+
     def _get_system_prompt(self) -> str:
         return """You are the Project Manager Agent.
 
@@ -1251,7 +1251,7 @@ You MUST respond with valid JSON only:
 }
 
 Output ONLY valid JSON."""
-    
+
     def _get_payload_schema(self) -> Dict[str, Any]:
         return {"type": "object"}
 '''
@@ -1269,9 +1269,9 @@ from orchestrator.agents.base_agent import BaseAgent
 
 class ResearchAgent(BaseAgent):
     """Research Agent for gathering information."""
-    
+
     AGENT_NAME = "research"
-    
+
     def _get_system_prompt(self) -> str:
         return """You are the Research Agent.
 
@@ -1296,7 +1296,7 @@ You MUST respond with valid JSON:
 }
 
 Output ONLY valid JSON."""
-    
+
     def _get_payload_schema(self) -> Dict[str, Any]:
         return {"type": "object"}
 '''
@@ -1314,9 +1314,9 @@ from orchestrator.agents.base_agent import BaseAgent
 
 class CoderAgent(BaseAgent):
     """Coder Agent for code generation."""
-    
+
     AGENT_NAME = "coder"
-    
+
     def _get_system_prompt(self) -> str:
         return """You are the Coder Agent.
 
@@ -1355,7 +1355,7 @@ You MUST respond with valid JSON:
 }
 
 All code must be complete and runnable. Output ONLY valid JSON."""
-    
+
     def _get_payload_schema(self) -> Dict[str, Any]:
         return {"type": "object"}
 '''
@@ -1373,9 +1373,9 @@ from orchestrator.agents.base_agent import BaseAgent
 
 class QAAgent(BaseAgent):
     """QA Agent for validation."""
-    
+
     AGENT_NAME = "qa"
-    
+
     def _get_system_prompt(self) -> str:
         return """You are the QA Agent.
 
@@ -1409,7 +1409,7 @@ You MUST respond with valid JSON:
 }
 
 Output ONLY valid JSON."""
-    
+
     def _get_payload_schema(self) -> Dict[str, Any]:
         return {"type": "object"}
 '''
@@ -1427,9 +1427,9 @@ from orchestrator.agents.base_agent import BaseAgent
 
 class DocsAgent(BaseAgent):
     """Documentation Agent."""
-    
+
     AGENT_NAME = "docs"
-    
+
     def _get_system_prompt(self) -> str:
         return """You are the Documentation Agent.
 
@@ -1456,7 +1456,7 @@ You MUST respond with valid JSON:
 }
 
 Output ONLY valid JSON."""
-    
+
     def _get_payload_schema(self) -> Dict[str, Any]:
         return {"type": "object"}
 '''
@@ -1493,7 +1493,7 @@ logger = logging.getLogger(__name__)
 
 class SMTPNotifier:
     """SMTP-based email notification service."""
-    
+
     def __init__(self):
         self.host = os.getenv('SMTP_HOST', '')
         self.port = int(os.getenv('SMTP_PORT', 587))
@@ -1501,49 +1501,49 @@ class SMTPNotifier:
         self.password = os.getenv('SMTP_PASSWORD', '')
         self.from_address = os.getenv('SMTP_FROM', 'noreply@multiagent.local')
         self.enabled = bool(self.host and self.username)
-        
+
         if self.enabled:
             logger.info("SMTP notifier initialized")
         else:
             logger.info("SMTP notifier disabled (no configuration)")
-    
+
     def _send_email(self, to_email: str, subject: str, body: str) -> bool:
         if not self.enabled:
             logger.debug(f"Email skipped (disabled): {subject}")
             return False
-        
+
         try:
             msg = MIMEMultipart()
             msg['Subject'] = subject
             msg['From'] = self.from_address
             msg['To'] = to_email
             msg.attach(MIMEText(body, 'plain'))
-            
+
             with smtplib.SMTP(self.host, self.port) as server:
                 server.starttls()
                 server.login(self.username, self.password)
                 server.send_message(msg)
-            
+
             logger.info(f"Email sent to {to_email}: {subject}")
             return True
         except Exception as e:
             logger.error(f"Failed to send email: {e}")
             return False
-    
+
     def send_workflow_started(self, email: str, workflow_id: str, request_summary: str) -> bool:
         return self._send_email(
             email,
             f"Workflow Started: {workflow_id}",
             f"Your workflow has been initiated.\\n\\nWorkflow ID: {workflow_id}\\nRequest: {request_summary}"
         )
-    
+
     def send_workflow_completed(self, email: str, workflow_id: str, duration: str, iterations: int) -> bool:
         return self._send_email(
             email,
             f"Workflow Completed: {workflow_id}",
             f"Your workflow has completed.\\n\\nWorkflow ID: {workflow_id}\\nDuration: {duration}\\nIterations: {iterations}"
         )
-    
+
     def send_workflow_failed(self, email: str, workflow_id: str, error_message: str) -> bool:
         return self._send_email(
             email,
@@ -1570,13 +1570,13 @@ logger = logging.getLogger(__name__)
 
 class MemoryStore:
     """Local memory store using SQLite."""
-    
+
     def __init__(self, db_path: str = "storage/data/memory.db"):
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_db()
         logger.info(f"Memory store initialized: {db_path}")
-    
+
     def _init_db(self):
         with sqlite3.connect(self.db_path) as conn:
             conn.executescript("""
@@ -1594,7 +1594,7 @@ class MemoryStore:
                     created_at TEXT
                 );
             """)
-    
+
     def save_workflow_state(self, workflow_id: str, state: Dict[str, Any]) -> None:
         from datetime import datetime, timezone
         now = datetime.now(timezone.utc).isoformat()
@@ -1603,7 +1603,7 @@ class MemoryStore:
                 "INSERT OR REPLACE INTO workflow_state VALUES (?, ?, ?, ?)",
                 (workflow_id, json.dumps(state), now, now)
             )
-    
+
     def get_workflow_state(self, workflow_id: str) -> Optional[Dict[str, Any]]:
         with sqlite3.connect(self.db_path) as conn:
             row = conn.execute(
@@ -1629,7 +1629,7 @@ FILES['app/templates/index.html'] = '''<!DOCTYPE html>
     <title>Multi-Agent Corporate System</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
+        body {
             font-family: system-ui, sans-serif;
             background: #0f172a;
             color: #e2e8f0;
@@ -1681,29 +1681,29 @@ FILES['app/templates/index.html'] = '''<!DOCTYPE html>
 <body>
     <div class="container">
         <h1>🏢 Multi-Agent Corporate System</h1>
-        
+
         <div class="card">
             <h2>Create Workflow</h2>
             <textarea id="request" placeholder="Describe what you want to build..."></textarea>
             <button onclick="runWorkflow()">🚀 Run Workflow</button>
         </div>
-        
+
         <div class="card" id="result" style="display:none;">
             <h2>Result</h2>
             <div id="status"></div>
             <pre id="output"></pre>
         </div>
     </div>
-    
+
     <script>
         async function runWorkflow() {
             const request = document.getElementById('request').value;
             if (!request) return alert('Please enter a request');
-            
+
             document.getElementById('result').style.display = 'block';
             document.getElementById('status').innerHTML = '<span class="status">Running...</span>';
             document.getElementById('output').textContent = 'Processing...';
-            
+
             try {
                 const response = await fetch('/api/run', {
                     method: 'POST',
@@ -1713,11 +1713,11 @@ FILES['app/templates/index.html'] = '''<!DOCTYPE html>
                     },
                     body: JSON.stringify({ request })
                 });
-                
+
                 const data = await response.json();
-                document.getElementById('status').innerHTML = 
+                document.getElementById('status').innerHTML =
                     `<span class="status ${data.status}">${data.status}</span>`;
-                document.getElementById('output').textContent = 
+                document.getElementById('output').textContent =
                     JSON.stringify(data, null, 2);
             } catch (error) {
                 document.getElementById('output').textContent = error.message;
@@ -1828,29 +1828,29 @@ def setup():
     print("=" * 60)
     print("Setting up Multi-Agent Corporate System")
     print("=" * 60)
-    
+
     # Create directories
     print("\\nCreating directories...")
     for directory in DIRECTORIES:
         dir_path = PROJECT_ROOT / directory
         dir_path.mkdir(parents=True, exist_ok=True)
         print(f"  ✓ {directory}/")
-    
+
     # Create files
     print("\\nCreating files...")
     for filepath, content in FILES.items():
         file_path = PROJECT_ROOT / filepath
         file_path.parent.mkdir(parents=True, exist_ok=True)
-        
+
         # Don't overwrite .env if it exists
         if filepath == '.env' and file_path.exists():
             print(f"  ⊘ {filepath} (already exists, skipped)")
             continue
-        
+
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
         print(f"  ✓ {filepath}")
-    
+
     # Create .env from example if it doesn't exist
     env_path = PROJECT_ROOT / '.env'
     env_example_path = PROJECT_ROOT / '.env.example'
@@ -1858,7 +1858,7 @@ def setup():
         import shutil
         shutil.copy(env_example_path, env_path)
         print(f"  ✓ .env (copied from .env.example)")
-    
+
     print("\\n" + "=" * 60)
     print("Setup complete!")
     print("=" * 60)

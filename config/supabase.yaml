@@ -3,18 +3,18 @@ supabase:
   url: "${SUPABASE_URL}"
   anon_key: "${SUPABASE_ANON_KEY}"
   service_role_key: "${SUPABASE_SERVICE_ROLE_KEY}"
-  
+
   # JWT configuration
   jwt:
     algorithm: "HS256"
     expiry_seconds: 3600
-    
+
   # Tables
   tables:
     workflows: "workflows"
     events: "events"
     artifacts: "artifacts"
-    
+
   # Storage bucket
   storage:
     bucket: "workflow-artifacts"
